@@ -4,7 +4,7 @@ Let's Connect Digital Freight.  OpenFreight is the open data and API standard fo
 
 OpenFreight is a community of carriers, forwarders, BCOs, and logistics technology companies that are removing data silos with open multimodal freight standards. Together, we can provide better, more efficient logistics services, benefitting every player across the supply chain.
 
-Join the growing community now. https://www.openfreight.org/openfreight-org-home-page/openfreight-community/
+Join the growing [community](https://www.openfreight.org/openfreight-org-home-page/openfreight-community/) now. 
 
 ---
 Setting A New Standard
