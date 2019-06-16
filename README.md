@@ -7,7 +7,7 @@ OpenFreight is a community of carriers, forwarders, BCOs, and logistics technolo
 Join the growing [community](https://www.openfreight.org/openfreight-org-home-page/openfreight-community/) now. 
 
 ---
-Setting A New Standard
+**Setting A New Standard**
 
 The initial OpenFreight standards were developed internally at Freightos and are already used by dozens of global organization. While they broadly focus on pricing, booking and documentation standards, the focus is rapidly expanding to full Track & Trace standards as well. Current standards include:
 
