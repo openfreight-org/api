@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+  xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:7" elementFormDefault="qualified"
+  targetNamespace="www.openfreight.org" xmlns:opn="www.openfreight.org">
+  <!-- =================================================================== -->
+  <!-- Schema agency: 	Freightos ==========================-->
+  <!-- Schema version:	1.0  ===============================-->
+  <!-- Schema date: 	    April 2019  =====================-->
+  <!-- Copyright (C) Freightos (2018). All Rights Reserved =-->
+  <!-- =================================================================== -->
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+    schemaLocation="../common/int-standard/UnqualifiedDataType_8p0.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:7"
+    schemaLocation="../common/int-standard/QualifiedDataType_7p0.xsd"/>
+
+  <xs:complexType name="MessageHeaderType">
+    <xs:sequence>
+      <xs:element name="MessageId" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="ConversationId" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="RequestID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="AuthenticationType" type="opn:AuthenticationType"/>
+      <xs:element type="xs:anyType" name="AuthenticationPayload" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Authentication Payload</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BusinessInfoType">
+    <xs:sequence>
+      <xs:element name="Station" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Station of the contract</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceName" type="udt:TextType"/>
+      <xs:element name="ServiceMethod" type="udt:TextType"/>
+      <xs:element name="ServiceComment" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="MessageDateTime" type="udt:DateTimeType">
+        <xs:annotation>
+          <xs:documentation>The request/response date time.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Parties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Party" type="opn:PartyType" maxOccurs="unbounded" minOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="xs:anyType" name="SummaryPayload" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Summary Payload</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShipmentType">
+    <xs:annotation>
+      <xs:documentation>An identifiable collection of one or more goods items to be transported
+        between the seller party and the buyer party. This information may be defined within a
+        commercial contract. A shipment can be transported in different consignments (e.g., split
+        for logistical purposes).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ShipmentDirection" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Export/Import indicator</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportMode" type="opn:TransportationModeType">
+        <xs:annotation>
+          <xs:documentation>Air, LCL,FTL,FCL,FTL,Rail,Express,Barge,RoRo,AirSea,BreakBulk
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShipmentSecured" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="TransportService" type="opn:TransportationServiceType">
+        <xs:annotation>
+          <xs:documentation>e.g., door-to-door, port-to-port
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShipmentPriorityCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Express ; Standard ; time -definite</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginLocation" type="opn:LocationType" minOccurs="1"/>
+      <xs:element name="DestinationLocation" type="opn:LocationType" minOccurs="1"/>
+      <xs:element name="PickupEvent" type="opn:EventType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The pickup event</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DeliveryEvent" type="opn:EventType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The delivery event</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TimeOfAvailability" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="LatestAcceptanceDate" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="Load" type="opn:UnitLoadType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Describes the actual cargo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PricePreference" type="opn:PricePreferenceType" minOccurs="0"/>
+      <xs:element name="Connection" type="opn:ConnectionType" minOccurs="0"/>
+      <xs:element name="InsuranceValueAmount" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="DeclaredCustomsValueAmount" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="ProductCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="SpecialHandlingCodes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="Code" type="udt:CodeType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Terms" type="opn:TermsType" minOccurs="0"/>
+      <xs:element name="CommodityClassification" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="CommodityClass"
+              type="opn:CommodityClassificationType">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Accessorials" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Accessorial"
+              type="opn:AccessorialType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeneralInformation" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="Condition" type="opn:ConditionType" minOccurs="0"/>
+      <xs:element name="AdditionalInformation" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Additional information specific to message requester such as Origin
+            Search Type, DestinationSearchType
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Information"
+              type="opn:AdditionalPropertyType">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SegmentCapacityType">
+    <xs:complexContent>
+      <xs:extension base="opn:SegmentType">
+        <xs:sequence>
+          <xs:element name="Charges" type="opn:ChargeType"/>
+          <xs:element name="AvailableSpace" type="opn:AvailableSpaceType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConnectionType">
+    <xs:sequence>
+      <xs:element name="NumberOfConnections" type="xs:integer" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates number of connections, (e.g 1: direct transportation)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransitTime" type="opn:TransitTimeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Number of (months, weeks, days, hours, etc.) it takes to transport a
+            shipment
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConnectionSegments" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="Segment" type="opn:SegmentType">
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusMessageType">
+    <xs:annotation>
+      <xs:documentation/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferenceID" type="udt:IDType">
+        <xs:annotation>
+          <xs:documentation>Booking Rate id</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="opn:StatusType"/>
+      <xs:element name="PriceIndicator" type="opn:PriceIndicatorType" minOccurs="0"/>
+      <xs:element name="Terms" type="opn:TermsType" minOccurs="0"/>
+      <xs:element name="Remarks" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="AdditionalInformation" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Additional information specific to message requester such as Origin
+            Search Type, DestinationSearchType
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Information"
+              type="opn:AdditionalPropertyType">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShipperType">
+    <xs:complexContent>
+      <xs:extension base="opn:PartyType">
+        <xs:sequence>
+          <xs:element name="Knownshipper" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AuthenticationTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Basic"/>
+      <xs:enumeration value="APIKey"/>
+      <xs:enumeration value="OAuth"/>
+      <xs:enumeration value="X509"/>
+      <xs:enumeration value="Extension"/>
+      <xs:enumeration value="Public"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SegmentType">
+    <xs:sequence>
+      <xs:element name="SegmentID" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="SegmentType" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="Status" type="opn:StatusType" minOccurs="0"/>
+      <xs:element name="VehicleType" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>aircraft,truck,ship,boat, Vessel</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VehicleNumber" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>[e.g. aircraft type:</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItineraryNumber" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>[e.g flight ID ;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportMode" type="opn:TransportationModeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Air, LCL,FTL,FCL,FTL,Rail,Express,Barge,RoRo,AirSea,BreakBulk
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Origin" type="opn:LocationType">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Destination" type="opn:LocationType">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ScheduledTimeOfDeparture" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="ScheduledTimeOfArrival" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="TimeOfAvailability" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="LatestAcceptanceDate" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="MarketingCarrierCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="OperatingCarrierCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="TransitTime" type="opn:TransitTimeType" maxOccurs="1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransportationServiceType">
+    <xs:annotation>
+      <xs:documentation>e.g., door-to-door, port-to-port</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="udt:CodeType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EstimatedTransitTimeType">
+    <xs:annotation>
+      <xs:documentation/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="From" type="udt:MeasureType"/>
+      <xs:element name="To" type="udt:MeasureType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthenticationType">
+    <xs:simpleContent>
+      <xs:extension base="opn:AuthenticationTypeEnum">
+        <xs:attribute name="other" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TransitTimeType">
+    <xs:sequence>
+      <xs:element name="Time" type="udt:MeasureType"/>
+      <xs:element name="EstimatedTransitTimes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EstimatedTransitTime" type="opn:EstimatedTransitTimeType"
+              maxOccurs="unbounded" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvailableSpaceType">
+    <xs:sequence>
+      <xs:element name="SpaceAvailable" type="xs:boolean"/>
+      <xs:element name="RemainingBookableWeight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="RemainingBookableVolume" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="ULD" type="opn:ULDType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PackageType">
+    <xs:sequence>
+      <xs:element name="PackagingType" type="udt:CodeType">
+        <xs:annotation>
+          <xs:documentation>
+            ['Case', 'Barrel', 'Basket', 'Box', 'Break Bulk', 'Bundle', 'Carton', 'Chest',
+            'Container', 'Crate', 'Cylinder', 'Drum', 'Lift Van', 'Package', 'Pallet', 'Piece',
+            'Reel', 'Roll', 'Skid', 'Truckload', 'Tube', 'Unit', 'Bags', 'Pails', 'Totes', 'Wheels',
+            'Gaylords', 'U-Box', 'HalfPallets', 'Cart', 'A-Frame', 'Hopper', 'Vehicle', 'Tubs',
+            'Gallons', 'Bales', 'Cans', 'Jerricans', 'Racks', 'Loose', 'Stacks', 'Bins'],
+
+
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Weight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="ChargeableWeightMeasure" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="Quantity" type="udt:QuantityType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Number of items in the package</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreightClass" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="Dimensions" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Dimension" type="opn:DimensionType">
+              <xs:annotation>
+                <xs:documentation>Internal Dimension
+                  External Dimension
+                  [e.g. PGA
+                  External dimensions 244 x 590
+                  Internal dimensions 228 x 590
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Density" type="xs:double" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>approximate density of goods</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Stackable" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="DangerousGood" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="ULD" type="opn:ULDType" minOccurs="0"/>
+      <xs:element name="Turnable" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="HazardousInfo" type="opn:HazardousMaterialType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only if Dangerous Good</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" name="HandlingInstructions" type="opn:InstructionType" minOccurs="0"/>
+      <xs:element maxOccurs="1" name="DeclaredValue" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="TransportTemperature" type="udt:IndicatorType" minOccurs="0"/>
+      <xs:element name="OverDimensionIndicator" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="OverWeightIndicator" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HazardousMaterialType">
+    <xs:sequence>
+      <xs:element name="HazardClassID" type="udt:CodeType"/>
+      <xs:element name="Description" type="udt:TextType"/>
+      <xs:element name="PackingInstruction" type="opn:InstructionType"/>
+      <xs:element name="ToxicityZoneCode" type="udt:CodeType"/>
+      <xs:element name="Temperature" type="udt:MeasureType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULDType">
+    <xs:sequence>
+      <xs:element name="Position" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <ULDs>
+              <PRE>AKE</PRE>
+              <UDP>0</UDP>
+              <LDP>0</LDP>
+              <LDC>1</LDC>
+            </ULDs>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ULDType" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>e.g. AKE</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GrossWeight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="UnitQuantity" type="udt:QuantityType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CommodityClassificationType">
+    <xs:sequence>
+      <xs:element name="CommodityCategoryCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The harmonized international commodity code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClassificationCode" type="udt:CodeType"/>
+      <xs:element name="Name" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Commodity Name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitLoadType">
+    <xs:annotation>
+      <xs:documentation>A unit load is one that can be stored or moved as a single entity at one
+        time, such as a pallet or container.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AllotmentID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="Product" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Product Code
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NetNetWeight" type="udt:MeasureType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The weight of the goods net of packaging and transport equipment.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NetWeight" type="udt:MeasureType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The weight of the goods including weight of packaging and transport
+            equipment
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NetVolumeMeasure" type="udt:MeasureType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The volume of a shipment net of packaging and transport equipment.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalChargeableWeight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="TotalQuantity" type="udt:MeasureType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>number of Unit Loads [ containers, ULD's, pallets,..]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalGrossVolumeMeasure" type="udt:MeasureType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The total volume of the goods in a shipment plus packaging
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HazardousInfo" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only if Dangerous Good</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Info" type="opn:HazardousMaterialType" minOccurs="1"
+              maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Packages" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="Package" type="opn:PackageType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Commodity" type="opn:CommodityType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CommodityType">
+    <xs:sequence>
+      <xs:element name="CommodityCode" type="udt:CodeType">
+        <xs:annotation>
+          <xs:documentation>The harmonized international commodity code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" type="udt:CodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DimensionType">
+    <xs:annotation>
+      <xs:documentation>Used to measure the internal dimension and/or external dimension of a
+        Shipping unit
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Width" type="udt:MeasureType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Width is measured</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Length" type="udt:MeasureType" minOccurs="1"/>
+      <xs:element name="Height" type="udt:MeasureType" minOccurs="1"/>
+      <xs:element name="Description" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Internal, External.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeeBreakType">
+    <xs:sequence>
+      <xs:element name="BreakPoint" type="udt:TextType"/>
+      <xs:element name="BreakAmount" type="udt:AmountType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeeType">
+    <xs:sequence>
+      <xs:element name="Currency" type="qdt:CurrencyCodeType"/>
+      <xs:element name="FeeLocationType" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Origin
+            service (leg)
+            destination
+            general
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExchangeRate" type="xs:double" minOccurs="0"/>
+      <xs:element name="Inclusive" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="FeeType" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Main Charge, Surcharge</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FeeCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="FeeName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="FeeComment" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="MinimumPrice" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="MaximumPrice" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="Quantity" type="udt:QuantityType" minOccurs="0"/>
+      <xs:element name="UnitOfMeasure" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="UnitRate" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="RateId" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="Rate" type="udt:AmountType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Price</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FeeBreaks" maxOccurs="1" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="FeeBreak" type="opn:FeeBreakType"
+            />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChargeType">
+    <xs:sequence>
+      <xs:element name="Fee" maxOccurs="unbounded" minOccurs="1" type="opn:FeeType"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PartyType">
+    <xs:annotation>
+      <xs:documentation>An organization/Individual fulfilling a role in a business process.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PartyTypeCode" type="udt:IDType">
+        <xs:annotation>
+          <xs:documentation>e.g. CA:Carrier;CG:Carrier's agent;
+            https://www.unece.org/trade/untdid/d00a/tred/tred3035.htm
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ID" nillable="false" type="udt:IDType"/>
+      <xs:element name="AdditionalID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="Name" type="udt:TextType"  minOccurs="0"/>
+      <xs:element name="AccountIDList" minOccurs="0">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="AccountID" type="opn:AccountIDType" maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+      </xs:complexType>
+      </xs:element>
+      <xs:element name="PostalAddress" type="opn:LocationType" minOccurs="0"/>
+      <xs:element name="Contact" type="opn:ContactType" minOccurs="0"/>
+      <xs:element name="Parties" minOccurs="0">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>An association to another party who acts for this party.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="Party" type="opn:PartyType" maxOccurs="unbounded" minOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdditionalPropertyType">
+    <xs:sequence>
+      <xs:element name="Key" type="udt:TextType"/>
+      <xs:element name="Value" type="udt:TextType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccountIDType">
+    <xs:sequence>
+      <xs:element name="IDSource" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="Value" type="udt:TextType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccessorialType">
+    <xs:sequence>
+      <xs:element name="Scope" type="udt:CodeType">
+        <xs:annotation>
+          <xs:documentation>Pickup,Delivery,General</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="udt:TextType"/>
+      <xs:element name="Value" type="udt:TextType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LocationType">
+    <xs:annotation>
+      <xs:documentation>refers to the physical address
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LocationTypeCode" type="udt:CodeType">
+        <xs:annotation>
+          <xs:documentation>"Seaport", "Airport", "Freight Terminal", "Rail Station",..
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>IATA Location Identifier,UN/LOCODE</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="TerminalCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="TerminalName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="ID" type="udt:IDType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>airport code, sea port code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AddressFormatCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Structured, Unstructured</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryID" type="qdt:CountryIDType" minOccurs="0"/>
+      <xs:element name="CountryName" minOccurs="0" type="udt:TextType"/>
+      <xs:element name="StateOrProvince" minOccurs="0" type="udt:TextType"/>
+      <xs:element name="CityID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="CityName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="StreetName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="PostalCode" minOccurs="0" type="udt:CodeType"/>
+      <xs:element name="AddressLines" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="AddressLine" type="udt:TextType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LocationCoordinate" type="opn:LocationCoordinate" minOccurs="0"/>
+      <xs:element name="TimezoneOffset" minOccurs="0" type="udt:TextType">
+        <xs:annotation>
+          <xs:documentation>Time offset from Universal Coordinated Time (UTC)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PriceIndicatorType">
+    <xs:sequence>
+      <xs:element name="RequestCurrency" type="qdt:CurrencyCodeType"/>
+      <xs:element name="ExchangeRate" type="xs:double" minOccurs="0"/>
+      <xs:element name="RateId" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateComment" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="PriceTool" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="PromotionCode" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateCurrency" type="qdt:CurrencyCodeType" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>currency of the response</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RateType" type="udt:CodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Promotional,Market,Contractual,Console</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UnitOfMeasure" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="UnitRate" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="IncludeOriginPortCharges" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="IncludeDestinationPortCharges" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="ValidFrom" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="ValidTo" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="BreakPointUsed" type="xs:double" minOccurs="0"/>
+      <xs:element name="ChargeableWeight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="GrossWeight" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="TotalCharge" type="udt:AmountType" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Main charge plus surcharges</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalFreightCharge" type="udt:AmountType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Transportation Charge</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PricePreferenceType">
+    <xs:sequence>
+      <xs:element name="RequestCurrency" type="qdt:CurrencyCodeType" minOccurs="0"/>
+      <xs:element name="RateCurrency" type="qdt:CurrencyCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>currency of the response</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RateType" type="udt:CodeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Promotional,Market,Contractual,Console</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PromotionCode" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateUnitOfMeasure" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="ResponseTime" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="DiscountAmount" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="ProposedRate" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="DiscountPercent" type="udt:MeasureType" minOccurs="0"/>
+      <xs:element name="AllInIndicator" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TelephoneType">
+    <xs:simpleContent>
+      <xs:extension base="udt:TextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TelefaxType">
+    <xs:simpleContent>
+      <xs:extension base="udt:TextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ElectronicMailType">
+    <xs:simpleContent>
+      <xs:extension base="udt:TextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="LocationCoordinate">
+    <xs:sequence>
+      <xs:element name="CoordinateSystemCode" type="udt:CodeType"/>
+      <xs:element name="LatitudeDegreesMeasure" type="udt:MeasureType"/>
+      <xs:element name="LatitudeMinutesMeasure" type="udt:MeasureType"/>
+      <xs:element name="LongitudeDegreesMeasure" type="udt:MeasureType"/>
+      <xs:element name="LongitudeMinutesMeasure" type="udt:MeasureType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactType">
+    <xs:sequence>
+      <xs:element name="ID" type="udt:IDType">
+        <xs:annotation>
+          <xs:documentation>Contact identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="udt:TextType"  minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>he name of the Contact</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Telephone" type="opn:TelephoneType" minOccurs="0"/>
+      <xs:element name="Telefax" type="opn:TelefaxType" minOccurs="0"/>
+      <xs:element name="ElectronicMail" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="Note" type="udt:TextType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransportationModeType">
+    <xs:annotation>
+      <xs:documentation>Air, LCL,FTL,FCL,FTL,Rail,Express,Barge,RoRo,AirSea,BreakBulk
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="udt:CodeType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EventType">
+    <xs:sequence>
+      <xs:element name="EventDate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ActualDateTime" type="udt:DateTimeType" minOccurs="0"/>
+            <xs:element name="ScheduledDateTime" type="udt:DateTimeType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Party" type="opn:PartyType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InstructionType">
+    <xs:annotation>
+      <xs:documentation>e.g handling instructions
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="InstructionLine" maxOccurs="unbounded" type="udt:TextType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConditionType">
+    <xs:sequence>
+      <xs:element name="Condition" type="udt:TextType">
+        <xs:annotation>
+          <xs:documentation>Additional information about conditions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConditionURI" type="xs:anyURI" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>URI of conditions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TermsType">
+    <xs:sequence>
+      <xs:element name="PaymentTerm" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Payment Terms:: prepaid,collect, third party
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MethodOfPayment" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Method of payment:: cash, checks, debit cards
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DeliveryTerm" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>INCOTERM::EXW (Ex Works),FCA (Free Carrier),FOB (Free on
+            Board),...
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StatusType">
+    <xs:sequence>
+      <xs:element name="Code" type="udt:CodeType"/>
+      <xs:element name="Reason" type="udt:TextType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
