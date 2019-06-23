@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== -->
+<!-- ===== Qualified DataType Schema Module                           ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  UN/CEFACT
+Schema version: 7.0
+Schema date:    12 October 2009
+
+Copyright (C) UN/CEFACT (2009). All Rights Reserved.
+
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself may not be modified in any way, such as by removing the copyright notice or references to UN/CEFACT, except as needed for the purpose of developing UN/CEFACT specifications, in which case the procedures for copyrights defined in the UN/CEFACT Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by UN/CEFACT or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS" basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:7" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8" xmlns:clm63055="urn:un:unece:uncefact:codelist:standard:6:3055:D09A" xmlns:clm6Recommendation20="urn:un:unece:uncefact:codelist:standard:6:Recommendation20:6" xmlns:clm5ISO42173A="urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2009-09-09" xmlns:clm61001="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode:D09A" xmlns:clm63035="urn:un:unece:uncefact:codelist:standard:UNECE:PartyRoleCode:D09A" xmlns:clm6Recommendation19="urn:un:unece:uncefact:codelist:standard:UNECE:TransportModeCode:2" xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006VI-6" targetNamespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:7" elementFormDefault="qualified" attributeFormDefault="unqualified" version="7.0">
+	<!-- ======================================================================= -->
+	<!-- ===== Imports                                                     ===== -->
+	<!-- ======================================================================= -->
+	<!-- ===== Imports of Code Lists                                       ===== -->
+	<!-- ======================================================================= -->
+	<xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8" schemaLocation="UnqualifiedDataType_8p0.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:6:3055:D09A" schemaLocation="UNECE_AgencyIdentificationCode_D09A.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:6:Recommendation20:6" schemaLocation="UNECE_MeasurementUnitCommonCode_6.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2009-09-09" schemaLocation="ISO_ISO3AlphaCurrencyCode_20090909.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode:D09A" schemaLocation="UNECE_DocumentNameCode_D09A.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:PartyRoleCode:D09A" schemaLocation="UNECE_PartyRoleCode_D09A.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:TransportModeCode:2" schemaLocation="UNECE_TransportModeCode_2.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006VI-6" schemaLocation="ISO_ISOTwoletterCountryCode_SecondEdition2006VI-6.xsd"/>
+	<!-- ================================================================== -->
+	<!-- ===== Type Definition: CountryIDType                         ===== -->
+	<!-- ================================================================== -->
+	<xsd:complexType name="CountryIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<ccts:UniqueID>UN02000003</ccts:UniqueID>
+				<ccts:Acronym>DT</ccts:Acronym>
+				<ccts:DictionaryEntryName>Country_ Identifier. Type</ccts:DictionaryEntryName>
+				<ccts:Version>1.0</ccts:Version>
+				<ccts:Definition>A character string to identify and distinguish uniquely, one instance of a country in an identification scheme from all other objects within the same scheme.</ccts:Definition>
+				<ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+				<ccts:PrimitiveType>String</ccts:PrimitiveType>
+				<ccts:DataTypeQualifierTerm>Country</ccts:DataTypeQualifierTerm>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType">
+				<xsd:attribute name="schemeID" type="xsd:token" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Identification Scheme. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="schemeAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Identification Scheme Agency. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="schemeVersionID" type="xsd:token" use="optional" fixed="second edition 2006">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Identification Scheme. Version. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ================================================================== -->
+	<!-- ===== Type Definition: CurrencyCodeType                      ===== -->
+	<!-- ================================================================== -->
+	<xsd:complexType name="CurrencyCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<ccts:UniqueID>UN02000004</ccts:UniqueID>
+				<ccts:Acronym>DT</ccts:Acronym>
+				<ccts:DictionaryEntryName>Currency_ Code. Type</ccts:DictionaryEntryName>
+				<ccts:Version>1.1</ccts:Version>
+				<ccts:Definition>A character string used to represent a currency.</ccts:Definition>
+				<ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+				<ccts:PrimitiveType>String</ccts:PrimitiveType>
+				<ccts:DataTypeQualifierTerm>Currency</ccts:DataTypeQualifierTerm>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="clm5ISO42173A:ISO3AlphaCurrencyCodeContentType">
+				<xsd:attribute name="listID" type="xsd:token" use="optional" fixed="ISO 4217 3A">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional" fixed="5">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Agency. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listVersionID" type="xsd:token" use="optional" fixed="2007-06-18">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Version. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ================================================================== -->
+	<!-- ===== Type Definition: DocumentCodeType                      ===== -->
+	<!-- ================================================================== -->
+	<xsd:complexType name="DocumentCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<ccts:UniqueID>UN02000006</ccts:UniqueID>
+				<ccts:Acronym>DT</ccts:Acronym>
+				<ccts:DictionaryEntryName>Document_ Code. Type</ccts:DictionaryEntryName>
+				<ccts:Version>1.1</ccts:Version>
+				<ccts:Definition>A character string denoting the type of a document. [Reference United Nations Code List (UNCL) 1001]</ccts:Definition>
+				<ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+				<ccts:PrimitiveType>String</ccts:PrimitiveType>
+				<ccts:DataTypeQualifierTerm>Document</ccts:DataTypeQualifierTerm>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="clm61001:DocumentNameCodeContentType">
+				<xsd:attribute name="listID" type="xsd:token" use="optional" fixed="1001">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional" fixed="6">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Agency. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listVersionID" type="xsd:token" use="optional" fixed="D09A">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Version. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="name" type="xsd:string" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code. Name. Text</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Name</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ================================================================== -->
+	<!-- ===== Type Definition: PartyRoleCodeType                     ===== -->
+	<!-- ================================================================== -->
+	<xsd:complexType name="PartyRoleCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<ccts:UniqueID>UN02000044</ccts:UniqueID>
+				<ccts:Acronym>DT</ccts:Acronym>
+				<ccts:DictionaryEntryName>Party Role_ Code. Type</ccts:DictionaryEntryName>
+				<ccts:Version>1.0</ccts:Version>
+				<ccts:Definition>A character string used to replace or represent a role of a party.</ccts:Definition>
+				<ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+				<ccts:PrimitiveType>String</ccts:PrimitiveType>
+				<ccts:DataTypeQualifierTerm>Party Role</ccts:DataTypeQualifierTerm>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="clm63035:PartyRoleCodeContentType">
+				<xsd:attribute name="listID" type="xsd:token" use="optional" fixed="3035">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional" fixed="6">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Agency. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listVersionID" type="xsd:token" use="optional" fixed="D09A">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Version. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="name" type="xsd:string" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code. Name. Text</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Name</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ================================================================== -->
+	<!-- ===== Type Definition: TransportModeCodeType                 ===== -->
+	<!-- ================================================================== -->
+	<xsd:complexType name="TransportModeCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<ccts:UniqueID>UN02000018</ccts:UniqueID>
+				<ccts:Acronym>DT</ccts:Acronym>
+				<ccts:DictionaryEntryName>Transport Mode_ Code. Type</ccts:DictionaryEntryName>
+				<ccts:Version>1.0</ccts:Version>
+				<ccts:Definition>A character string used to represent a transport mode.</ccts:Definition>
+				<ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+				<ccts:PrimitiveType>String</ccts:PrimitiveType>
+				<ccts:DataTypeQualifierTerm>Transport Mode</ccts:DataTypeQualifierTerm>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="clm6Recommendation19:TransportModeCodeContentType">
+				<xsd:attribute name="listID" type="xsd:token" use="optional" fixed="Recommendation 19">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional" fixed="6">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Agency. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="listVersionID" type="xsd:token" use="optional" fixed="2">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code List. Version. Identifier</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="name" type="xsd:string" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							<ccts:UniqueID/>
+							<ccts:Acronym>SC</ccts:Acronym>
+							<ccts:Name>Code. Name. Text</ccts:Name>
+							<ccts:Definition/>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:PropertyTerm>Name</ccts:PropertyTerm>
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

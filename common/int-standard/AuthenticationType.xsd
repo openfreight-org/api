@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!--
+  	Schema agency: 	Freightos 
+  	Schema version:	1.0
+  	Schema date: 	    Novemner 2018
+  	
+  	Copyright (C) Freightos (2018). All Rights Reserved.
+  	
+-->
+    <xs:simpleType name="AuthenticationTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Basic"/>
+            <xs:enumeration value="APIKey"/>
+            <xs:enumeration value="OAuth"/>
+            <xs:enumeration value="X509"/>
+            <xs:enumeration value="Extension"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- =================================================================== -->
+    <!-- ===== Complex  Type to extend the original List               ===== -->
+    <!-- =================================================================== -->
+    
+    <xs:complexType name="AuthenticationType">
+        <xs:simpleContent>
+            <xs:extension base="AuthenticationTypeEnum">
+                <xs:attribute name="other" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
