@@ -1,6 +1,6 @@
 # [OpenFreight.org](https://www.openfreight.org) Github Pages Repository
 ---
-Let's Connect Digital Freight.  OpenFreight is the open data and API standard for multimodal freight.
+Let's Connect Digital Freight.  OpenFreight is the open data standard for multimodal freight.
 
 OpenFreight is a community of carriers, forwarders, BCOs, and logistics technology companies that are removing data silos with open multimodal freight standards. Together, we can provide better, more efficient logistics services, benefitting every player across the supply chain.
 
