@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+  elementFormDefault="qualified" targetNamespace="www.openfreight.org"
+  xmlns:opn="www.openfreight.org">
+  <!-- =================================================================== -->
+  <!-- Schema agency: 	Freightos ==========================-->
+  <!-- Schema version:	1.0  ===============================-->
+  <!-- Schema date: 	    April 2019  =====================-->
+  <!-- Copyright (C) Freightos (2018). All Rights Reserved =-->
+  <!-- =================================================================== -->
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+    schemaLocation="../../common/int-standard/UnqualifiedDataType_8p0.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:7"
+    schemaLocation="../../common/int-standard/QualifiedDataType_7p0.xsd"/>
+
+  <xs:include schemaLocation="../../common/OpenFreightReusableTypes.xsd"/>
+
+  <xs:element name="BookingRequest" type="opn:BookingRequestType"/>
+  <xs:element name="BookingResponse" type="opn:BookingResponseType"/>
+  <xs:element name="BookingStatusResponse" type="opn:BookingStatusResponseType"/>
+
+  <xs:complexType name="BookingRequestType">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="opn:MessageHeaderType"/>
+      <xs:element name="BusinessInfo" type="opn:BusinessInfoType"/>
+      <xs:element name="WayBillIdentifier" type="opn:WayBillIdentifierType" minOccurs="0"/>
+      <xs:element name="Shipment" type="opn:ShipmentType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BookingResponseType">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="opn:MessageHeaderType"/>
+      <xs:element name="BusinessInfo" type="opn:BusinessInfoType"/>
+      <xs:element name="WayBillIdentifier" type="opn:WayBillIdentifierType"/>
+      <xs:element name="BookingRate" type="opn:BookingRateType"/>
+      <xs:element name="ResponseStatus" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Status" type="opn:StatusType" minOccurs="1" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BookingStatusResponseType">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="opn:MessageHeaderType"/>
+      <xs:element name="BusinessInfo" type="opn:BusinessInfoType"/>
+      <xs:element name="WayBillIdentifier" type="opn:WayBillIdentifierType"/>
+      <xs:element name="BookingStatus" type="opn:StatusMessageType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BookingRateType">
+    <xs:annotation>
+      <xs:documentation>An identifiable collection of one or more goods items to be transported between the seller party and the buyer party. This information may be defined within a commercial contract. A shipment can be transported in different consignments (e.g., split for logistical purposes).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferenceID" type="udt:IDType">
+        <xs:annotation>
+          <xs:documentation>Booking Rate id </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShipmentDirection" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Export/Import indicator</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShipmentSecured" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="TransportMode" type="opn:TransportationModeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Air, LCL,FTL,FCL,FTL,Rail,Express,Barge,RoRo,AirSea,BreakBulk</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportService" type="opn:TransportationServiceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation> e.g., door-to-door, port-to-port
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShipmentPriorityCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Express ; Standard ; time -definite</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProductCode" type="udt:CodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Product code: Express, Standard</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginLocation" type="opn:LocationType" minOccurs="0"/>
+      <xs:element name="DestinationLocation" type="opn:LocationType" minOccurs="0"/>
+      <xs:element name="PickupEvent" type="opn:EventType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The pickup event</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DeliveryEvent" type="opn:EventType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The delivery event</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Connection" type="opn:BookingConnectionType" minOccurs="0"/>
+      <xs:element name="TimeOfAvailability" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="LatestAcceptanceDate" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="ValidFrom" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="ValidTo" type="udt:DateTimeType" minOccurs="0"/>
+      <xs:element name="InsuranceValueAmount" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="DeclaredCustomsValueAmount" type="udt:AmountType" minOccurs="0"/>
+      <xs:element name="PriceIndicator" type="opn:PriceIndicatorType" minOccurs="0"/>
+      <xs:element name="SpecialHandlingCodes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Code" type="udt:CodeType" maxOccurs="unbounded" minOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Terms" type="opn:TermsType" minOccurs="0"/>
+
+      <xs:element name="CommodityClassification" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="CommodityClass"
+              type="opn:CommodityClassificationType">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Remarks" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="AdditionalInformation" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Additional information specific to message requester such as Origin Search Type,  DestinationSearchType</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Information" type="opn:AdditionalPropertyType" maxOccurs="unbounded"
+              minOccurs="0">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="BookingSegmentType">
+    <xs:complexContent>
+      <xs:extension base="opn:SegmentType">
+        <xs:sequence>
+          <xs:element name="Charges" type="opn:ChargeType" minOccurs="0"/>
+          <xs:element name="AvailableSpace" type="opn:AvailableSpaceType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BookingConnectionType">
+    <xs:sequence>
+      <xs:element name="NumberOfConnections" type="xs:integer" minOccurs="0"/>
+      <xs:element name="TransitTime" type="opn:TransitTimeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Number of (months, weeks, days, hours, etc.) it takes to transport a shipment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConnectionSegments" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Segment" type="opn:BookingSegmentType" maxOccurs="unbounded"
+              minOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WayBillIdentifierType">
+    <xs:sequence>
+      <xs:element name="HWB" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Home WayBill, created by the FreightForworder
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MWB" type="udt:TextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Master WayBill, created by the carrier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="BillOfLading" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="BillOfLadingURL" type="xs:anyURI" minOccurs="0"/>
+      <xs:element name="ElectronicWayBill" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indecator if the WayBill has acommopanying document or not.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

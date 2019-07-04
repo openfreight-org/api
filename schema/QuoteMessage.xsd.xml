@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opn:QuoteMessage
+  xmlns:opn="www.openfreight.org"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="www.openfreight.org ../../../xsd/1.1.2/QuoteMessage.xsd ">  <opn:MessageHeader>
+    <!--Optional:-->
+    <opn:MessageId schemeID="token" schemeName="string" schemeAgencyID="265" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.org/sonoras/aeoliam" schemeURI="http://www.any.com/verrantque/temperat">token</opn:MessageId>
+    <!--Optional:-->
+    <opn:ConversationId schemeID="token" schemeName="string" schemeAgencyID="260" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.test.com/regemque/nimborum" schemeURI="http://www.my.com/ferant/profundum">token</opn:ConversationId>
+    <!--Optional:-->
+    <opn:RequestID schemeID="token" schemeName="string" schemeAgencyID="1" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.test.com/iovis/flammato" schemeURI="http://www.sample.com/bella/nubibus">token</opn:RequestID>
+    <opn:AuthenticationType other="string">Public</opn:AuthenticationType>
+    <!--Optional:-->
+    <opn:AuthenticationPayload>anyType</opn:AuthenticationPayload>
+  </opn:MessageHeader>
+  <opn:BusinessInfo>
+    <!--Optional:-->
+    <opn:Station listID="token" listAgencyID="179" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.com/ac/caelumque" listSchemeURI="http://www.sample.com/aris/coniunx">token</opn:Station>
+    <opn:ServiceName languageID="string">string</opn:ServiceName>
+    <opn:ServiceMethod languageID="string">string</opn:ServiceMethod>
+    <!--Optional:-->
+    <opn:ServiceComment languageID="string">string</opn:ServiceComment>
+    <opn:MessageDateTime>2015-06-18T01:07:00+03:00</opn:MessageDateTime>
+    <!--Optional:-->
+    <opn:Parties>
+      <!--1 or more repetitions:-->
+      <opn:Party>
+        <opn:PartyTypeCode schemeID="token" schemeName="string" schemeAgencyID="189" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.any.com/quisquam/et" schemeURI="http://www.sample.gov/ac/sed">token</opn:PartyTypeCode>
+        <opn:ID schemeID="token" schemeName="string" schemeAgencyID="139" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.sample.org/austris/annos" schemeURI="http://www.my.org/dare/rates">token</opn:ID>
+        <!--Optional:-->
+        <opn:AdditionalID schemeID="token" schemeName="string" schemeAgencyID="33" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.com/faciat/magno" schemeURI="http://www.my.com/et/regemque">token</opn:AdditionalID>
+        <!--Optional:-->
+        <opn:Name languageID="string">string</opn:Name>
+        <!--Optional:-->
+        <opn:AccountIDList>
+          <!--1 or more repetitions:-->
+          <opn:AccountID>
+            <!--Optional:-->
+            <opn:IDSource languageID="string">string</opn:IDSource>
+            <opn:Value languageID="string">string</opn:Value>
+          </opn:AccountID>
+        </opn:AccountIDList>
+        <!--Optional:-->
+        <opn:PostalAddress>
+          <opn:LocationTypeCode listID="token" listAgencyID="11" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.com/tenens/regina" listSchemeURI="http://www.any.org/habenas/insuper">token</opn:LocationTypeCode>
+          <!--Optional:-->
+          <opn:LocationCode listID="token" listAgencyID="170" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.com/in/soror" listSchemeURI="http://www.my.edu/coniunx/adorat">token</opn:LocationCode>
+          <!--Optional:-->
+          <opn:LocationName languageID="string">string</opn:LocationName>
+          <!--Optional:-->
+          <opn:TerminalCode listID="token" listAgencyID="261" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/aris/nimborum" listSchemeURI="http://www.any.org/premere/montis">token</opn:TerminalCode>
+          <!--Optional:-->
+          <opn:TerminalName languageID="string">string</opn:TerminalName>
+          <!--Optional:-->
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="42" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.test.com/gero/nimborum" schemeURI="http://www.test.org/montis/flammato">token</opn:ID>
+          <!--Optional:-->
+          <opn:AddressFormatCode listID="token" listAgencyID="324" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/tenens/incedo" listSchemeURI="http://www.test.org/iras/acuto">token</opn:AddressFormatCode>
+          <!--Optional:-->
+          <opn:CountryID schemeID="token" schemeAgencyID="267" schemeVersionID="second edition 2006">LV</opn:CountryID>
+          <!--Optional:-->
+          <opn:CountryName languageID="string">string</opn:CountryName>
+          <!--Optional:-->
+          <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+          <!--Optional:-->
+          <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="289" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.my.com/profundum/atris" schemeURI="http://www.any.com/magno/animos">token</opn:CityID>
+          <!--Optional:-->
+          <opn:CityName languageID="string">string</opn:CityName>
+          <!--Optional:-->
+          <opn:StreetName languageID="string">string</opn:StreetName>
+          <!--Optional:-->
+          <opn:PostalCode listID="token" listAgencyID="357" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/patriam/metuens" listSchemeURI="http://www.company.com/laxas/tempestatesque">token</opn:PostalCode>
+          <!--Optional:-->
+          <opn:AddressLines>
+            <!--1 or more repetitions:-->
+            <opn:AddressLine languageID="string">string</opn:AddressLine>
+          </opn:AddressLines>
+          <!--Optional:-->
+          <opn:LocationCoordinate>
+            <opn:CoordinateSystemCode listID="token" listAgencyID="39" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.org/vasto/murmure" listSchemeURI="http://www.sample.com/rapidum/rapidi">token</opn:CoordinateSystemCode>
+            <opn:LatitudeDegreesMeasure unitCode="C11">1.051732E7</opn:LatitudeDegreesMeasure>
+            <opn:LatitudeMinutesMeasure unitCode="G96">1.051732E7</opn:LatitudeMinutesMeasure>
+            <opn:LongitudeDegreesMeasure unitCode="HGM">1.051732E7</opn:LongitudeDegreesMeasure>
+            <opn:LongitudeMinutesMeasure unitCode="F60">1.051732E7</opn:LongitudeMinutesMeasure>
+          </opn:LocationCoordinate>
+          <!--Optional:-->
+          <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+        </opn:PostalAddress>
+        <!--Optional:-->
+        <opn:Contact>
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="327" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.my.org/ipsa/et" schemeURI="http://www.sample.com/imperio/hic">token</opn:ID>
+          <!--Optional:-->
+          <opn:Name languageID="string">string</opn:Name>
+          <!--Optional:-->
+          <opn:Telephone languageID="string">string</opn:Telephone>
+          <!--Optional:-->
+          <opn:Telefax languageID="string">string</opn:Telefax>
+          <!--Optional:-->
+          <opn:ElectronicMail languageID="string">string</opn:ElectronicMail>
+          <!--Optional:-->
+          <opn:Note languageID="string">string</opn:Note>
+          <!--Optional:-->
+          <opn:Groups>
+            <!--1 or more repetitions:-->
+            <opn:Group>
+              <opn:Type languageID="string">string</opn:Type>
+              <opn:Name languageID="string">string</opn:Name>
+            </opn:Group>
+          </opn:Groups>
+        </opn:Contact>
+        <!--Optional:-->
+        <opn:Parties>
+          <!--1 or more repetitions:-->
+          <opn:Party/>
+        </opn:Parties>
+      </opn:Party>
+    </opn:Parties>
+    <!--Optional:-->
+    <opn:SummaryPayload>anyType</opn:SummaryPayload>
+  </opn:BusinessInfo>
+  <opn:Quote>
+    <opn:ReferenceID schemeID="token" schemeName="string" schemeAgencyID="227" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.any.org/tempestatesque/circum" schemeURI="http://www.test.com/aris/insuper">token</opn:ReferenceID>
+    <!--Optional:-->
+    <opn:Status languageID="string">string</opn:Status>
+    <!--Optional:-->
+    <opn:ShipmentDirection languageID="string">string</opn:ShipmentDirection>
+    <opn:ShipmentPriorityCode listID="token" listAgencyID="50" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.org/magno/nimborum" listSchemeURI="http://www.company.com/iunonis/aeoliam">token</opn:ShipmentPriorityCode>
+    <opn:TransportMode listID="token" listAgencyID="228" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.com/et/nubibus" listSchemeURI="http://www.my.edu/murmure/rates">token</opn:TransportMode>
+    <!--Optional:-->
+    <opn:TransportService listID="token" listAgencyID="118" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.org/ipsa/numen" listSchemeURI="http://www.your.org/maria/et">token</opn:TransportService>
+    <opn:Connection>
+      <!--Optional:-->
+      <opn:NumberOfConnections>100</opn:NumberOfConnections>
+      <!--Optional:-->
+      <opn:TransitTime>
+        <opn:Time unitCode="WG">1.051732E7</opn:Time>
+        <opn:EstimatedTransitTimes>
+          <!--Zero or more repetitions:-->
+          <opn:EstimatedTransitTime>
+            <opn:From unitCode="K53">1.051732E7</opn:From>
+            <opn:To unitCode="58">1.051732E7</opn:To>
+          </opn:EstimatedTransitTime>
+        </opn:EstimatedTransitTimes>
+      </opn:TransitTime>
+      <opn:ConnectionSegments>
+        <!--1 or more repetitions:-->
+        <opn:Segment>
+          <!--Optional:-->
+          <opn:SegmentID languageID="string">string</opn:SegmentID>
+          <!--Optional:-->
+          <opn:SegmentType listID="token" listAgencyID="249" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.org/montis/omnipotens" listSchemeURI="http://www.test.org/premit/talia">token</opn:SegmentType>
+          <!--Optional:-->
+          <opn:Status>
+            <opn:Code listID="token" listAgencyID="320" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.org/et/profundum" listSchemeURI="http://www.my.com/vasto/illi">token</opn:Code>
+            <!--Optional:-->
+            <opn:Reason languageID="string">string</opn:Reason>
+          </opn:Status>
+          <!--Optional:-->
+          <opn:VehicleType listID="token" listAgencyID="344" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.gov/rapidum/bella" listSchemeURI="http://www.any.edu/rapidi/imposuit">token</opn:VehicleType>
+          <!--Optional:-->
+          <opn:VehicleNumber languageID="string">string</opn:VehicleNumber>
+          <!--Optional:-->
+          <opn:ItineraryNumber languageID="string">string</opn:ItineraryNumber>
+          <!--Optional:-->
+          <opn:TransportMode listID="token" listAgencyID="232" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/et/vinclis" listSchemeURI="http://www.company.org/premere/sonoras">token</opn:TransportMode>
+          <opn:Origin>
+            <opn:LocationTypeCode listID="token" listAgencyID="126" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.com/imperio/premere" listSchemeURI="http://www.corp.org/ego/maria">token</opn:LocationTypeCode>
+            <!--Optional:-->
+            <opn:LocationCode listID="token" listAgencyID="61" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/iovis/austris" listSchemeURI="http://www.my.org/sonoras/ni">token</opn:LocationCode>
+            <!--Optional:-->
+            <opn:LocationName languageID="string">string</opn:LocationName>
+            <!--Optional:-->
+            <opn:TerminalCode listID="token" listAgencyID="220" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.org/animos/iovisque" listSchemeURI="http://www.corp.com/secum/hic">token</opn:TerminalCode>
+            <!--Optional:-->
+            <opn:TerminalName languageID="string">string</opn:TerminalName>
+            <!--Optional:-->
+            <opn:ID schemeID="token" schemeName="string" schemeAgencyID="119" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.com/altos/rex" schemeURI="http://www.your.com/premit/certo">token</opn:ID>
+            <!--Optional:-->
+            <opn:AddressFormatCode listID="token" listAgencyID="287" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/terras/nubibus" listSchemeURI="http://www.any.com/sonoras/annos">token</opn:AddressFormatCode>
+            <!--Optional:-->
+            <opn:CountryID schemeID="token" schemeAgencyID="293" schemeVersionID="second edition 2006">GQ</opn:CountryID>
+            <!--Optional:-->
+            <opn:CountryName languageID="string">string</opn:CountryName>
+            <!--Optional:-->
+            <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+            <!--Optional:-->
+            <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="163" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.any.com/molemque/quisquam" schemeURI="http://www.sample.org/profundum/adorat">token</opn:CityID>
+            <!--Optional:-->
+            <opn:CityName languageID="string">string</opn:CityName>
+            <!--Optional:-->
+            <opn:StreetName languageID="string">string</opn:StreetName>
+            <!--Optional:-->
+            <opn:PostalCode listID="token" listAgencyID="121" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.com/animos/iovis" listSchemeURI="http://www.corp.gov/secum/faciat">token</opn:PostalCode>
+            <!--Optional:-->
+            <opn:AddressLines>
+              <!--1 or more repetitions:-->
+              <opn:AddressLine languageID="string">string</opn:AddressLine>
+            </opn:AddressLines>
+            <!--Optional:-->
+            <opn:LocationCoordinate>
+              <opn:CoordinateSystemCode listID="token" listAgencyID="313" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/claustra/imposuit" listSchemeURI="http://www.your.com/corde/sceptra">token</opn:CoordinateSystemCode>
+              <opn:LatitudeDegreesMeasure unitCode="K50">1.051732E7</opn:LatitudeDegreesMeasure>
+              <opn:LatitudeMinutesMeasure unitCode="AL">1.051732E7</opn:LatitudeMinutesMeasure>
+              <opn:LongitudeDegreesMeasure unitCode="C13">1.051732E7</opn:LongitudeDegreesMeasure>
+              <opn:LongitudeMinutesMeasure unitCode="D48">1.051732E7</opn:LongitudeMinutesMeasure>
+            </opn:LocationCoordinate>
+            <!--Optional:-->
+            <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+          </opn:Origin>
+          <opn:Destination>
+            <opn:LocationTypeCode listID="token" listAgencyID="15" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.org/sceptra/volutans" listSchemeURI="http://www.sample.com/aut/et">token</opn:LocationTypeCode>
+            <!--Optional:-->
+            <opn:LocationCode listID="token" listAgencyID="371" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.com/arce/austris" listSchemeURI="http://www.corp.com/pater/regina">token</opn:LocationCode>
+            <!--Optional:-->
+            <opn:LocationName languageID="string">string</opn:LocationName>
+            <!--Optional:-->
+            <opn:TerminalCode listID="token" listAgencyID="145" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.com/sciret/mollitque" listSchemeURI="http://www.any.org/et/ast">token</opn:TerminalCode>
+            <!--Optional:-->
+            <opn:TerminalName languageID="string">string</opn:TerminalName>
+            <!--Optional:-->
+            <opn:ID schemeID="token" schemeName="string" schemeAgencyID="179" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.corp.com/aut/insuper" schemeURI="http://www.corp.com/dare/hic">token</opn:ID>
+            <!--Optional:-->
+            <opn:AddressFormatCode listID="token" listAgencyID="204" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.com/illi/pater" listSchemeURI="http://www.any.org/profundum/regina">token</opn:AddressFormatCode>
+            <!--Optional:-->
+            <opn:CountryID schemeID="token" schemeAgencyID="137" schemeVersionID="second edition 2006">PW</opn:CountryID>
+            <!--Optional:-->
+            <opn:CountryName languageID="string">string</opn:CountryName>
+            <!--Optional:-->
+            <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+            <!--Optional:-->
+            <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="328" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.my.com/mollitque/ventos" schemeURI="http://www.my.gov/premit/caelumque">token</opn:CityID>
+            <!--Optional:-->
+            <opn:CityName languageID="string">string</opn:CityName>
+            <!--Optional:-->
+            <opn:StreetName languageID="string">string</opn:StreetName>
+            <!--Optional:-->
+            <opn:PostalCode listID="token" listAgencyID="104" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/et/illi" listSchemeURI="http://www.sample.gov/iunonis/molemque">token</opn:PostalCode>
+            <!--Optional:-->
+            <opn:AddressLines>
+              <!--1 or more repetitions:-->
+              <opn:AddressLine languageID="string">string</opn:AddressLine>
+            </opn:AddressLines>
+            <!--Optional:-->
+            <opn:LocationCoordinate>
+              <opn:CoordinateSystemCode listID="token" listAgencyID="93" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/tenens/ventos" listSchemeURI="http://www.your.com/circum/magno">token</opn:CoordinateSystemCode>
+              <opn:LatitudeDegreesMeasure unitCode="L61">1.051732E7</opn:LatitudeDegreesMeasure>
+              <opn:LatitudeMinutesMeasure unitCode="DMA">1.051732E7</opn:LatitudeMinutesMeasure>
+              <opn:LongitudeDegreesMeasure unitCode="K18">1.051732E7</opn:LongitudeDegreesMeasure>
+              <opn:LongitudeMinutesMeasure unitCode="E2">1.051732E7</opn:LongitudeMinutesMeasure>
+            </opn:LocationCoordinate>
+            <!--Optional:-->
+            <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+          </opn:Destination>
+          <!--Optional:-->
+          <opn:ScheduledTimeOfDeparture>2009-09-22T17:23:26</opn:ScheduledTimeOfDeparture>
+          <!--Optional:-->
+          <opn:ScheduledTimeOfArrival>2008-06-22T05:05:47+03:00</opn:ScheduledTimeOfArrival>
+          <!--Optional:-->
+          <opn:TimeOfAvailability>2014-09-05T21:26:53</opn:TimeOfAvailability>
+          <!--Optional:-->
+          <opn:LatestAcceptanceDate>2009-08-19T08:32:54</opn:LatestAcceptanceDate>
+          <!--Optional:-->
+          <opn:MarketingCarrierCode listID="token" listAgencyID="195" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.any.org/aeolus/talia" listSchemeURI="http://www.any.org/ventis/ventis">token</opn:MarketingCarrierCode>
+          <!--Optional:-->
+          <opn:OperatingCarrierCode listID="token" listAgencyID="82" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/claustra/habenas" listSchemeURI="http://www.company.org/in/tenens">token</opn:OperatingCarrierCode>
+          <!--Optional:-->
+          <opn:TransitTime>
+            <opn:Time unitCode="H26">1.051732E7</opn:Time>
+            <opn:EstimatedTransitTimes>
+              <!--Zero or more repetitions:-->
+              <opn:EstimatedTransitTime>
+                <opn:From unitCode="TN">1.051732E7</opn:From>
+                <opn:To unitCode="D73">1.051732E7</opn:To>
+              </opn:EstimatedTransitTime>
+            </opn:EstimatedTransitTimes>
+          </opn:TransitTime>
+          <!--Optional:-->
+          <opn:Charges>
+            <!--1 or more repetitions:-->
+            <opn:Fee>
+              <opn:Currency listID="ISO 4217 3A" listAgencyID="5" listVersionID="2007-06-18" listURI="http://www.my.org/gente/incedo">GHS</opn:Currency>
+              <!--Optional:-->
+              <opn:FeeLocationType languageID="string">string</opn:FeeLocationType>
+              <!--Optional:-->
+              <opn:ExchangeRate>1.051732E7</opn:ExchangeRate>
+              <!--Optional:-->
+              <opn:Inclusive>false</opn:Inclusive>
+              <!--Optional:-->
+              <opn:FeeType listID="token" listAgencyID="18" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.com/exspirantem/animos" listSchemeURI="http://www.company.org/aut/montis">token</opn:FeeType>
+              <!--Optional:-->
+              <opn:FeeCode listID="token" listAgencyID="374" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/et/metuens" listSchemeURI="http://www.your.com/verrantque/numen">token</opn:FeeCode>
+              <!--Optional:-->
+              <opn:FeeName languageID="string">string</opn:FeeName>
+              <!--Optional:-->
+              <opn:FeeComment languageID="string">string</opn:FeeComment>
+              <!--Optional:-->
+              <opn:MinimumPrice currencyID="BHD">1.051732E7</opn:MinimumPrice>
+              <!--Optional:-->
+              <opn:MaximumPrice currencyID="MDL">1.051732E7</opn:MaximumPrice>
+              <!--Optional:-->
+              <opn:Quantity unitCode="56">1.051732E7</opn:Quantity>
+              <!--Optional:-->
+              <opn:UnitOfMeasure listID="token" listAgencyID="332" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.com/montis/ego" listSchemeURI="http://www.my.org/secum/ventos">token</opn:UnitOfMeasure>
+              <!--Optional:-->
+              <opn:UnitRate currencyID="LSL">1.051732E7</opn:UnitRate>
+              <!--Optional:-->
+              <opn:RateId languageID="string">string</opn:RateId>
+              <!--Optional:-->
+              <opn:Rate currencyID="XTS">1.051732E7</opn:Rate>
+              <!--Optional:-->
+              <opn:FeeBreaks>
+                <!--Zero or more repetitions:-->
+                <opn:FeeBreak>
+                  <opn:BreakPoint languageID="string">string</opn:BreakPoint>
+                  <opn:BreakAmount currencyID="XDR">1.051732E7</opn:BreakAmount>
+                </opn:FeeBreak>
+              </opn:FeeBreaks>
+            </opn:Fee>
+          </opn:Charges>
+          <!--Optional:-->
+          <opn:AvailableSpace>
+            <opn:SpaceAvailable>false</opn:SpaceAvailable>
+            <!--Optional:-->
+            <opn:RemainingBookableWeight unitCode="J54">1.051732E7</opn:RemainingBookableWeight>
+            <!--Optional:-->
+            <opn:RemainingBookableVolume unitCode="CK">1.051732E7</opn:RemainingBookableVolume>
+            <!--Optional:-->
+            <opn:ULD>
+              <!--Optional:-->
+              <opn:Position listID="token" listAgencyID="16" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.org/soror/tempestatesque" listSchemeURI="http://www.sample.com/quisquam/divum">token</opn:Position>
+              <!--Optional:-->
+              <opn:ULDType listID="token" listAgencyID="357" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.gov/et/aeoliam" listSchemeURI="http://www.corp.org/soror/caelumque">token</opn:ULDType>
+              <!--Optional:-->
+              <opn:GrossWeight unitCode="RT">1.051732E7</opn:GrossWeight>
+              <!--Optional:-->
+              <opn:UnitQuantity unitCode="SHT">1.051732E7</opn:UnitQuantity>
+            </opn:ULD>
+          </opn:AvailableSpace>
+        </opn:Segment>
+      </opn:ConnectionSegments>
+    </opn:Connection>
+    <opn:OriginLocation>
+      <opn:LocationTypeCode listID="token" listAgencyID="177" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/rapidi/infixit" listSchemeURI="http://www.sample.org/austris/caelumque">token</opn:LocationTypeCode>
+      <!--Optional:-->
+      <opn:LocationCode listID="token" listAgencyID="307" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/insuper/magno" listSchemeURI="http://www.corp.org/laxas/rapidum">token</opn:LocationCode>
+      <!--Optional:-->
+      <opn:LocationName languageID="string">string</opn:LocationName>
+      <!--Optional:-->
+      <opn:TerminalCode listID="token" listAgencyID="88" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.com/laxas/magno" listSchemeURI="http://www.your.com/regina/soror">token</opn:TerminalCode>
+      <!--Optional:-->
+      <opn:TerminalName languageID="string">string</opn:TerminalName>
+      <!--Optional:-->
+      <opn:ID schemeID="token" schemeName="string" schemeAgencyID="25" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.com/qui/patriam" schemeURI="http://www.test.com/speluncis/frenat">token</opn:ID>
+      <!--Optional:-->
+      <opn:AddressFormatCode listID="token" listAgencyID="111" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.gov/iaculata/aeolus" listSchemeURI="http://www.company.com/animos/altos">token</opn:AddressFormatCode>
+      <!--Optional:-->
+      <opn:CountryID schemeID="token" schemeAgencyID="261" schemeVersionID="second edition 2006">ZM</opn:CountryID>
+      <!--Optional:-->
+      <opn:CountryName languageID="string">string</opn:CountryName>
+      <!--Optional:-->
+      <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+      <!--Optional:-->
+      <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="296" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.corp.org/aeolus/et" schemeURI="http://www.corp.org/gente/transfixo">token</opn:CityID>
+      <!--Optional:-->
+      <opn:CityName languageID="string">string</opn:CityName>
+      <!--Optional:-->
+      <opn:StreetName languageID="string">string</opn:StreetName>
+      <!--Optional:-->
+      <opn:PostalCode listID="token" listAgencyID="86" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.com/frenat/altos" listSchemeURI="http://www.company.org/iras/ni">token</opn:PostalCode>
+      <!--Optional:-->
+      <opn:AddressLines>
+        <!--1 or more repetitions:-->
+        <opn:AddressLine languageID="string">string</opn:AddressLine>
+      </opn:AddressLines>
+      <!--Optional:-->
+      <opn:LocationCoordinate>
+        <opn:CoordinateSystemCode listID="token" listAgencyID="297" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.com/speluncis/vinclis" listSchemeURI="http://www.test.com/imperio/transfixo">token</opn:CoordinateSystemCode>
+        <opn:LatitudeDegreesMeasure unitCode="AZ">1.051732E7</opn:LatitudeDegreesMeasure>
+        <opn:LatitudeMinutesMeasure unitCode="TW">1.051732E7</opn:LatitudeMinutesMeasure>
+        <opn:LongitudeDegreesMeasure unitCode="RL">1.051732E7</opn:LongitudeDegreesMeasure>
+        <opn:LongitudeMinutesMeasure unitCode="F38">1.051732E7</opn:LongitudeMinutesMeasure>
+      </opn:LocationCoordinate>
+      <!--Optional:-->
+      <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+    </opn:OriginLocation>
+    <opn:DestinationLocation>
+      <opn:LocationTypeCode listID="token" listAgencyID="237" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/cum/illum" listSchemeURI="http://www.sample.com/aeolus/volutans">token</opn:LocationTypeCode>
+      <!--Optional:-->
+      <opn:LocationCode listID="token" listAgencyID="170" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/et/ni" listSchemeURI="http://www.corp.org/iras/laxas">token</opn:LocationCode>
+      <!--Optional:-->
+      <opn:LocationName languageID="string">string</opn:LocationName>
+      <!--Optional:-->
+      <opn:TerminalCode listID="token" listAgencyID="90" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.edu/furentibus/aris" listSchemeURI="http://www.your.com/disiecitque/tempestatesque">token</opn:TerminalCode>
+      <!--Optional:-->
+      <opn:TerminalName languageID="string">string</opn:TerminalName>
+      <!--Optional:-->
+      <opn:ID schemeID="token" schemeName="string" schemeAgencyID="196" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.any.org/vasto/atris" schemeURI="http://www.sample.org/ignem/sceptra">token</opn:ID>
+      <!--Optional:-->
+      <opn:AddressFormatCode listID="token" listAgencyID="338" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/aut/pater" listSchemeURI="http://www.company.org/sedet/flammas">token</opn:AddressFormatCode>
+      <!--Optional:-->
+      <opn:CountryID schemeID="token" schemeAgencyID="2" schemeVersionID="second edition 2006">ZW</opn:CountryID>
+      <!--Optional:-->
+      <opn:CountryName languageID="string">string</opn:CountryName>
+      <!--Optional:-->
+      <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+      <!--Optional:-->
+      <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="374" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.your.org/supplex/circum" schemeURI="http://www.my.edu/et/speluncis">token</opn:CityID>
+      <!--Optional:-->
+      <opn:CityName languageID="string">string</opn:CityName>
+      <!--Optional:-->
+      <opn:StreetName languageID="string">string</opn:StreetName>
+      <!--Optional:-->
+      <opn:PostalCode listID="token" listAgencyID="236" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.org/disiecitque/foedere" listSchemeURI="http://www.any.org/ferant/patriam">token</opn:PostalCode>
+      <!--Optional:-->
+      <opn:AddressLines>
+        <!--1 or more repetitions:-->
+        <opn:AddressLine languageID="string">string</opn:AddressLine>
+      </opn:AddressLines>
+      <!--Optional:-->
+      <opn:LocationCoordinate>
+        <opn:CoordinateSystemCode listID="token" listAgencyID="170" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.com/exspirantem/secum" listSchemeURI="http://www.sample.com/aequora/rapidi">token</opn:CoordinateSystemCode>
+        <opn:LatitudeDegreesMeasure unitCode="L13">1.051732E7</opn:LatitudeDegreesMeasure>
+        <opn:LatitudeMinutesMeasure unitCode="L88">1.051732E7</opn:LatitudeMinutesMeasure>
+        <opn:LongitudeDegreesMeasure unitCode="B90">1.051732E7</opn:LongitudeDegreesMeasure>
+        <opn:LongitudeMinutesMeasure unitCode="G27">1.051732E7</opn:LongitudeMinutesMeasure>
+      </opn:LocationCoordinate>
+      <!--Optional:-->
+      <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+    </opn:DestinationLocation>
+    <!--Optional:-->
+    <opn:PickupEvent>
+      <opn:EventDate>
+        <!--Optional:-->
+        <opn:ActualDateTime>2018-10-26T12:18:39+03:00</opn:ActualDateTime>
+        <opn:ScheduledDateTime>2002-05-21T13:44:27</opn:ScheduledDateTime>
+      </opn:EventDate>
+      <!--Optional:-->
+      <opn:Party>
+        <opn:PartyTypeCode schemeID="token" schemeName="string" schemeAgencyID="337" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.sample.edu/certo/rex" schemeURI="http://www.company.org/animos/imperio">token</opn:PartyTypeCode>
+        <opn:ID schemeID="token" schemeName="string" schemeAgencyID="222" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.your.org/regemque/profundum" schemeURI="http://www.sample.com/vinclis/ventos">token</opn:ID>
+        <!--Optional:-->
+        <opn:AdditionalID schemeID="token" schemeName="string" schemeAgencyID="269" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.sample.com/ferant/pectore" schemeURI="http://www.corp.com/ventos/secum">token</opn:AdditionalID>
+        <!--Optional:-->
+        <opn:Name languageID="string">string</opn:Name>
+        <!--Optional:-->
+        <opn:AccountIDList>
+          <!--1 or more repetitions:-->
+          <opn:AccountID>
+            <!--Optional:-->
+            <opn:IDSource languageID="string">string</opn:IDSource>
+            <opn:Value languageID="string">string</opn:Value>
+          </opn:AccountID>
+        </opn:AccountIDList>
+        <!--Optional:-->
+        <opn:PostalAddress>
+          <opn:LocationTypeCode listID="token" listAgencyID="79" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.com/imperio/nimborum" listSchemeURI="http://www.company.com/ni/rapidi">token</opn:LocationTypeCode>
+          <!--Optional:-->
+          <opn:LocationCode listID="token" listAgencyID="349" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.gov/claustra/illi" listSchemeURI="http://www.company.com/rapidum/habenas">token</opn:LocationCode>
+          <!--Optional:-->
+          <opn:LocationName languageID="string">string</opn:LocationName>
+          <!--Optional:-->
+          <opn:TerminalCode listID="token" listAgencyID="157" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/iovis/rates" listSchemeURI="http://www.my.com/iussus/infixit">token</opn:TerminalCode>
+          <!--Optional:-->
+          <opn:TerminalName languageID="string">string</opn:TerminalName>
+          <!--Optional:-->
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="196" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.your.org/insuper/ipsa" schemeURI="http://www.company.edu/scopuloque/auras">token</opn:ID>
+          <!--Optional:-->
+          <opn:AddressFormatCode listID="token" listAgencyID="103" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.gov/exspirantem/per" listSchemeURI="http://www.corp.gov/vinclis/illum">token</opn:AddressFormatCode>
+          <!--Optional:-->
+          <opn:CountryID schemeID="token" schemeAgencyID="172" schemeVersionID="second edition 2006">GA</opn:CountryID>
+          <!--Optional:-->
+          <opn:CountryName languageID="string">string</opn:CountryName>
+          <!--Optional:-->
+          <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+          <!--Optional:-->
+          <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="334" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.test.gov/soror/claustra" schemeURI="http://www.test.gov/secum/habenas">token</opn:CityID>
+          <!--Optional:-->
+          <opn:CityName languageID="string">string</opn:CityName>
+          <!--Optional:-->
+          <opn:StreetName languageID="string">string</opn:StreetName>
+          <!--Optional:-->
+          <opn:PostalCode listID="token" listAgencyID="193" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.any.org/premere/incedo" listSchemeURI="http://www.company.com/ego/abdidit">token</opn:PostalCode>
+          <!--Optional:-->
+          <opn:AddressLines>
+            <!--1 or more repetitions:-->
+            <opn:AddressLine languageID="string">string</opn:AddressLine>
+          </opn:AddressLines>
+          <!--Optional:-->
+          <opn:LocationCoordinate>
+            <opn:CoordinateSystemCode listID="token" listAgencyID="43" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.org/pater/flammato" listSchemeURI="http://www.company.com/sed/pater">token</opn:CoordinateSystemCode>
+            <opn:LatitudeDegreesMeasure unitCode="K19">1.051732E7</opn:LatitudeDegreesMeasure>
+            <opn:LatitudeMinutesMeasure unitCode="F57">1.051732E7</opn:LatitudeMinutesMeasure>
+            <opn:LongitudeDegreesMeasure unitCode="SO">1.051732E7</opn:LongitudeDegreesMeasure>
+            <opn:LongitudeMinutesMeasure unitCode="H59">1.051732E7</opn:LongitudeMinutesMeasure>
+          </opn:LocationCoordinate>
+          <!--Optional:-->
+          <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+        </opn:PostalAddress>
+        <!--Optional:-->
+        <opn:Contact>
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="53" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.com/aris/ipsa" schemeURI="http://www.my.org/molemque/iaculata">token</opn:ID>
+          <!--Optional:-->
+          <opn:Name languageID="string">string</opn:Name>
+          <!--Optional:-->
+          <opn:Telephone languageID="string">string</opn:Telephone>
+          <!--Optional:-->
+          <opn:Telefax languageID="string">string</opn:Telefax>
+          <!--Optional:-->
+          <opn:ElectronicMail languageID="string">string</opn:ElectronicMail>
+          <!--Optional:-->
+          <opn:Note languageID="string">string</opn:Note>
+          <!--Optional:-->
+          <opn:Groups>
+            <!--1 or more repetitions:-->
+            <opn:Group>
+              <opn:Type languageID="string">string</opn:Type>
+              <opn:Name languageID="string">string</opn:Name>
+            </opn:Group>
+          </opn:Groups>
+        </opn:Contact>
+        <!--Optional:-->
+        <opn:Parties>
+          <!--1 or more repetitions:-->
+          <opn:Party/>
+        </opn:Parties>
+      </opn:Party>
+    </opn:PickupEvent>
+    <!--Optional:-->
+    <opn:DeliveryEvent>
+      <opn:EventDate>
+        <!--Optional:-->
+        <opn:ActualDateTime>2004-04-11T03:58:50</opn:ActualDateTime>
+        <opn:ScheduledDateTime>2009-09-19T19:10:44</opn:ScheduledDateTime>
+      </opn:EventDate>
+      <!--Optional:-->
+      <opn:Party>
+        <opn:PartyTypeCode schemeID="token" schemeName="string" schemeAgencyID="274" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.test.org/bella/ventis" schemeURI="http://www.my.com/et/rapidum">token</opn:PartyTypeCode>
+        <opn:ID schemeID="token" schemeName="string" schemeAgencyID="289" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.my.org/austris/abdidit" schemeURI="http://www.test.org/animos/illi">token</opn:ID>
+        <!--Optional:-->
+        <opn:AdditionalID schemeID="token" schemeName="string" schemeAgencyID="286" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.corp.com/claustra/pater" schemeURI="http://www.my.edu/talia/iovis">token</opn:AdditionalID>
+        <!--Optional:-->
+        <opn:Name languageID="string">string</opn:Name>
+        <!--Optional:-->
+        <opn:AccountIDList>
+          <!--1 or more repetitions:-->
+          <opn:AccountID>
+            <!--Optional:-->
+            <opn:IDSource languageID="string">string</opn:IDSource>
+            <opn:Value languageID="string">string</opn:Value>
+          </opn:AccountID>
+        </opn:AccountIDList>
+        <!--Optional:-->
+        <opn:PostalAddress>
+          <opn:LocationTypeCode listID="token" listAgencyID="162" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.org/premit/una" listSchemeURI="http://www.my.edu/quippe/patriam">token</opn:LocationTypeCode>
+          <!--Optional:-->
+          <opn:LocationCode listID="token" listAgencyID="356" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.edu/ac/e" listSchemeURI="http://www.company.com/bella/transfixo">token</opn:LocationCode>
+          <!--Optional:-->
+          <opn:LocationName languageID="string">string</opn:LocationName>
+          <!--Optional:-->
+          <opn:TerminalCode listID="token" listAgencyID="235" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/venit/auras" listSchemeURI="http://www.test.edu/foedere/ni">token</opn:TerminalCode>
+          <!--Optional:-->
+          <opn:TerminalName languageID="string">string</opn:TerminalName>
+          <!--Optional:-->
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="149" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.your.org/evertitque/ast" schemeURI="http://www.sample.gov/terras/annos">token</opn:ID>
+          <!--Optional:-->
+          <opn:AddressFormatCode listID="token" listAgencyID="248" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.org/iunonis/circum" listSchemeURI="http://www.corp.org/hoc/iussus">token</opn:AddressFormatCode>
+          <!--Optional:-->
+          <opn:CountryID schemeID="token" schemeAgencyID="38" schemeVersionID="second edition 2006">CD</opn:CountryID>
+          <!--Optional:-->
+          <opn:CountryName languageID="string">string</opn:CountryName>
+          <!--Optional:-->
+          <opn:StateOrProvince languageID="string">string</opn:StateOrProvince>
+          <!--Optional:-->
+          <opn:CityID schemeID="token" schemeName="string" schemeAgencyID="350" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.company.com/terras/pectore" schemeURI="http://www.sample.com/honorem/talia">token</opn:CityID>
+          <!--Optional:-->
+          <opn:CityName languageID="string">string</opn:CityName>
+          <!--Optional:-->
+          <opn:StreetName languageID="string">string</opn:StreetName>
+          <!--Optional:-->
+          <opn:PostalCode listID="token" listAgencyID="240" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.any.edu/venit/nubibus" listSchemeURI="http://www.test.org/iunonis/vinclis">token</opn:PostalCode>
+          <!--Optional:-->
+          <opn:AddressLines>
+            <!--1 or more repetitions:-->
+            <opn:AddressLine languageID="string">string</opn:AddressLine>
+          </opn:AddressLines>
+          <!--Optional:-->
+          <opn:LocationCoordinate>
+            <opn:CoordinateSystemCode listID="token" listAgencyID="23" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.com/premit/acuto" listSchemeURI="http://www.test.gov/feta/montis">token</opn:CoordinateSystemCode>
+            <opn:LatitudeDegreesMeasure unitCode="AJ">1.051732E7</opn:LatitudeDegreesMeasure>
+            <opn:LatitudeMinutesMeasure unitCode="D41">1.051732E7</opn:LatitudeMinutesMeasure>
+            <opn:LongitudeDegreesMeasure unitCode="ATM">1.051732E7</opn:LongitudeDegreesMeasure>
+            <opn:LongitudeMinutesMeasure unitCode="L99">1.051732E7</opn:LongitudeMinutesMeasure>
+          </opn:LocationCoordinate>
+          <!--Optional:-->
+          <opn:TimezoneOffset languageID="string">string</opn:TimezoneOffset>
+        </opn:PostalAddress>
+        <!--Optional:-->
+        <opn:Contact>
+          <opn:ID schemeID="token" schemeName="string" schemeAgencyID="85" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.your.gov/rapidi/premit" schemeURI="http://www.your.com/evertitque/insuper">token</opn:ID>
+          <!--Optional:-->
+          <opn:Name languageID="string">string</opn:Name>
+          <!--Optional:-->
+          <opn:Telephone languageID="string">string</opn:Telephone>
+          <!--Optional:-->
+          <opn:Telefax languageID="string">string</opn:Telefax>
+          <!--Optional:-->
+          <opn:ElectronicMail languageID="string">string</opn:ElectronicMail>
+          <!--Optional:-->
+          <opn:Note languageID="string">string</opn:Note>
+          <!--Optional:-->
+          <opn:Groups>
+            <!--1 or more repetitions:-->
+            <opn:Group>
+              <opn:Type languageID="string">string</opn:Type>
+              <opn:Name languageID="string">string</opn:Name>
+            </opn:Group>
+          </opn:Groups>
+        </opn:Contact>
+        <!--Optional:-->
+        <opn:Parties>
+          <!--1 or more repetitions:-->
+          <opn:Party/>
+        </opn:Parties>
+      </opn:Party>
+    </opn:DeliveryEvent>
+    <opn:CreateDate>2001-11-24T08:01:38+02:00</opn:CreateDate>
+    <opn:TimeOfAvailability>2014-06-20T15:10:32+03:00</opn:TimeOfAvailability>
+    <opn:LatestAcceptanceDate>2001-03-13T16:22:20</opn:LatestAcceptanceDate>
+    <opn:ValidFrom>2009-04-08T16:03:18+03:00</opn:ValidFrom>
+    <opn:ValidTo>2003-05-20T11:44:41</opn:ValidTo>
+    <opn:Load>
+      <!--Optional:-->
+      <opn:AllotmentID schemeID="token" schemeName="string" schemeAgencyID="22" schemeAgencyName="string" schemeVersionID="token" schemeDataURI="http://www.sample.org/premere/magno" schemeURI="http://www.test.com/murmure/tot">token</opn:AllotmentID>
+      <!--Optional:-->
+      <opn:Product listID="token" listAgencyID="227" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.edu/aeolus/antro" listSchemeURI="http://www.your.com/bella/hoc">token</opn:Product>
+      <!--Optional:-->
+      <opn:NetNetWeight unitCode="D19">1.051732E7</opn:NetNetWeight>
+      <!--Optional:-->
+      <opn:NetWeight unitCode="FAH">1.051732E7</opn:NetWeight>
+      <!--Optional:-->
+      <opn:NetVolumeMeasure unitCode="2I">1.051732E7</opn:NetVolumeMeasure>
+      <!--Optional:-->
+      <opn:TotalChargeableWeight unitCode="K61">1.051732E7</opn:TotalChargeableWeight>
+      <!--Optional:-->
+      <opn:TotalQuantity unitCode="B41">1.051732E7</opn:TotalQuantity>
+      <!--Optional:-->
+      <opn:TotalGrossVolumeMeasure unitCode="WHR">1.051732E7</opn:TotalGrossVolumeMeasure>
+      <!--Optional:-->
+      <opn:HazardousInfo>
+        <!--1 or more repetitions:-->
+        <opn:Info>
+          <opn:HazardClassID listID="token" listAgencyID="165" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.org/regina/imperio" listSchemeURI="http://www.company.edu/vasto/sceptra">token</opn:HazardClassID>
+          <opn:Description languageID="string">string</opn:Description>
+          <opn:PackingInstruction>
+            <!--1 or more repetitions:-->
+            <opn:InstructionLine languageID="string">string</opn:InstructionLine>
+          </opn:PackingInstruction>
+          <opn:ToxicityZoneCode listID="token" listAgencyID="250" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.your.com/regina/flammato" listSchemeURI="http://www.corp.com/cum/dea">token</opn:ToxicityZoneCode>
+          <opn:Temperature unitCode="F94">1.051732E7</opn:Temperature>
+        </opn:Info>
+      </opn:HazardousInfo>
+      <!--Optional:-->
+      <opn:Packages>
+        <!--1 or more repetitions:-->
+        <opn:Package>
+          <opn:PackagingType listID="token" listAgencyID="227" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.gov/una/scopuloque" listSchemeURI="http://www.corp.com/faciat/montis">token</opn:PackagingType>
+          <!--Optional:-->
+          <opn:Weight unitCode="KMH">1.051732E7</opn:Weight>
+          <!--Optional:-->
+          <opn:ChargeableWeightMeasure unitCode="1G">1.051732E7</opn:ChargeableWeightMeasure>
+          <!--Optional:-->
+          <opn:Quantity unitCode="MBF">1.051732E7</opn:Quantity>
+          <!--Optional:-->
+          <opn:FreightClass languageID="string">string</opn:FreightClass>
+          <!--Optional:-->
+          <opn:Dimensions>
+            <!--1 or more repetitions:-->
+            <opn:Dimension>
+              <opn:Width unitCode="L55">1.051732E7</opn:Width>
+              <opn:Length unitCode="JK">1.051732E7</opn:Length>
+              <opn:Height unitCode="K30">1.051732E7</opn:Height>
+              <!--Optional:-->
+              <opn:Description languageID="string">string</opn:Description>
+            </opn:Dimension>
+          </opn:Dimensions>
+          <!--Optional:-->
+          <opn:Density>1.051732E7</opn:Density>
+          <!--Optional:-->
+          <opn:Stackable>false</opn:Stackable>
+          <!--Optional:-->
+          <opn:DangerousGood>true</opn:DangerousGood>
+          <!--Optional:-->
+          <opn:ULD>
+            <!--Optional:-->
+            <opn:Position listID="token" listAgencyID="157" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.gov/volutans/ventis" listSchemeURI="http://www.your.com/tot/molemque">token</opn:Position>
+            <!--Optional:-->
+            <opn:ULDType listID="token" listAgencyID="213" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.com/rapidum/regemque" listSchemeURI="http://www.test.org/austris/supplex">token</opn:ULDType>
+            <!--Optional:-->
+            <opn:GrossWeight unitCode="GIP">1.051732E7</opn:GrossWeight>
+            <!--Optional:-->
+            <opn:UnitQuantity unitCode="E93">1.051732E7</opn:UnitQuantity>
+          </opn:ULD>
+          <!--Optional:-->
+          <opn:Turnable>true</opn:Turnable>
+          <!--Optional:-->
+          <opn:HazardousInfo>
+            <opn:HazardClassID listID="token" listAgencyID="298" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/certo/dare" listSchemeURI="http://www.company.com/nimborum/circum">token</opn:HazardClassID>
+            <opn:Description languageID="string">string</opn:Description>
+            <opn:PackingInstruction>
+              <!--1 or more repetitions:-->
+              <opn:InstructionLine languageID="string">string</opn:InstructionLine>
+            </opn:PackingInstruction>
+            <opn:ToxicityZoneCode listID="token" listAgencyID="37" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.com/tenens/speluncis" listSchemeURI="http://www.any.org/aeolus/certo">token</opn:ToxicityZoneCode>
+            <opn:Temperature unitCode="MLT">1.051732E7</opn:Temperature>
+          </opn:HazardousInfo>
+          <!--Optional:-->
+          <opn:HandlingInstructions>
+            <!--1 or more repetitions:-->
+            <opn:InstructionLine languageID="string">string</opn:InstructionLine>
+          </opn:HandlingInstructions>
+          <!--Optional:-->
+          <opn:DeclaredValue currencyID="SGD">1.051732E7</opn:DeclaredValue>
+          <!--Optional:-->
+          <opn:TransportTemperature>true</opn:TransportTemperature>
+          <!--Optional:-->
+          <opn:OverDimensionIndicator>false</opn:OverDimensionIndicator>
+          <!--Optional:-->
+          <opn:OverWeightIndicator>true</opn:OverWeightIndicator>
+        </opn:Package>
+      </opn:Packages>
+      <!--Optional:-->
+      <opn:Commodity>
+        <opn:CommodityCode listID="token" listAgencyID="67" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.my.org/iovis/rates" listSchemeURI="http://www.my.com/rex/et">token</opn:CommodityCode>
+        <opn:Description listID="token" listAgencyID="277" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.sample.edu/auras/iaculata" listSchemeURI="http://www.sample.edu/animos/acuto">token</opn:Description>
+      </opn:Commodity>
+    </opn:Load>
+    <opn:Version listID="token" listAgencyID="353" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/sonoras/hic" listSchemeURI="http://www.corp.com/et/et">token</opn:Version>
+    <opn:QuoteURI listID="token" listAgencyID="370" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.com/qui/sedet" listSchemeURI="http://www.sample.org/rapidum/luctantis">token</opn:QuoteURI>
+    <opn:InsuranceValueAmount currencyID="EGP">1.051732E7</opn:InsuranceValueAmount>
+    <opn:DeclaredCustomsValueAmount currencyID="CLP">1.051732E7</opn:DeclaredCustomsValueAmount>
+    <opn:PriceIndicator>
+      <opn:RequestCurrency listID="ISO 4217 3A" listAgencyID="5" listVersionID="2007-06-18" listURI="http://www.company.org/gero/dedit">ANG</opn:RequestCurrency>
+      <!--Optional:-->
+      <opn:ExchangeRate>1.051732E7</opn:ExchangeRate>
+      <!--Optional:-->
+      <opn:RateId languageID="string">string</opn:RateId>
+      <!--Optional:-->
+      <opn:RateComment languageID="string">string</opn:RateComment>
+      <!--Optional:-->
+      <opn:PriceTool languageID="string">string</opn:PriceTool>
+      <!--Optional:-->
+      <opn:PromotionCode languageID="string">string</opn:PromotionCode>
+      <opn:RateCurrency listID="ISO 4217 3A" listAgencyID="5" listVersionID="2007-06-18" listURI="http://www.any.org/et/per">LSL</opn:RateCurrency>
+      <!--Optional:-->
+      <opn:RateType listID="token" listAgencyID="22" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.any.com/e/et" listSchemeURI="http://www.any.org/quae/dedit">token</opn:RateType>
+      <!--Optional:-->
+      <opn:UnitOfMeasure listID="token" listAgencyID="186" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.com/tot/mollitque" listSchemeURI="http://www.sample.gov/ac/metuens">token</opn:UnitOfMeasure>
+      <!--Optional:-->
+      <opn:UnitRate currencyID="TTD">1.051732E7</opn:UnitRate>
+      <!--Optional:-->
+      <opn:IncludeOriginPortCharges>true</opn:IncludeOriginPortCharges>
+      <!--Optional:-->
+      <opn:IncludeDestinationPortCharges>true</opn:IncludeDestinationPortCharges>
+      <!--Optional:-->
+      <opn:ValidFrom>2013-01-03T00:51:48</opn:ValidFrom>
+      <!--Optional:-->
+      <opn:ValidTo>2011-08-25T22:40:29</opn:ValidTo>
+      <!--Optional:-->
+      <opn:BreakPointUsed>1.051732E7</opn:BreakPointUsed>
+      <!--Optional:-->
+      <opn:ChargeableWeight unitCode="C6">1.051732E7</opn:ChargeableWeight>
+      <!--Optional:-->
+      <opn:GrossWeight unitCode="3G">1.051732E7</opn:GrossWeight>
+      <opn:TotalCharge currencyID="KGS">1.051732E7</opn:TotalCharge>
+      <!--Optional:-->
+      <opn:TotalFreightCharge currencyID="LKR">1.051732E7</opn:TotalFreightCharge>
+    </opn:PriceIndicator>
+    <!--Optional:-->
+    <opn:SpecialHandlingCodes>
+      <!--1 or more repetitions:-->
+      <opn:SpecialHandlingCode listID="token" listAgencyID="185" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.edu/infixit/exspirantem" listSchemeURI="http://www.corp.com/tempestatesque/frenat">token</opn:SpecialHandlingCode>
+    </opn:SpecialHandlingCodes>
+    <!--Optional:-->
+    <opn:Accessorials>
+      <!--1 or more repetitions:-->
+      <opn:Accessorial>
+        <opn:Scope listID="token" listAgencyID="146" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.corp.org/adorat/temperat" listSchemeURI="http://www.any.gov/terras/pater">token</opn:Scope>
+        <opn:Name languageID="string">string</opn:Name>
+        <opn:Value languageID="string">string</opn:Value>
+      </opn:Accessorial>
+    </opn:Accessorials>
+    <!--Optional:-->
+    <opn:CommodityClassification>
+      <!--1 or more repetitions:-->
+      <opn:CommodityClass>
+        <opn:ClassificationCode listID="token" listAgencyID="272" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/pectore/frenat" listSchemeURI="http://www.any.com/gero/sceptra">token</opn:ClassificationCode>
+        <!--Optional:-->
+        <opn:Name languageID="string">string</opn:Name>
+      </opn:CommodityClass>
+    </opn:CommodityClassification>
+    <!--Optional:-->
+    <opn:Terms>
+      <!--Optional:-->
+      <opn:PaymentTerm listID="token" listAgencyID="297" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.test.edu/vinclis/qui" listSchemeURI="http://www.your.org/laxas/talia">token</opn:PaymentTerm>
+      <!--Optional:-->
+      <opn:MethodOfPayment languageID="string">string</opn:MethodOfPayment>
+      <!--Optional:-->
+      <opn:DeliveryTerm listID="token" listAgencyID="126" listAgencyName="string" listName="string" listVersionID="token" name="string" languageID="string" listURI="http://www.company.org/gente/patriam" listSchemeURI="http://www.your.com/metuens/quippe">token</opn:DeliveryTerm>
+    </opn:Terms>
+    <!--Optional:-->
+    <opn:InternalRemarks languageID="string">string</opn:InternalRemarks>
+    <!--Optional:-->
+    <opn:Remarks languageID="string">string</opn:Remarks>
+    <!--Optional:-->
+    <opn:Condition>
+      <opn:Condition languageID="string">string</opn:Condition>
+      <!--Optional:-->
+      <opn:ConditionURI>http://www.your.com/tempestatesque/aeoliam</opn:ConditionURI>
+    </opn:Condition>
+    <!--Optional:-->
+    <opn:AdditionalInfo>
+      <!--Zero or more repetitions:-->
+      <opn:Info>
+        <opn:Key languageID="string">string</opn:Key>
+        <opn:Value languageID="string">string</opn:Value>
+      </opn:Info>
+    </opn:AdditionalInfo>
+  </opn:Quote>
+</opn:QuoteMessage>
