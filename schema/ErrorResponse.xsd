@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+  xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:7" elementFormDefault="qualified"
+  targetNamespace="www.openfreight.org" xmlns:opn="www.openfreight.org">
+  <!-- =================================================================== -->
+  <!-- Schema agency: 	Freightos ==========================-->
+  <!-- Schema version:	1.0  ===============================-->
+  <!-- Schema date: 	    April 2019  =====================-->
+  <!-- Copyright (C) Freightos (2018). All Rights Reserved =-->
+  <!-- =================================================================== -->
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+    schemaLocation="standard/UnqualifiedDataType_8p0.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:7"
+    schemaLocation="standard/QualifiedDataType_7p0.xsd"/>
+
+  <xs:include schemaLocation="OpenFreightReusableTypes.xsd"/>
+
+  <xs:element name="ErrorResponse" type="opn:ErrorMessageType"/>
+
+  <xs:complexType name="ErrorMessageType">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="opn:MessageHeaderType"/>
+      <xs:element name="BusinessInfo" type="opn:BusinessInfoType"/>
+      <xs:element name="Status" type="udt:CodeType"/>
+      <xs:element name="Message" type="udt:TextType"/>
+      <xs:element name="AdditionalInformation" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Information" type="opn:StatusType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,1576 @@
+post:
+    tags:
+        - v1/book
+    description: Documentation For OpenFreight's Booking API
+    operationId: eBooking API
+    requestBody:
+        content:
+            application/xml:
+                schema:
+                    $ref: '#/components/schemas/BookingRequest'
+                examples:
+                    Book:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingRequest\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\n  </opn:WayBillIdentifier>\n  <opn:Shipment>\n    <opn:ShipmentDirection>Export</opn:ShipmentDirection>\n    <opn:TransportMode>Air</opn:TransportMode>\n    <opn:TransportService>port-to-port</opn:TransportService>\n    <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:PickupEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-27T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-27T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n      <opn:Party>\n        <opn:PartyTypeCode>XXXXX</opn:PartyTypeCode>\n        <opn:ID>XXXXX</opn:ID>\n        <opn:AdditionalID>XXXXX</opn:AdditionalID>\n        <opn:Name>XXXXX</opn:Name>\n        <opn:AccountID>XXXXX</opn:AccountID>\n        <opn:PostalAddress>\n          <opn:LocationTypeCode>XXXXX</opn:LocationTypeCode>\n          <opn:LocationCode>XXXXX</opn:LocationCode>\n          <opn:LocationName>XXXXX</opn:LocationName>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:AddressFormatCode>XXXXX</opn:AddressFormatCode>\n          <opn:CountryID>QA</opn:CountryID>\n          <opn:CountryName>XXXXX</opn:CountryName>\n          <opn:StateOrProvince>XXXXX</opn:StateOrProvince>\n          <opn:CityID>XXXXX</opn:CityID>\n          <opn:CityName>XXXXX</opn:CityName>\n          <opn:StreetName>XXXXX</opn:StreetName>\n          <opn:PostalCode>XXXXX</opn:PostalCode>\n          <opn:AddressLines>\n            <opn:AddressLine>XXXXX</opn:AddressLine>\n          </opn:AddressLines>\n          <opn:LocationCoordinate>\n            <opn:CoordinateSystemCode>XXXXX</opn:CoordinateSystemCode>\n            <opn:LatitudeDegreesMeasure>0.0</opn:LatitudeDegreesMeasure>\n            <opn:LatitudeMinutesMeasure>0.0</opn:LatitudeMinutesMeasure>\n            <opn:LongitudeDegreesMeasure>0.0</opn:LongitudeDegreesMeasure>\n            <opn:LongitudeMinutesMeasure>0.0</opn:LongitudeMinutesMeasure>\n          </opn:LocationCoordinate>\n          <opn:TimezoneOffset>+00:00</opn:TimezoneOffset>\n        </opn:PostalAddress>\n        <opn:Contact>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:Name>XXXXX</opn:Name>\n          <opn:Telephone>XXXXX</opn:Telephone>\n          <opn:Telefax>XXXXX</opn:Telefax>\n          <opn:ElectronicMail>XXXXX</opn:ElectronicMail>\n          <opn:Note>XXXXX</opn:Note>\n        </opn:Contact>\n      </opn:Party>\n    </opn:PickupEvent>\n    <opn:DeliveryEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-28T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-28T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n    </opn:DeliveryEvent>\n    <opn:Load>\n      <opn:Product>XXXXX</opn:Product>\n      <opn:NetWeight unitCode=\"KG\">45.4</opn:NetWeight>\n      <opn:NetVolumeMeasure unitCode=\"MTQ\">1.0</opn:NetVolumeMeasure>\n      <opn:TotalQuantity>1</opn:TotalQuantity>\n    </opn:Load>\n    <opn:PricePreference>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Promotional</opn:RateType>\n    </opn:PricePreference>\n    <opn:Connection>\n      <opn:NumberOfConnections>1</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:VehicleNumber>123</opn:VehicleNumber>\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T00:00:00+00:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T00:00:00+00:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:InsuranceValueAmount>0.0</opn:InsuranceValueAmount>\n    <opn:DeclaredCustomsValueAmount>0.0</opn:DeclaredCustomsValueAmount>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:GeneralInformation>XXXXX</opn:GeneralInformation>\n  </opn:Shipment>\n</opn:BookingRequest>\n"
+                    Cancel:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingRequest\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>cancel</opn:ServiceMethod>\n    <opn:ServiceComment>XXXXX</opn:ServiceComment>\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\n  </opn:WayBillIdentifier>\n</opn:BookingRequest>\n"
+                    Update:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingRequest\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>update</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\n  </opn:WayBillIdentifier>\n  <opn:Shipment>\n    <opn:ShipmentDirection>Export</opn:ShipmentDirection>\n    <opn:TransportMode>Air</opn:TransportMode>\n    <opn:TransportService>port-to-port</opn:TransportService>\n    <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:PickupEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-27T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-27T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n      <opn:Party>\n        <opn:PartyTypeCode>XXXXX</opn:PartyTypeCode>\n        <opn:ID>XXXXX</opn:ID>\n        <opn:AdditionalID>XXXXX</opn:AdditionalID>\n        <opn:Name>XXXXX</opn:Name>\n        <opn:AccountID>XXXXX</opn:AccountID>\n        <opn:PostalAddress>\n          <opn:LocationTypeCode>XXXXX</opn:LocationTypeCode>\n          <opn:LocationCode>XXXXX</opn:LocationCode>\n          <opn:LocationName>XXXXX</opn:LocationName>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:AddressFormatCode>XXXXX</opn:AddressFormatCode>\n          <opn:CountryID>QA</opn:CountryID>\n          <opn:CountryName>XXXXX</opn:CountryName>\n          <opn:StateOrProvince>XXXXX</opn:StateOrProvince>\n          <opn:CityID>XXXXX</opn:CityID>\n          <opn:CityName>XXXXX</opn:CityName>\n          <opn:StreetName>XXXXX</opn:StreetName>\n          <opn:PostalCode>XXXXX</opn:PostalCode>\n          <opn:AddressLines>\n            <opn:AddressLine>XXXXX</opn:AddressLine>\n          </opn:AddressLines>\n          <opn:LocationCoordinate>\n            <opn:CoordinateSystemCode>XXXXX</opn:CoordinateSystemCode>\n            <opn:LatitudeDegreesMeasure>0.0</opn:LatitudeDegreesMeasure>\n            <opn:LatitudeMinutesMeasure>0.0</opn:LatitudeMinutesMeasure>\n            <opn:LongitudeDegreesMeasure>0.0</opn:LongitudeDegreesMeasure>\n            <opn:LongitudeMinutesMeasure>0.0</opn:LongitudeMinutesMeasure>\n          </opn:LocationCoordinate>\n          <opn:TimezoneOffset>+00:00</opn:TimezoneOffset>\n        </opn:PostalAddress>\n        <opn:Contact>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:Name>XXXXX</opn:Name>\n          <opn:Telephone>XXXXX</opn:Telephone>\n          <opn:Telefax>XXXXX</opn:Telefax>\n          <opn:ElectronicMail>XXXXX</opn:ElectronicMail>\n          <opn:Note>XXXXX</opn:Note>\n        </opn:Contact>\n      </opn:Party>\n    </opn:PickupEvent>\n    <opn:DeliveryEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-29T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-29T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n    </opn:DeliveryEvent>\n    <opn:Load>\n      <opn:Product>XXXXX</opn:Product>\n      <opn:NetWeight unitCode=\"KG\">45.4</opn:NetWeight>\n      <opn:NetVolumeMeasure unitCode=\"MTQ\">1.0</opn:NetVolumeMeasure>\n      <opn:TotalQuantity>1</opn:TotalQuantity>\n    </opn:Load>\n    <opn:PricePreference>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Standard</opn:RateType>\n    </opn:PricePreference>\n    <opn:Connection>\n      <opn:NumberOfConnections>2</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:VehicleNumber>123</opn:VehicleNumber>\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>BCN</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T00:00:00+00:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T00:00:00+00:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n        <opn:Segment>\n          <opn:SegmentID>2</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:VehicleNumber>123</opn:VehicleNumber>\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>BCN</opn:LocationCode>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-28T02:00:00+00:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-29T00:00:00+00:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:InsuranceValueAmount>0.0</opn:InsuranceValueAmount>\n    <opn:DeclaredCustomsValueAmount>0.0</opn:DeclaredCustomsValueAmount>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:GeneralInformation>XXXXX</opn:GeneralInformation>\n  </opn:Shipment>\n</opn:BookingRequest>\n"
+                    Rejected:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingRequest\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>#321123</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>#123321</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://BillOfLadingURL.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:Shipment>\n    <opn:ShipmentDirection>Export</opn:ShipmentDirection>\n    <opn:TransportMode>Air</opn:TransportMode>\n    <opn:ShipmentSecured>true</opn:ShipmentSecured>\n    <opn:TransportService>port-to-port</opn:TransportService>\n    <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:PickupEvent>\n      <opn:EventDate>\n        <opn:ScheduledDateTime>2018-09-27T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n    </opn:PickupEvent>\n    <opn:DeliveryEvent>\n      <opn:EventDate>\n        <opn:ScheduledDateTime>2018-09-28T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n    </opn:DeliveryEvent>\n    <opn:Load>\n      <opn:Product>XXXXX</opn:Product>\n      <opn:NetWeight unitCode=\"KG\">45.4</opn:NetWeight>\n      <opn:NetVolumeMeasure unitCode=\"MTQ\">1.0</opn:NetVolumeMeasure>\n      <opn:TotalQuantity>1</opn:TotalQuantity>\n    </opn:Load>\n    <opn:PricePreference>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Promotional</opn:RateType>\n    </opn:PricePreference>\n    <opn:Connection>\n      <opn:NumberOfConnections>1</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:VehicleNumber>123</opn:VehicleNumber>\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T00:00:00+00:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T00:00:00+00:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:InsuranceValueAmount>0.0</opn:InsuranceValueAmount>\n    <opn:DeclaredCustomsValueAmount>0.0</opn:DeclaredCustomsValueAmount>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:GeneralInformation>XXXXX</opn:GeneralInformation>\n  </opn:Shipment>\n</opn:BookingRequest>\n"
+                    Processing:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingRequest\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value>XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\n  </opn:WayBillIdentifier>\n  <opn:Shipment>\n    <opn:ShipmentDirection>Export</opn:ShipmentDirection>\n    <opn:TransportMode>Air</opn:TransportMode>\n    <opn:TransportService>port-to-port</opn:TransportService>\n    <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:PickupEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-27T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-27T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n      <opn:Party>\n        <opn:PartyTypeCode>XXXXX</opn:PartyTypeCode>\n        <opn:ID>XXXXX</opn:ID>\n        <opn:AdditionalID>XXXXX</opn:AdditionalID>\n        <opn:Name>XXXXX</opn:Name>\n        <opn:AccountID>XXXXX</opn:AccountID>\n        <opn:PostalAddress>\n          <opn:LocationTypeCode>XXXXX</opn:LocationTypeCode>\n          <opn:LocationCode>XXXXX</opn:LocationCode>\n          <opn:LocationName>XXXXX</opn:LocationName>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:AddressFormatCode>XXXXX</opn:AddressFormatCode>\n          <opn:CountryID>QA</opn:CountryID>\n          <opn:CountryName>XXXXX</opn:CountryName>\n          <opn:StateOrProvince>XXXXX</opn:StateOrProvince>\n          <opn:CityID>XXXXX</opn:CityID>\n          <opn:CityName>XXXXX</opn:CityName>\n          <opn:StreetName>XXXXX</opn:StreetName>\n          <opn:PostalCode>XXXXX</opn:PostalCode>\n          <opn:AddressLines>\n            <opn:AddressLine>XXXXX</opn:AddressLine>\n          </opn:AddressLines>\n          <opn:LocationCoordinate>\n            <opn:CoordinateSystemCode>XXXXX</opn:CoordinateSystemCode>\n            <opn:LatitudeDegreesMeasure>0.0</opn:LatitudeDegreesMeasure>\n            <opn:LatitudeMinutesMeasure>0.0</opn:LatitudeMinutesMeasure>\n            <opn:LongitudeDegreesMeasure>0.0</opn:LongitudeDegreesMeasure>\n            <opn:LongitudeMinutesMeasure>0.0</opn:LongitudeMinutesMeasure>\n          </opn:LocationCoordinate>\n          <opn:TimezoneOffset>+00:00</opn:TimezoneOffset>\n        </opn:PostalAddress>\n        <opn:Contact>\n          <opn:ID>XXXXX</opn:ID>\n          <opn:Name>XXXXX</opn:Name>\n          <opn:Telephone>XXXXX</opn:Telephone>\n          <opn:Telefax>XXXXX</opn:Telefax>\n          <opn:ElectronicMail>XXXXX</opn:ElectronicMail>\n          <opn:Note>XXXXX</opn:Note>\n        </opn:Contact>\n      </opn:Party>\n    </opn:PickupEvent>\n    <opn:DeliveryEvent>\n      <opn:EventDate>\n        <opn:ActualDateTime>2018-09-28T00:00:00+00:00</opn:ActualDateTime>\n        <opn:ScheduledDateTime>2018-09-28T00:00:00+00:00</opn:ScheduledDateTime>\n      </opn:EventDate>\n    </opn:DeliveryEvent>\n    <opn:Load>\n      <opn:Product>XXXXX</opn:Product>\n      <opn:NetWeight unitCode=\"KG\">45.4</opn:NetWeight>\n      <opn:NetVolumeMeasure unitCode=\"MTQ\">1.0</opn:NetVolumeMeasure>\n      <opn:TotalQuantity>1</opn:TotalQuantity>\n    </opn:Load>\n    <opn:PricePreference>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Promotional</opn:RateType>\n    </opn:PricePreference>\n    <opn:Connection>\n      <opn:NumberOfConnections>1</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:VehicleNumber>123</opn:VehicleNumber>\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T00:00:00+00:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T00:00:00+00:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:InsuranceValueAmount>0.0</opn:InsuranceValueAmount>\n    <opn:DeclaredCustomsValueAmount>0.0</opn:DeclaredCustomsValueAmount>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:GeneralInformation>XXXXX</opn:GeneralInformation>\n  </opn:Shipment>\n</opn:BookingRequest>\n"
+                    Minimum:
+                        value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<opn:BookingRequest\r\n  xmlns:opn=\"www.openfreight.org\"\r\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\r\n  <opn:MessageHeader>\r\n    <opn:MessageId>XXXXX</opn:MessageId>\r\n    <opn:ConversationId>XXXXX</opn:ConversationId>\r\n    <opn:RequestID>XXXXX</opn:RequestID>\r\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\r\n  </opn:MessageHeader>\r\n  <opn:BusinessInfo>\r\n    <opn:Station>Station Code</opn:Station>\r\n    <opn:ServiceName>Booking</opn:ServiceName>\r\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\r\n    <opn:ServiceComment/>\r\n    <opn:MessageDateTime>2018-09-20T00:00:00+00:00</opn:MessageDateTime>\r\n    <opn:Parties>\r\n      <opn:Party xsi:type=\"opn:ShipperType\">\r\n        <opn:PartyTypeCode>OS</opn:PartyTypeCode>\r\n        <opn:ID>#123654</opn:ID>\r\n        <opn:Knownshipper>true</opn:Knownshipper>\r\n      </opn:Party>\r\n      <opn:Party>\r\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\r\n        <opn:ID>#123654</opn:ID>\r\n        <opn:Name>Name</opn:Name>\r\n        <opn:AccountIDList>\r\n          <opn:AccountID>\r\n            <opn:Value>XXXXX</opn:Value>\r\n          </opn:AccountID>\r\n        </opn:AccountIDList>\r\n      </opn:Party>\r\n      <opn:Party>\r\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\r\n        <opn:ID>#123654</opn:ID>\r\n        <opn:Name>Name</opn:Name>\r\n        <opn:AccountIDList>\r\n          <opn:AccountID>\r\n            <opn:Value>XXXXX</opn:Value>\r\n          </opn:AccountID>\r\n        </opn:AccountIDList>\r\n      </opn:Party>\r\n    </opn:Parties>\r\n  </opn:BusinessInfo>\r\n  <opn:WayBillIdentifier>\r\n    <opn:HWB>XXXXX</opn:HWB>\r\n    <opn:MWB>XXXXX</opn:MWB>\r\n    <opn:BillOfLading>XXXXX</opn:BillOfLading>\r\n  </opn:WayBillIdentifier>\r\n  <opn:Shipment>\r\n    <opn:ShipmentDirection>Export</opn:ShipmentDirection>\r\n    <opn:TransportMode>Air</opn:TransportMode>\r\n    <opn:TransportService>port-to-port</opn:TransportService>\r\n    <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\r\n    <opn:OriginLocation>\r\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\r\n      <opn:LocationCode>FRA</opn:LocationCode>\r\n    </opn:OriginLocation>\r\n    <opn:DestinationLocation>\r\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\r\n      <opn:LocationCode>JFK</opn:LocationCode>\r\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\r\n    </opn:DestinationLocation>\r\n    <opn:PickupEvent>\r\n      <opn:EventDate>\r\n        <opn:ActualDateTime>2018-09-27T00:00:00+00:00</opn:ActualDateTime>\r\n        <opn:ScheduledDateTime>2018-09-27T00:00:00+00:00</opn:ScheduledDateTime>\r\n      </opn:EventDate>\r\n    </opn:PickupEvent>\r\n    <opn:DeliveryEvent>\r\n      <opn:EventDate>\r\n        <opn:ActualDateTime>2018-09-28T00:00:00+00:00</opn:ActualDateTime>\r\n        <opn:ScheduledDateTime>2018-09-28T00:00:00+00:00</opn:ScheduledDateTime>\r\n      </opn:EventDate>\r\n    </opn:DeliveryEvent>\r\n    <opn:Load>\r\n      <opn:Product>XXX</opn:Product>\r\n      <opn:NetWeight unitCode=\"KG\">1</opn:NetWeight>\r\n      <opn:NetVolumeMeasure unitCode=\"MTQ\">1</opn:NetVolumeMeasure>\r\n      <opn:TotalQuantity>1</opn:TotalQuantity>\r\n      <opn:Packages>\r\n        <opn:Package>\r\n          <opn:PackagingType>XXX</opn:PackagingType>\r\n          <opn:Weight unitCode=\"KG\">1</opn:Weight>\r\n          <opn:Quantity>1</opn:Quantity>\r\n          <opn:Dimensions>\r\n            <opn:Dimension>\r\n              <opn:Width unitCode=\"CMT\">1</opn:Width>\r\n              <opn:Length unitCode=\"CMT\">1</opn:Length>\r\n              <opn:Height unitCode=\"CMT\">1</opn:Height>\r\n            </opn:Dimension>\r\n          </opn:Dimensions>\r\n        </opn:Package>\r\n      </opn:Packages>\r\n    </opn:Load>\r\n    <opn:Connection>\r\n      <opn:NumberOfConnections>1</opn:NumberOfConnections>\r\n      <opn:ConnectionSegments>\r\n        <opn:Segment>\r\n          <opn:SegmentID>1</opn:SegmentID>\r\n          <opn:VehicleType>aircraft</opn:VehicleType>\r\n          <opn:VehicleNumber>123</opn:VehicleNumber>\r\n          <opn:ItineraryNumber>XXXXX</opn:ItineraryNumber>\r\n          <opn:Origin>\r\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\r\n            <opn:LocationCode>FRA</opn:LocationCode>\r\n          </opn:Origin>\r\n          <opn:Destination>\r\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\r\n            <opn:LocationCode>JFK</opn:LocationCode>\r\n          </opn:Destination>\r\n          <opn:ScheduledTimeOfDeparture>2018-09-27T00:00:00+00:00</opn:ScheduledTimeOfDeparture>\r\n          <opn:ScheduledTimeOfArrival>2018-09-28T00:00:00+00:00</opn:ScheduledTimeOfArrival>\r\n          <opn:LatestAcceptanceDate>2018-09-24T00:00:00</opn:LatestAcceptanceDate>\r\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\r\n        </opn:Segment>\r\n      </opn:ConnectionSegments>\r\n    </opn:Connection>\r\n    <opn:SpecialHandlingCodes>\r\n      <opn:Code>XXXXX</opn:Code>\r\n      <opn:Code>XXXXX</opn:Code>\r\n    </opn:SpecialHandlingCodes>\r\n    <opn:CommodityClassification>\r\n      <opn:CommodityClass>\r\n        <opn:ClassificationCode>XXXXX</opn:ClassificationCode>\r\n      </opn:CommodityClass>\r\n    </opn:CommodityClassification>\r\n  </opn:Shipment>\r\n</opn:BookingRequest>\r\n"
+            application/json:
+                schema:
+                    $ref: '#/components/schemas/BookingRequest'
+                examples:
+                    Book:
+                        value:
+                            messageHeader:
+                                messageId:
+                                    value: XXXXX
+                                conversationId:
+                                    value: XXXXX
+                                requestID:
+                                    value: XXXXX
+                                authenticationType:
+                                    value: BASIC
+                            businessInfo:
+                                station:
+                                    value: Station Code
+                                serviceName:
+                                    value: Booking
+                                serviceMethod:
+                                    value: NEW
+                                serviceComment:
+                                    value: ''
+                                messageDateTime: '2018-09-20T00:00:00.000Z'
+                                parties:
+                                    party:
+                                        -
+                                            partyTypeCode:
+                                                value: CN
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#321123'
+                                        -
+                                            partyTypeCode:
+                                                value: CZ
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#123321'
+                            wayBillIdentifier:
+                                hwb:
+                                    value: XXXXX
+                                mwb:
+                                    value: XXXXX
+                                billOfLading:
+                                    value: XXXXX
+                            shipment:
+                                shipmentDirection:
+                                    value: Export
+                                transportMode:
+                                    value: Air
+                                transportService:
+                                    value: port-to-port
+                                shipmentPriorityCode:
+                                    value: Standard
+                                originLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: JFK
+                                    locationName:
+                                        value: John F. Kennedy International Airport
+                                destinationLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: FRA
+                                pickupEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-27T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-27T00:00:00.000Z'
+                                    party:
+                                        partyTypeCode:
+                                            value: XXXXX
+                                        id:
+                                            value: XXXXX
+                                        additionalID:
+                                            value: XXXXX
+                                        name:
+                                            value: XXXXX
+                                        accountID:
+                                            value: XXXXX
+                                        postalAddress:
+                                            locationTypeCode:
+                                                value: XXXXX
+                                            locationCode:
+                                                value: XXXXX
+                                            locationName:
+                                                value: XXXXX
+                                            id:
+                                                value: XXXXX
+                                            addressFormatCode:
+                                                value: XXXXX
+                                            countryID:
+                                                value: QA
+                                                schemeVersionID: second edition 2006
+                                            countryName:
+                                                value: XXXXX
+                                            stateOrProvince:
+                                                value: XXXXX
+                                            cityID:
+                                                value: XXXXX
+                                            cityName:
+                                                value: XXXXX
+                                            streetName:
+                                                value: XXXXX
+                                            postalCode:
+                                                value: XXXXX
+                                            addressLines:
+                                                addressLine:
+                                                    -
+                                                        value: XXXXX
+                                            locationCoordinate:
+                                                coordinateSystemCode:
+                                                    value: XXXXX
+                                                latitudeDegreesMeasure:
+                                                    value: 0
+                                                latitudeMinutesMeasure:
+                                                    value: 0
+                                                longitudeDegreesMeasure:
+                                                    value: 0
+                                                longitudeMinutesMeasure:
+                                                    value: 0
+                                            timezoneOffset:
+                                                value: '+00:00'
+                                        contact:
+                                            id:
+                                                value: XXXXX
+                                            name:
+                                                value: XXXXX
+                                            telephone:
+                                                value: XXXXX
+                                            telefax:
+                                                value: XXXXX
+                                            electronicMail:
+                                                value: XXXXX
+                                            note:
+                                                value: XXXXX
+                                deliveryEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-28T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-28T00:00:00.000Z'
+                                load:
+                                    product:
+                                        value: XXXXX
+                                    netWeight:
+                                        value: 45.4
+                                        unitCode: KG
+                                    netVolumeMeasure:
+                                        value: 1
+                                        unitCode: MTQ
+                                    totalQuantity:
+                                        value: 1
+                                pricePreference:
+                                    requestCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateType:
+                                        value: Promotional
+                                    allInIndicator: false
+                                connection:
+                                    numberOfConnections: 1
+                                    connectionSegments:
+                                        segment:
+                                            -
+                                                segmentID:
+                                                    value: '1'
+                                                vehicleType:
+                                                    value: aircraft
+                                                vehicleNumber:
+                                                    value: '123'
+                                                itineraryNumber:
+                                                    value: XXXXX
+                                                origin:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: JFK
+                                                destination:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: FRA
+                                                scheduledTimeOfDeparture: '2018-09-27T00:00:00.000Z'
+                                                scheduledTimeOfArrival: '2018-09-28T00:00:00.000Z'
+                                                operatingCarrierCode:
+                                                    value: XXXXX
+                                insuranceValueAmount:
+                                    value: 0
+                                declaredCustomsValueAmount:
+                                    value: 0
+                                productCode:
+                                    value: XXXXX
+                                specialHandlingCodes:
+                                    code:
+                                        -
+                                            value: XXXXX
+                                terms:
+                                    paymentTerm:
+                                        value: XXXXX
+                                    methodOfPayment:
+                                        value: XXXXX
+                                    deliveryTerm:
+                                        value: XXXXX
+                                generalInformation:
+                                    value: XXXXX
+                    Cancel:
+                        value:
+                            messageHeader:
+                                messageId:
+                                    value: XXXXX
+                                conversationId:
+                                    value: XXXXX
+                                requestID:
+                                    value: XXXXX
+                                authenticationType:
+                                    value: BASIC
+                            businessInfo:
+                                station:
+                                    value: Station Code
+                                serviceName:
+                                    value: Booking
+                                serviceMethod:
+                                    value: cancel
+                                serviceComment:
+                                    value: XXXXX
+                                messageDateTime: '2018-09-20T00:00:00.000Z'
+                                parties:
+                                    party:
+                                        -
+                                            partyTypeCode:
+                                                value: CN
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#321123'
+                                        -
+                                            partyTypeCode:
+                                                value: CZ
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#123321'
+                            wayBillIdentifier:
+                                hwb:
+                                    value: XXXXX
+                                mwb:
+                                    value: XXXXX
+                                billOfLading:
+                                    value: XXXXX
+                    Update:
+                        value:
+                            messageHeader:
+                                messageId:
+                                    value: XXXXX
+                                conversationId:
+                                    value: XXXXX
+                                requestID:
+                                    value: XXXXX
+                                authenticationType:
+                                    value: BASIC
+                            businessInfo:
+                                station:
+                                    value: Station Code
+                                serviceName:
+                                    value: Booking
+                                serviceMethod:
+                                    value: update
+                                serviceComment:
+                                    value: ''
+                                messageDateTime: '2018-09-20T00:00:00.000Z'
+                                parties:
+                                    party:
+                                        -
+                                            partyTypeCode:
+                                                value: CN
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#321123'
+                                        -
+                                            partyTypeCode:
+                                                value: CZ
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#123321'
+                            wayBillIdentifier:
+                                hwb:
+                                    value: XXXXX
+                                mwb:
+                                    value: XXXXX
+                                billOfLading:
+                                    value: XXXXX
+                            shipment:
+                                shipmentDirection:
+                                    value: Export
+                                transportMode:
+                                    value: Air
+                                transportService:
+                                    value: port-to-port
+                                shipmentPriorityCode:
+                                    value: Standard
+                                originLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: JFK
+                                    locationName:
+                                        value: John F. Kennedy International Airport
+                                destinationLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: FRA
+                                pickupEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-27T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-27T00:00:00.000Z'
+                                    party:
+                                        partyTypeCode:
+                                            value: XXXXX
+                                        id:
+                                            value: XXXXX
+                                        additionalID:
+                                            value: XXXXX
+                                        name:
+                                            value: XXXXX
+                                        accountID:
+                                            value: XXXXX
+                                        postalAddress:
+                                            locationTypeCode:
+                                                value: XXXXX
+                                            locationCode:
+                                                value: XXXXX
+                                            locationName:
+                                                value: XXXXX
+                                            id:
+                                                value: XXXXX
+                                            addressFormatCode:
+                                                value: XXXXX
+                                            countryID:
+                                                value: QA
+                                                schemeVersionID: second edition 2006
+                                            countryName:
+                                                value: XXXXX
+                                            stateOrProvince:
+                                                value: XXXXX
+                                            cityID:
+                                                value: XXXXX
+                                            cityName:
+                                                value: XXXXX
+                                            streetName:
+                                                value: XXXXX
+                                            postalCode:
+                                                value: XXXXX
+                                            addressLines:
+                                                addressLine:
+                                                    -
+                                                        value: XXXXX
+                                            locationCoordinate:
+                                                coordinateSystemCode:
+                                                    value: XXXXX
+                                                latitudeDegreesMeasure:
+                                                    value: 0
+                                                latitudeMinutesMeasure:
+                                                    value: 0
+                                                longitudeDegreesMeasure:
+                                                    value: 0
+                                                longitudeMinutesMeasure:
+                                                    value: 0
+                                            timezoneOffset:
+                                                value: '+00:00'
+                                        contact:
+                                            id:
+                                                value: XXXXX
+                                            name:
+                                                value: XXXXX
+                                            telephone:
+                                                value: XXXXX
+                                            telefax:
+                                                value: XXXXX
+                                            electronicMail:
+                                                value: XXXXX
+                                            note:
+                                                value: XXXXX
+                                deliveryEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-29T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-29T00:00:00.000Z'
+                                load:
+                                    product:
+                                        value: XXXXX
+                                    netWeight:
+                                        value: 45.4
+                                        unitCode: KG
+                                    netVolumeMeasure:
+                                        value: 1
+                                        unitCode: MTQ
+                                    totalQuantity:
+                                        value: 1
+                                pricePreference:
+                                    requestCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateType:
+                                        value: Standard
+                                    allInIndicator: false
+                                connection:
+                                    numberOfConnections: 2
+                                    connectionSegments:
+                                        segment:
+                                            -
+                                                segmentID:
+                                                    value: '1'
+                                                vehicleType:
+                                                    value: aircraft
+                                                vehicleNumber:
+                                                    value: '123'
+                                                itineraryNumber:
+                                                    value: XXXXX
+                                                origin:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: JFK
+                                                destination:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: BCN
+                                                scheduledTimeOfDeparture: '2018-09-27T00:00:00.000Z'
+                                                scheduledTimeOfArrival: '2018-09-28T00:00:00.000Z'
+                                                operatingCarrierCode:
+                                                    value: XXXXX
+                                            -
+                                                segmentID:
+                                                    value: '2'
+                                                vehicleType:
+                                                    value: aircraft
+                                                vehicleNumber:
+                                                    value: '123'
+                                                itineraryNumber:
+                                                    value: XXXXX
+                                                origin:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: BCN
+                                                destination:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: FRA
+                                                scheduledTimeOfDeparture: '2018-09-28T02:00:00.000Z'
+                                                scheduledTimeOfArrival: '2018-09-29T00:00:00.000Z'
+                                                operatingCarrierCode:
+                                                    value: XXXXX
+                                insuranceValueAmount:
+                                    value: 0
+                                declaredCustomsValueAmount:
+                                    value: 0
+                                productCode:
+                                    value: XXXXX
+                                specialHandlingCodes:
+                                    code:
+                                        -
+                                            value: XXXXX
+                                terms:
+                                    paymentTerm:
+                                        value: XXXXX
+                                    methodOfPayment:
+                                        value: XXXXX
+                                    deliveryTerm:
+                                        value: XXXXX
+                                generalInformation:
+                                    value: XXXXX
+                    Rejected:
+                        value:
+                            messageHeader:
+                                messageId:
+                                    value: XXXXX
+                                conversationId:
+                                    value: XXXXX
+                                requestID:
+                                    value: XXXXX
+                                authenticationType:
+                                    value: BASIC
+                            businessInfo:
+                                station:
+                                    value: Station Code
+                                serviceName:
+                                    value: Booking
+                                serviceMethod:
+                                    value: NEW
+                                serviceComment:
+                                    value: ''
+                                messageDateTime: '2018-09-20T00:00:00.000Z'
+                                parties:
+                                    party:
+                                        -
+                                            partyTypeCode:
+                                                value: CN
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#321123'
+                                        -
+                                            partyTypeCode:
+                                                value: CZ
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#123321'
+                            wayBillIdentifier:
+                                hwb:
+                                    value: XXXXX
+                                mwb:
+                                    value: XXXXX
+                                billOfLading:
+                                    value: XXXXX
+                                billOfLadingURL: 'http://BillOfLadingURL.org'
+                                electronicWayBill: true
+                            shipment:
+                                shipmentDirection:
+                                    value: Export
+                                transportMode:
+                                    value: Air
+                                shipmentSecured: true
+                                transportService:
+                                    value: port-to-port
+                                shipmentPriorityCode:
+                                    value: Standard
+                                originLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: JFK
+                                    locationName:
+                                        value: John F. Kennedy International Airport
+                                destinationLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: FRA
+                                pickupEvent:
+                                    eventDate:
+                                        scheduledDateTime: '2018-09-27T00:00:00.000Z'
+                                deliveryEvent:
+                                    eventDate:
+                                        scheduledDateTime: '2018-09-28T00:00:00.000Z'
+                                load:
+                                    product:
+                                        value: XXXXX
+                                    netWeight:
+                                        value: 45.4
+                                        unitCode: KG
+                                    netVolumeMeasure:
+                                        value: 1
+                                        unitCode: MTQ
+                                    totalQuantity:
+                                        value: 1
+                                pricePreference:
+                                    requestCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateType:
+                                        value: Promotional
+                                    allInIndicator: false
+                                connection:
+                                    numberOfConnections: 1
+                                    connectionSegments:
+                                        segment:
+                                            -
+                                                segmentID:
+                                                    value: '1'
+                                                vehicleType:
+                                                    value: aircraft
+                                                vehicleNumber:
+                                                    value: '123'
+                                                itineraryNumber:
+                                                    value: XXXXX
+                                                origin:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: JFK
+                                                destination:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: FRA
+                                                scheduledTimeOfDeparture: '2018-09-27T00:00:00.000Z'
+                                                scheduledTimeOfArrival: '2018-09-28T00:00:00.000Z'
+                                                operatingCarrierCode:
+                                                    value: XXXXX
+                                insuranceValueAmount:
+                                    value: 0
+                                declaredCustomsValueAmount:
+                                    value: 0
+                                productCode:
+                                    value: XXXXX
+                                specialHandlingCodes:
+                                    code:
+                                        -
+                                            value: XXXXX
+                                terms:
+                                    paymentTerm:
+                                        value: XXXXX
+                                    methodOfPayment:
+                                        value: XXXXX
+                                    deliveryTerm:
+                                        value: XXXXX
+                                generalInformation:
+                                    value: XXXXX
+                    Processing:
+                        value:
+                            messageHeader:
+                                messageId:
+                                    value: XXXXX
+                                conversationId:
+                                    value: XXXXX
+                                requestID:
+                                    value: XXXXX
+                                authenticationType:
+                                    value: BASIC
+                            businessInfo:
+                                station:
+                                    value: Station Code
+                                serviceName:
+                                    value: Booking
+                                serviceMethod:
+                                    value: NEW
+                                serviceComment:
+                                    value: ''
+                                messageDateTime: '2018-09-20T00:00:00.000Z'
+                                parties:
+                                    party:
+                                        -
+                                            partyTypeCode:
+                                                value: CN
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#321123'
+                                        -
+                                            partyTypeCode:
+                                                value: CZ
+                                            id:
+                                                value: '#123654'
+                                            name:
+                                                value: Name
+                                            accountIDList:
+                                                accountID:
+                                                    -
+                                                        value:
+                                                            value: '#123321'
+                            wayBillIdentifier:
+                                hwb:
+                                    value: XXXXX
+                                mwb:
+                                    value: XXXXX
+                                billOfLading:
+                                    value: XXXXX
+                            shipment:
+                                shipmentDirection:
+                                    value: Export
+                                transportMode:
+                                    value: Air
+                                transportService:
+                                    value: port-to-port
+                                shipmentPriorityCode:
+                                    value: Standard
+                                originLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: JFK
+                                    locationName:
+                                        value: John F. Kennedy International Airport
+                                destinationLocation:
+                                    locationTypeCode:
+                                        value: Airport
+                                    locationCode:
+                                        value: FRA
+                                pickupEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-27T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-27T00:00:00.000Z'
+                                    party:
+                                        partyTypeCode:
+                                            value: XXXXX
+                                        id:
+                                            value: XXXXX
+                                        additionalID:
+                                            value: XXXXX
+                                        name:
+                                            value: XXXXX
+                                        accountID:
+                                            value: XXXXX
+                                        postalAddress:
+                                            locationTypeCode:
+                                                value: XXXXX
+                                            locationCode:
+                                                value: XXXXX
+                                            locationName:
+                                                value: XXXXX
+                                            id:
+                                                value: XXXXX
+                                            addressFormatCode:
+                                                value: XXXXX
+                                            countryID:
+                                                value: QA
+                                                schemeVersionID: second edition 2006
+                                            countryName:
+                                                value: XXXXX
+                                            stateOrProvince:
+                                                value: XXXXX
+                                            cityID:
+                                                value: XXXXX
+                                            cityName:
+                                                value: XXXXX
+                                            streetName:
+                                                value: XXXXX
+                                            postalCode:
+                                                value: XXXXX
+                                            addressLines:
+                                                addressLine:
+                                                    -
+                                                        value: XXXXX
+                                            locationCoordinate:
+                                                coordinateSystemCode:
+                                                    value: XXXXX
+                                                latitudeDegreesMeasure:
+                                                    value: 0
+                                                latitudeMinutesMeasure:
+                                                    value: 0
+                                                longitudeDegreesMeasure:
+                                                    value: 0
+                                                longitudeMinutesMeasure:
+                                                    value: 0
+                                            timezoneOffset:
+                                                value: '+00:00'
+                                        contact:
+                                            id:
+                                                value: XXXXX
+                                            name:
+                                                value: XXXXX
+                                            telephone:
+                                                value: XXXXX
+                                            telefax:
+                                                value: XXXXX
+                                            electronicMail:
+                                                value: XXXXX
+                                            note:
+                                                value: XXXXX
+                                deliveryEvent:
+                                    eventDate:
+                                        actualDateTime: '2018-09-28T00:00:00.000Z'
+                                        scheduledDateTime: '2018-09-28T00:00:00.000Z'
+                                load:
+                                    product:
+                                        value: XXXXX
+                                    netWeight:
+                                        value: 45.4
+                                        unitCode: KG
+                                    netVolumeMeasure:
+                                        value: 1
+                                        unitCode: MTQ
+                                    totalQuantity:
+                                        value: 1
+                                pricePreference:
+                                    requestCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateCurrency:
+                                        value: USD
+                                        listID: ISO 4217 3A
+                                        listAgencyID: '5'
+                                        listVersionID: '2007-06-18'
+                                    rateType:
+                                        value: Promotional
+                                    allInIndicator: false
+                                connection:
+                                    numberOfConnections: 1
+                                    connectionSegments:
+                                        segment:
+                                            -
+                                                segmentID:
+                                                    value: '1'
+                                                vehicleType:
+                                                    value: aircraft
+                                                vehicleNumber:
+                                                    value: '123'
+                                                itineraryNumber:
+                                                    value: XXXXX
+                                                origin:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: JFK
+                                                destination:
+                                                    locationTypeCode:
+                                                        value: Airport
+                                                    locationCode:
+                                                        value: FRA
+                                                scheduledTimeOfDeparture: '2018-09-27T00:00:00.000Z'
+                                                scheduledTimeOfArrival: '2018-09-28T00:00:00.000Z'
+                                                operatingCarrierCode:
+                                                    value: XXXXX
+                                insuranceValueAmount:
+                                    value: 0
+                                declaredCustomsValueAmount:
+                                    value: 0
+                                productCode:
+                                    value: XXXXX
+                                specialHandlingCodes:
+                                    code:
+                                        -
+                                            value: XXXXX
+                                terms:
+                                    paymentTerm:
+                                        value: XXXXX
+                                    methodOfPayment:
+                                        value: XXXXX
+                                    deliveryTerm:
+                                        value: XXXXX
+                                generalInformation:
+                                    value: XXXXX
+        required: true
+    responses:
+        '200':
+            description: success response description
+            content:
+                application/xml:
+                    schema:
+                        $ref: '#/components/schemas/BookingResponse'
+                    examples:
+                        Book:
+                            value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingResponse\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:30+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>BillOfLading</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://BillOfLadingURL.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:BookingRate>\n    <opn:ReferenceID>XXXXX</opn:ReferenceID>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:Connection>\n      <opn:NumberOfConnections>1</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:ItineraryNumber>Flight id</opn:ItineraryNumber>\n          <opn:TransportMode>Air</opn:TransportMode>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n            <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T19:36:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T09:45:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:PriceIndicator>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Promotional</opn:RateType>\n      <opn:TotalCharge>300.0</opn:TotalCharge>\n    </opn:PriceIndicator>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:Remarks>XXXXX</opn:Remarks>\n  </opn:BookingRate>\n  <opn:ResponseStatus>\n    <opn:Status>\n      <opn:Code>Confirmed</opn:Code>\n      <opn:Reason>XXXXX</opn:Reason>\n    </opn:Status>\n  </opn:ResponseStatus>\n</opn:BookingResponse>\n"
+                        Cancel:
+                            value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingResponse\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd\">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>cancel</opn:ServiceMethod>\n    <opn:MessageDateTime>2018-09-20T00:00:30+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>BillOfLading</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://tempuri.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:BookingRate>\n    <opn:ReferenceID>XXXXX</opn:ReferenceID>\n    <opn:PriceIndicator>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateId>XXXXXXXX</opn:RateId>\n      <opn:RateComment>Cancellation is made before 24 hours before LAT</opn:RateComment>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:TotalCharge>25</opn:TotalCharge>\n    </opn:PriceIndicator>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:Remarks>XXXXX</opn:Remarks>\n  </opn:BookingRate>\n  <opn:ResponseStatus>\n    <opn:Status>\n      <opn:Code>canceled</opn:Code>\n      <opn:Reason>XXXXX</opn:Reason>\n    </opn:Status>\n  </opn:ResponseStatus>\n</opn:BookingResponse>\n"
+                        Update:
+                            value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingResponse\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd\">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>update</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:30+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>BillOfLading</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://BillOfLadingURL.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:BookingRate>\n    <opn:ReferenceID>XXXXX</opn:ReferenceID>\n    <opn:ProductCode>XXXXX</opn:ProductCode>\n    <opn:OriginLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>JFK</opn:LocationCode>\n      <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n    </opn:OriginLocation>\n    <opn:DestinationLocation>\n      <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n      <opn:LocationCode>FRA</opn:LocationCode>\n    </opn:DestinationLocation>\n    <opn:Connection>\n      <opn:NumberOfConnections>2</opn:NumberOfConnections>\n      <opn:ConnectionSegments>\n        <opn:Segment>\n          <opn:SegmentID>1</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:ItineraryNumber>Flight id</opn:ItineraryNumber>\n          <opn:TransportMode>Air</opn:TransportMode>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>JFK</opn:LocationCode>\n            <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>BCN</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T19:36:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T09:45:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n        <opn:Segment>\n          <opn:SegmentID>2</opn:SegmentID>\n          <opn:VehicleType>aircraft</opn:VehicleType>\n          <opn:ItineraryNumber>Flight id</opn:ItineraryNumber>\n          <opn:TransportMode>Air</opn:TransportMode>\n          <opn:Origin>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>BCN</opn:LocationCode>\n            <opn:LocationName>John F. Kennedy International Airport</opn:LocationName>\n          </opn:Origin>\n          <opn:Destination>\n            <opn:LocationTypeCode>Airport</opn:LocationTypeCode>\n            <opn:LocationCode>FRA</opn:LocationCode>\n          </opn:Destination>\n          <opn:ScheduledTimeOfDeparture>2018-09-27T19:36:00</opn:ScheduledTimeOfDeparture>\n          <opn:ScheduledTimeOfArrival>2018-09-28T09:45:00</opn:ScheduledTimeOfArrival>\n          <opn:OperatingCarrierCode>XXXXX</opn:OperatingCarrierCode>\n        </opn:Segment>\n      </opn:ConnectionSegments>\n    </opn:Connection>\n    <opn:PriceIndicator>\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\n      <opn:RateCurrency>USD</opn:RateCurrency>\n      <opn:RateType>Standard</opn:RateType>\n      <opn:TotalCharge>200.0</opn:TotalCharge>\n    </opn:PriceIndicator>\n    <opn:SpecialHandlingCodes>\n      <opn:Code>XXXXX</opn:Code>\n    </opn:SpecialHandlingCodes>\n    <opn:Terms>\n      <opn:PaymentTerm>XXXXX</opn:PaymentTerm>\n      <opn:MethodOfPayment>XXXXX</opn:MethodOfPayment>\n      <opn:DeliveryTerm>XXXXX</opn:DeliveryTerm>\n    </opn:Terms>\n    <opn:Remarks>XXXXX</opn:Remarks>\n  </opn:BookingRate>\n  <opn:ResponseStatus>\n    <opn:Status>\n      <opn:Code>Updated</opn:Code>\n      <opn:Reason>XXXXX</opn:Reason>\n    </opn:Status>\n  </opn:ResponseStatus>\n</opn:BookingResponse>\n"
+                        Rejected:
+                            value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingResponse\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd\">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:30+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>BillOfLading</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://tempuri.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:BookingRate>\n    <opn:ReferenceID>XXXXX</opn:ReferenceID>\n    <opn:Remarks>XXXXX</opn:Remarks>\n  </opn:BookingRate>\n  <opn:ResponseStatus>\n    <opn:Status>\n      <opn:Code>Rejected</opn:Code>\n      <opn:Reason>No Available Space</opn:Reason>\n    </opn:Status>\n  </opn:ResponseStatus>\n</opn:BookingResponse>\n"
+                        Processing:
+                            value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<opn:BookingResponse\n  xmlns:opn=\"www.openfreight.org\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"www.openfreight.org BookingSchema.xsd \">\n  <opn:MessageHeader>\n    <opn:MessageId>XXXXX</opn:MessageId>\n    <opn:ConversationId>XXXXX</opn:ConversationId>\n    <opn:RequestID>XXXXX</opn:RequestID>\n    <opn:AuthenticationType>Basic</opn:AuthenticationType>\n  </opn:MessageHeader>\n  <opn:BusinessInfo>\n    <opn:Station>Station Code</opn:Station>\n    <opn:ServiceName>Booking</opn:ServiceName>\n    <opn:ServiceMethod>NEW</opn:ServiceMethod>\n    <opn:ServiceComment/>\n    <opn:MessageDateTime>2018-09-20T00:00:30+00:00</opn:MessageDateTime>\n    <opn:Parties>\n      <opn:Party>\n        <opn:PartyTypeCode>CN</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n      <opn:Party>\n        <opn:PartyTypeCode>CZ</opn:PartyTypeCode>\n        <opn:ID>#123654</opn:ID>\n        <opn:Name>Name</opn:Name>\n        <opn:AccountIDList>\n\t\t    <opn:AccountID>\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\n\t\t\t</opn:AccountID>\n\t\t</opn:AccountIDList>\n      </opn:Party>\n    </opn:Parties>\n  </opn:BusinessInfo>\n  <opn:WayBillIdentifier>\n    <opn:HWB>XXXXX</opn:HWB>\n    <opn:MWB>XXXXX</opn:MWB>\n    <opn:BillOfLading>BillOfLading</opn:BillOfLading>\n    <opn:BillOfLadingURL>http://BillOfLadingURL.org</opn:BillOfLadingURL>\n    <opn:ElectronicWayBill>true</opn:ElectronicWayBill>\n  </opn:WayBillIdentifier>\n  <opn:BookingRate>\n    <opn:ReferenceID>XXXXX</opn:ReferenceID>\n    <opn:Remarks>XXXXX</opn:Remarks>\n  </opn:BookingRate>\n  <opn:ResponseStatus>\n    <opn:Status>\n      <opn:Code>Processing</opn:Code>\n      <opn:Reason>XXXXX</opn:Reason>\n    </opn:Status>\n  </opn:ResponseStatus>\n</opn:BookingResponse>\n"
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/BookingResponse'
+                    examples:
+                        Book:
+                            value:
+                                messageHeader:
+                                    messageId:
+                                        value: XXXXX
+                                    conversationId:
+                                        value: XXXXX
+                                    requestID:
+                                        value: XXXXX
+                                    authenticationType:
+                                        value: BASIC
+                                businessInfo:
+                                    station:
+                                        value: Station Code
+                                    serviceName:
+                                        value: Booking
+                                    serviceMethod:
+                                        value: NEW
+                                    serviceComment:
+                                        value: ''
+                                    messageDateTime: '2018-09-20T00:00:30.000Z'
+                                    parties:
+                                        party:
+                                            -
+                                                partyTypeCode:
+                                                    value: CN
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#321123'
+                                            -
+                                                partyTypeCode:
+                                                    value: CZ
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#123321'
+                                wayBillIdentifier:
+                                    hwb:
+                                        value: XXXXX
+                                    mwb:
+                                        value: XXXXX
+                                    billOfLading:
+                                        value: BillOfLading
+                                    billOfLadingURL: 'http://BillOfLadingURL.org'
+                                    electronicWayBill: true
+                                bookingRate:
+                                    referenceID:
+                                        value: XXXXX
+                                    productCode:
+                                        value: XXXXX
+                                    originLocation:
+                                        locationTypeCode:
+                                            value: Airport
+                                        locationCode:
+                                            value: JFK
+                                        locationName:
+                                            value: John F. Kennedy International Airport
+                                    destinationLocation:
+                                        locationTypeCode:
+                                            value: Airport
+                                        locationCode:
+                                            value: FRA
+                                    connection:
+                                        numberOfConnections: 1
+                                        connectionSegments:
+                                            segment:
+                                                -
+                                                    segmentID:
+                                                        value: '1'
+                                                    vehicleType:
+                                                        value: aircraft
+                                                    itineraryNumber:
+                                                        value: Flight id
+                                                    transportMode:
+                                                        value: Air
+                                                    origin:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: JFK
+                                                        locationName:
+                                                            value: John F. Kennedy International Airport
+                                                    destination:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: FRA
+                                                    scheduledTimeOfDeparture: '2018-09-27T16:36:00.000Z'
+                                                    scheduledTimeOfArrival: '2018-09-28T06:45:00.000Z'
+                                                    operatingCarrierCode:
+                                                        value: XXXXX
+                                    priceIndicator:
+                                        requestCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        rateCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        rateType:
+                                            value: Promotional
+                                        totalCharge:
+                                            value: 300
+                                    specialHandlingCodes:
+                                        code:
+                                            -
+                                                value: XXXXX
+                                    terms:
+                                        paymentTerm:
+                                            value: XXXXX
+                                        methodOfPayment:
+                                            value: XXXXX
+                                        deliveryTerm:
+                                            value: XXXXX
+                                    remarks:
+                                        value: XXXXX
+                                responseStatus:
+                                    status:
+                                        -
+                                            code:
+                                                value: Confirmed
+                                            reason:
+                                                value: XXXXX
+                        Cancel:
+                            value:
+                                messageHeader:
+                                    messageId:
+                                        value: XXXXX
+                                    conversationId:
+                                        value: XXXXX
+                                    requestID:
+                                        value: XXXXX
+                                    authenticationType:
+                                        value: BASIC
+                                businessInfo:
+                                    station:
+                                        value: Station Code
+                                    serviceName:
+                                        value: Booking
+                                    serviceMethod:
+                                        value: cancel
+                                    messageDateTime: '2018-09-20T00:00:30.000Z'
+                                    parties:
+                                        party:
+                                            -
+                                                partyTypeCode:
+                                                    value: CN
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#321123'
+                                            -
+                                                partyTypeCode:
+                                                    value: CZ
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#123321'
+                                wayBillIdentifier:
+                                    mwb:
+                                        value: XXXXX
+                                    billOfLading:
+                                        value: BillOfLading
+                                    billOfLadingURL: 'http://tempuri.org'
+                                    electronicWayBill: true
+                                bookingRate:
+                                    referenceID:
+                                        value: XXXXX
+                                    priceIndicator:
+                                        requestCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        rateId:
+                                            value: XXXXXXXX
+                                        rateComment:
+                                            value: Cancellation is made before 24 hours before LAT
+                                        rateCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        totalCharge:
+                                            value: 25
+                                    terms:
+                                        paymentTerm:
+                                            value: XXXXX
+                                        methodOfPayment:
+                                            value: XXXXX
+                                        deliveryTerm:
+                                            value: XXXXX
+                                    remarks:
+                                        value: XXXXX
+                                responseStatus:
+                                    status:
+                                        -
+                                            code:
+                                                value: canceled
+                                            reason:
+                                                value: XXXXX
+                        Update:
+                            value:
+                                messageHeader:
+                                    messageId:
+                                        value: XXXXX
+                                    conversationId:
+                                        value: XXXXX
+                                    requestID:
+                                        value: XXXXX
+                                    authenticationType:
+                                        value: BASIC
+                                businessInfo:
+                                    station:
+                                        value: Station Code
+                                    serviceName:
+                                        value: Booking
+                                    serviceMethod:
+                                        value: update
+                                    serviceComment:
+                                        value: ''
+                                    messageDateTime: '2018-09-20T00:00:30.000Z'
+                                    parties:
+                                        party:
+                                            -
+                                                partyTypeCode:
+                                                    value: CN
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#321123'
+                                            -
+                                                partyTypeCode:
+                                                    value: CZ
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#123321'
+                                wayBillIdentifier:
+                                    hwb:
+                                        value: XXXXX
+                                    mwb:
+                                        value: XXXXX
+                                    billOfLading:
+                                        value: BillOfLading
+                                    billOfLadingURL: 'http://BillOfLadingURL.org'
+                                    electronicWayBill: true
+                                bookingRate:
+                                    referenceID:
+                                        value: XXXXX
+                                    productCode:
+                                        value: XXXXX
+                                    originLocation:
+                                        locationTypeCode:
+                                            value: Airport
+                                        locationCode:
+                                            value: JFK
+                                        locationName:
+                                            value: John F. Kennedy International Airport
+                                    destinationLocation:
+                                        locationTypeCode:
+                                            value: Airport
+                                        locationCode:
+                                            value: FRA
+                                    connection:
+                                        numberOfConnections: 2
+                                        connectionSegments:
+                                            segment:
+                                                -
+                                                    segmentID:
+                                                        value: '1'
+                                                    vehicleType:
+                                                        value: aircraft
+                                                    itineraryNumber:
+                                                        value: Flight id
+                                                    transportMode:
+                                                        value: Air
+                                                    origin:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: JFK
+                                                        locationName:
+                                                            value: John F. Kennedy International Airport
+                                                    destination:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: BCN
+                                                    scheduledTimeOfDeparture: '2018-09-27T16:36:00.000Z'
+                                                    scheduledTimeOfArrival: '2018-09-28T06:45:00.000Z'
+                                                    operatingCarrierCode:
+                                                        value: XXXXX
+                                                -
+                                                    segmentID:
+                                                        value: '2'
+                                                    vehicleType:
+                                                        value: aircraft
+                                                    itineraryNumber:
+                                                        value: Flight id
+                                                    transportMode:
+                                                        value: Air
+                                                    origin:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: BCN
+                                                        locationName:
+                                                            value: John F. Kennedy International Airport
+                                                    destination:
+                                                        locationTypeCode:
+                                                            value: Airport
+                                                        locationCode:
+                                                            value: FRA
+                                                    scheduledTimeOfDeparture: '2018-09-27T16:36:00.000Z'
+                                                    scheduledTimeOfArrival: '2018-09-28T06:45:00.000Z'
+                                                    operatingCarrierCode:
+                                                        value: XXXXX
+                                    priceIndicator:
+                                        requestCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        rateCurrency:
+                                            value: USD
+                                            listID: ISO 4217 3A
+                                            listAgencyID: '5'
+                                            listVersionID: '2007-06-18'
+                                        rateType:
+                                            value: Standard
+                                        totalCharge:
+                                            value: 200
+                                    specialHandlingCodes:
+                                        code:
+                                            -
+                                                value: XXXXX
+                                    terms:
+                                        paymentTerm:
+                                            value: XXXXX
+                                        methodOfPayment:
+                                            value: XXXXX
+                                        deliveryTerm:
+                                            value: XXXXX
+                                    remarks:
+                                        value: XXXXX
+                                responseStatus:
+                                    status:
+                                        -
+                                            code:
+                                                value: Updated
+                                            reason:
+                                                value: XXXXX
+                        Rejected:
+                            value:
+                                messageHeader:
+                                    messageId:
+                                        value: XXXXX
+                                    conversationId:
+                                        value: XXXXX
+                                    requestID:
+                                        value: XXXXX
+                                    authenticationType:
+                                        value: BASIC
+                                businessInfo:
+                                    station:
+                                        value: Station Code
+                                    serviceName:
+                                        value: Booking
+                                    serviceMethod:
+                                        value: NEW
+                                    serviceComment:
+                                        value: ''
+                                    messageDateTime: '2018-09-20T00:00:30.000Z'
+                                    parties:
+                                        party:
+                                            -
+                                                partyTypeCode:
+                                                    value: CN
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#321123'
+                                            -
+                                                partyTypeCode:
+                                                    value: CZ
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#123321'
+                                wayBillIdentifier:
+                                    mwb:
+                                        value: XXXXX
+                                    billOfLading:
+                                        value: BillOfLading
+                                    billOfLadingURL: 'http://tempuri.org'
+                                    electronicWayBill: true
+                                bookingRate:
+                                    referenceID:
+                                        value: XXXXX
+                                    remarks:
+                                        value: XXXXX
+                                responseStatus:
+                                    status:
+                                        -
+                                            code:
+                                                value: Rejected
+                                            reason:
+                                                value: No Available Space
+                        Processing:
+                            value:
+                                messageHeader:
+                                    messageId:
+                                        value: XXXXX
+                                    conversationId:
+                                        value: XXXXX
+                                    requestID:
+                                        value: XXXXX
+                                    authenticationType:
+                                        value: BASIC
+                                businessInfo:
+                                    station:
+                                        value: Station Code
+                                    serviceName:
+                                        value: Booking
+                                    serviceMethod:
+                                        value: NEW
+                                    serviceComment:
+                                        value: ''
+                                    messageDateTime: '2018-09-20T00:00:30.000Z'
+                                    parties:
+                                        party:
+                                            -
+                                                partyTypeCode:
+                                                    value: CN
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#321123'
+                                            -
+                                                partyTypeCode:
+                                                    value: CZ
+                                                id:
+                                                    value: '#123654'
+                                                name:
+                                                    value: Name
+                                                accountIDList:
+                                                    accountID:
+                                                        -
+                                                            value:
+                                                                value: '#123321'
+                                wayBillIdentifier:
+                                    hwb:
+                                        value: XXXXX
+                                    mwb:
+                                        value: XXXXX
+                                    billOfLading:
+                                        value: BillOfLading
+                                    billOfLadingURL: 'http://BillOfLadingURL.org'
+                                    electronicWayBill: true
+                                bookingRate:
+                                    referenceID:
+                                        value: XXXXX
+                                    remarks:
+                                        value: XXXXX
+                                responseStatus:
+                                    status:
+                                        -
+                                            code:
+                                                value: Processing
+                                            reason:
+                                                value: XXXXX
+        '401':
+            description: "Unauthorized, check the appId you are using\n\t\t\t\t"
+            content:
+                application/xml:
+                    examples:
+                        example 0:
+                            value: |-
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <opn:ErrorResponse
+                                  xmlns:opn="www.openfreight.org"
+                                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                  xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                  <opn:MessageHeader>
+                                    <opn:MessageId>XXXXX</opn:MessageId>
+                                    <opn:ConversationId>XXXXX</opn:ConversationId>
+                                    <opn:RequestID>XXXXX</opn:RequestID>
+                                    <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                  </opn:MessageHeader>
+                                  <opn:BusinessInfo>
+                                    <opn:Station>XXXXX</opn:Station>
+                                    <opn:ServiceName>XXXXX</opn:ServiceName>
+                                    <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                    <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                    <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                  </opn:BusinessInfo>
+                                  <opn:Status>XXXXX</opn:Status>
+                                  <opn:Message>XXXXX</opn:Message>
+                                  <opn:AdditionalInformation>
+                                    <opn:Information>
+                                      <opn:Code>XXXXX</opn:Code>
+                                      <opn:Reason>XXXXX</opn:Reason>
+                                    </opn:Information>
+                                  </opn:AdditionalInformation>
+                                </opn:ErrorResponse>
+        '440':
+            description: "Invalid incoming request: Not supported bulk requests,\n\t\t\t\t\tNot supported Origin or Destination type, Not supported enum value,\n\t\t\t\t\tNot supported Origin or Destination in specific mode\n\t\t\t\t"
+            content:
+                application/xml:
+                    examples:
+                        example 0:
+                            value: |-
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <opn:ErrorResponse
+                                  xmlns:opn="www.openfreight.org"
+                                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                  xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                  <opn:MessageHeader>
+                                    <opn:MessageId>XXXXX</opn:MessageId>
+                                    <opn:ConversationId>XXXXX</opn:ConversationId>
+                                    <opn:RequestID>XXXXX</opn:RequestID>
+                                    <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                  </opn:MessageHeader>
+                                  <opn:BusinessInfo>
+                                    <opn:Station>XXXXX</opn:Station>
+                                    <opn:ServiceName>XXXXX</opn:ServiceName>
+                                    <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                    <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                    <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                  </opn:BusinessInfo>
+                                  <opn:Status>XXXXX</opn:Status>
+                                  <opn:Message>XXXXX</opn:Message>
+                                  <opn:AdditionalInformation>
+                                    <opn:Information>
+                                      <opn:Code>XXXXX</opn:Code>
+                                      <opn:Reason>XXXXX</opn:Reason>
+                                    </opn:Information>
+                                  </opn:AdditionalInformation>
+                                </opn:ErrorResponse>
+        '540':
+            description: Unexpected Error
+            content:
+                application/xml:
+                    examples:
+                        example 0:
+                            value: |-
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <opn:ErrorResponse
+                                  xmlns:opn="www.openfreight.org"
+                                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                  xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                  <opn:MessageHeader>
+                                    <opn:MessageId>XXXXX</opn:MessageId>
+                                    <opn:ConversationId>XXXXX</opn:ConversationId>
+                                    <opn:RequestID>XXXXX</opn:RequestID>
+                                    <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                  </opn:MessageHeader>
+                                  <opn:BusinessInfo>
+                                    <opn:Station>XXXXX</opn:Station>
+                                    <opn:ServiceName>XXXXX</opn:ServiceName>
+                                    <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                    <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                    <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                  </opn:BusinessInfo>
+                                  <opn:Status>XXXXX</opn:Status>
+                                  <opn:Message>XXXXX</opn:Message>
+                                  <opn:AdditionalInformation>
+                                    <opn:Information>
+                                      <opn:Code>XXXXX</opn:Code>
+                                      <opn:Reason>XXXXX</opn:Reason>
+                                    </opn:Information>
+                                  </opn:AdditionalInformation>
+                                </opn:ErrorResponse>
+    x-camelContextId: OpenFreightBooking
+    x-routeId: 'Handle API_AGGREGATOR:GG_Api_OPEN_FREIGHT_BOOKING Post Request'
+    x-code-samples:
+        -
+            lang: Curl
+            source: >-
+                curl -X POST https://integration.freightos.com/openfreight/rest/v1/book -H 'appId:To get your
+                appId please contact this email: support-integration@freightos.com'

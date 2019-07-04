@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+  xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:7" elementFormDefault="qualified"
+  targetNamespace="www.openfreight.org" xmlns:opn="www.openfreight.org">
+  <!-- =================================================================== -->
+  <!-- Schema agency: 	Freightos ==========================-->
+  <!-- Schema version:	1.0  ===============================-->
+  <!-- Schema date: 	    April 2019  =====================-->
+  <!-- Copyright (C) Freightos (2018). All Rights Reserved =-->
+  <!-- =================================================================== -->
+
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:8"
+    schemaLocation="standard/UnqualifiedDataType_8p0.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:7"
+    schemaLocation="standard/QualifiedDataType_7p0.xsd"/>
+
+  <xs:include schemaLocation="OpenFreightReusableTypes.xsd"/>
+
+  <xs:element name="RateStatus" type="opn:RateStatusMessageType"/>
+
+  <xs:complexType name="RateStatusMessageType">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="opn:MessageHeaderType"/>
+      <xs:element name="BusinessInfo" type="opn:BusinessInfoType"/>
+      <xs:element name="Status" type="opn:RateStatusType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RateStatusType">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="udt:CodeType"/>
+      <xs:element name="Reason" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateIdentifier" type="udt:TextType"/>
+      <xs:element name="PricePreference" type="opn:PricePreferenceType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
