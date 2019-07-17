@@ -17,10 +17,10 @@
 
   <xs:complexType name="MessageHeaderType">
     <xs:sequence>
-      <xs:element name="MessageId" type="udt:IDType" minOccurs="0"/>
-      <xs:element name="ConversationId" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="MessageID" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="ConversationID" type="udt:IDType" minOccurs="0"/>
       <xs:element name="RequestID" type="udt:IDType" minOccurs="0"/>
-      <xs:element name="AuthenticationType" type="opn:AuthenticationType"/>
+      <xs:element name="AuthenticationType" type="opn:AuthenticationType" minOccurs="0"/>
       <xs:element type="xs:anyType" name="AuthenticationPayload" minOccurs="0">
         <xs:annotation>
           <xs:documentation>Authentication Payload</xs:documentation>
@@ -36,10 +36,10 @@
           <xs:documentation>Station of the contract</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ServiceName" type="udt:TextType"/>
-      <xs:element name="ServiceMethod" type="udt:TextType"/>
+      <xs:element name="ServiceName" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="ServiceMethod" type="udt:TextType" minOccurs="0"/>
       <xs:element name="ServiceComment" type="udt:TextType" minOccurs="0"/>
-      <xs:element name="MessageDateTime" type="udt:DateTimeType">
+      <xs:element name="MessageDateTime" type="udt:DateTimeType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>The request/response date time.</xs:documentation>
         </xs:annotation>
@@ -73,14 +73,14 @@
           <xs:documentation>Export/Import indicator</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="TransportMode" type="opn:TransportationModeType">
+      <xs:element name="TransportMode" type="opn:TransportationModeType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>Air, LCL,FTL,FCL,FTL,Rail,Express,Barge,RoRo,AirSea,BreakBulk
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ShipmentSecured" type="xs:boolean" minOccurs="0"/>
-      <xs:element name="TransportService" type="opn:TransportationServiceType">
+      <xs:element name="TransportService" type="opn:TransportationServiceType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>e.g., door-to-door, port-to-port
           </xs:documentation>
@@ -347,7 +347,7 @@
   </xs:complexType>
   <xs:complexType name="PackageType">
     <xs:sequence>
-      <xs:element name="PackagingType" type="udt:CodeType">
+      <xs:element name="PackagingType" type="udt:CodeType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>
             ['Case', 'Barrel', 'Basket', 'Box', 'Break Bulk', 'Bundle', 'Carton', 'Chest',
@@ -514,7 +514,7 @@
       <xs:element name="Packages" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="1" name="Package" type="opn:PackageType"/>
+            <xs:element name="Package" type="opn:PackageType" maxOccurs="unbounded" minOccurs="0"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -586,7 +586,7 @@
       <xs:element name="Quantity" type="udt:QuantityType" minOccurs="0"/>
       <xs:element name="UnitOfMeasure" type="udt:CodeType" minOccurs="0"/>
       <xs:element name="UnitRate" type="udt:AmountType" minOccurs="0"/>
-      <xs:element name="RateId" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateID" type="udt:TextType" minOccurs="0"/>
       <xs:element name="Rate" type="udt:AmountType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>Price</xs:documentation>
@@ -621,7 +621,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ID" nillable="false" type="udt:IDType"/>
+      <xs:element name="ID" nillable="false" type="udt:IDType" minOccurs="0"/>
       <xs:element name="AdditionalID" type="udt:IDType" minOccurs="0"/>
       <xs:element name="Name" type="udt:TextType" minOccurs="0"/>
       <xs:element name="AccountIDList" minOccurs="0">
@@ -729,7 +729,7 @@
     <xs:sequence>
       <xs:element name="RequestCurrency" type="qdt:CurrencyCodeType"/>
       <xs:element name="ExchangeRate" type="xs:double" minOccurs="0"/>
-      <xs:element name="RateId" type="udt:TextType" minOccurs="0"/>
+      <xs:element name="RateID" type="udt:TextType" minOccurs="0"/>
       <xs:element name="RateComment" type="udt:TextType" minOccurs="0"/>
       <xs:element name="PriceTool" type="udt:TextType" minOccurs="0"/>
       <xs:element name="PromotionCode" type="udt:TextType" minOccurs="0"/>

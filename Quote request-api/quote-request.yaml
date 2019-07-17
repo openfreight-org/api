@@ -1,0 +1,3375 @@
+openapi: 3.0.0
+info:
+    title: OpenFreight Quote Request only API
+    description: |+
+
+        #### APIs
+        - [Quote Request API](#operation/Quote%20Request%20API)
+
+    version: '1.0'
+    x-publish: false
+servers:
+    -
+        url: 'https://integration.freightos.com/openfreight/rest'
+paths:
+    /v2/quotesRequest:
+        post:
+            tags:
+                - v2/quotesRequest
+            description: Documentation For OpenFreight's Quotes API
+            operationId: Quote Request API
+            requestBody:
+                content:
+                    application/xml:
+                        schema:
+                            $ref: '#/components/schemas/QuoteRequest'
+                        examples:
+                            Air:
+                                value: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<opn:QuoteRequest>\r\n    <opn:MessageHeader>\r\n    \t<opn:MessageID>6e67eef5-6a68-46d1-8c27-a9a8ed646c85</opn:MessageID>\r\n        <opn:RequestID>7b7ae200-11a6-4ae1-ac33-0b44e15655fb</opn:RequestID>\r\n        <opn:AuthenticationType>APIKey</opn:AuthenticationType>\r\n    </opn:MessageHeader>\r\n    <opn:BusinessInfo>\r\n    <opn:Station>LAX</opn:Station>\r\n    <opn:ServiceName>Quote</opn:ServiceName>\r\n    <opn:ServiceMethod>Quote Request</opn:ServiceMethod>\r\n    <opn:ServiceComment>Quote for general cargo</opn:ServiceComment>\r\n    <opn:MessageDateTime>2019-01-03T12:00:00</opn:MessageDateTime>\r\n    <opn:Parties>\r\n      <opn:Party>\r\n        <opn:PartyTypeCode>HI</opn:PartyTypeCode>\r\n        <opn:ID>IATA code</opn:ID>\r\n        <opn:Name>Requestor's Name</opn:Name>\r\n        <opn:AccountIDList>\r\n\t\t    <opn:AccountID>\r\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\r\n\t\t\t</opn:AccountID>\r\n\t\t</opn:AccountIDList>\r\n        <opn:PostalAddress>\r\n          <opn:LocationTypeCode>XXXXX</opn:LocationTypeCode>\r\n          <opn:LocationCode>XXXXX</opn:LocationCode>\r\n          <opn:LocationName>XXXXX</opn:LocationName>\r\n          <opn:ID>XXXXX</opn:ID>\r\n          <opn:AddressFormatCode>XXXXX</opn:AddressFormatCode>\r\n          <opn:CountryID>US</opn:CountryID>\r\n          <opn:CountryName>XXXXX</opn:CountryName>\r\n          <opn:StateOrProvince>XXXXX</opn:StateOrProvince>\r\n          <opn:CityID>XXXXX</opn:CityID>\r\n          <opn:CityName>XXXXX</opn:CityName>\r\n          <opn:StreetName>XXXXX</opn:StreetName>\r\n          <opn:PostalCode>XXXXX</opn:PostalCode>\r\n          <opn:AddressLines>\r\n            <opn:AddressLine>XXXXX</opn:AddressLine>\r\n          </opn:AddressLines>\r\n          <opn:LocationCoordinate>\r\n            <opn:CoordinateSystemCode>XXXXX</opn:CoordinateSystemCode>\r\n            <opn:LatitudeDegreesMeasure>0.0</opn:LatitudeDegreesMeasure>\r\n            <opn:LatitudeMinutesMeasure>0.0</opn:LatitudeMinutesMeasure>\r\n            <opn:LongitudeDegreesMeasure>0.0</opn:LongitudeDegreesMeasure>\r\n            <opn:LongitudeMinutesMeasure>0.0</opn:LongitudeMinutesMeasure>\r\n          </opn:LocationCoordinate>\r\n          <opn:TimezoneOffset>+00:00</opn:TimezoneOffset>\r\n        </opn:PostalAddress>\r\n        <opn:Contact>\r\n          <opn:ID>XXXXX</opn:ID>\r\n          <opn:Name>XXXXX</opn:Name>\r\n          <opn:Telephone>XXXXX</opn:Telephone>\r\n          <opn:Telefax>XXXXX</opn:Telefax>\r\n          <opn:ElectronicMail>XXXXX</opn:ElectronicMail>\r\n          <opn:Note>XXXXX</opn:Note>\r\n        </opn:Contact>\r\n      </opn:Party>\r\n      <opn:Party>\r\n        <opn:PartyTypeCode>CA</opn:PartyTypeCode>\r\n        <opn:ID>QAC</opn:ID>\r\n        <opn:Name>Carrier's Name</opn:Name>\r\n        <opn:AccountIDList>\r\n\t\t    <opn:AccountID>\r\n\t\t\t<opn:Value languageID=\"string\">XXXXX</opn:Value>\r\n\t\t\t</opn:AccountID>\r\n\t\t</opn:AccountIDList>\r\n      </opn:Party>\r\n    </opn:Parties>\r\n  </opn:BusinessInfo>\r\n    <opn:Shipment>\r\n       <opn:ShipmentDirection>Export</opn:ShipmentDirection>\r\n    <opn:TransportMode>Air</opn:TransportMode>\r\n    <opn:TransportService>P2P</opn:TransportService>\r\n    <opn:ShipmentPriorityCode>standard</opn:ShipmentPriorityCode>\r\n        <opn:OriginLocation>\r\n            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n            <opn:LocationCode>LAX</opn:LocationCode>\r\n            <opn:CountryID>US</opn:CountryID>\r\n            <opn:CountryName>United States of America</opn:CountryName>\r\n            <opn:CityName>Los Angeles</opn:CityName>\r\n            <opn:LocationCoordinate>\r\n                <opn:LatitudeDegreesMeasure unitCode=\"DD\">33.94</opn:LatitudeDegreesMeasure>\r\n                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-118.41</opn:LongitudeDegreesMeasure>\r\n            </opn:LocationCoordinate>\r\n        </opn:OriginLocation>\r\n        <opn:DestinationLocation>\r\n            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n            <opn:LocationCode>JFK</opn:LocationCode>\r\n            <opn:CountryID>US</opn:CountryID>\r\n            <opn:CountryName>United States of America</opn:CountryName>\r\n            <opn:CityName>New York</opn:CityName>\r\n            <opn:LocationCoordinate>\r\n                <opn:LatitudeDegreesMeasure unitCode=\"DD\">40.64</opn:LatitudeDegreesMeasure>\r\n                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-73.78</opn:LongitudeDegreesMeasure>\r\n            </opn:LocationCoordinate>\r\n        </opn:DestinationLocation>\r\n         <opn:PickupEvent>\r\n      <opn:EventDate>\r\n        <opn:ActualDateTime>2019-01-31T12:00:00</opn:ActualDateTime>\r\n        <opn:ScheduledDateTime>2019-01-31T12:00:00</opn:ScheduledDateTime>\r\n      </opn:EventDate>\r\n    </opn:PickupEvent>\r\n    <opn:DeliveryEvent>\r\n      <opn:EventDate>\r\n        <opn:ActualDateTime>2019-02-15T12:00:00</opn:ActualDateTime>\r\n        <opn:ScheduledDateTime>2019-02-15T12:00:00</opn:ScheduledDateTime>\r\n      </opn:EventDate>\r\n    </opn:DeliveryEvent>\r\n        <opn:Load>\r\n            <opn:NetWeight unitCode=\"kg\">100.0</opn:NetWeight>\r\n            <opn:NetVolumeMeasure unitCode=\"cbm\">1.0</opn:NetVolumeMeasure>\r\n            <opn:Packages>\r\n                <opn:Package>\r\n                    <opn:PackagingType>pallets</opn:PackagingType>\r\n                    <opn:Weight unitCode=\"kg\">100.0</opn:Weight>\r\n                    <opn:Quantity>1.0</opn:Quantity>\r\n                    <opn:Dimensions>\r\n                        <opn:Dimension>\r\n                            <opn:Width unitCode=\"cm\">100.0</opn:Width>\r\n                            <opn:Length unitCode=\"cm\">100.0</opn:Length>\r\n                            <opn:Height unitCode=\"cm\">100.0</opn:Height>\r\n                        </opn:Dimension>\r\n                    </opn:Dimensions>\r\n                    <opn:Density>0.0</opn:Density>\r\n                    <opn:Stackable>true</opn:Stackable>\r\n                     <opn:TransportTemperature>true</opn:TransportTemperature>\r\n                    <opn:OverDimensionIndicator>false</opn:OverDimensionIndicator>\r\n                    <opn:OverWeightIndicator>false</opn:OverWeightIndicator>\r\n                </opn:Package>\r\n            </opn:Packages>\r\n            <opn:Commodity>\r\n        \t<opn:CommodityCode>xxx</opn:CommodityCode>\r\n        <opn:Description></opn:Description>\r\n      </opn:Commodity>\r\n      </opn:Load>\r\n      <opn:PricePreference>\r\n      <opn:RequestCurrency>USD</opn:RequestCurrency>\r\n      <opn:RateCurrency>USD</opn:RateCurrency>\r\n      <opn:RateType></opn:RateType>\r\n    </opn:PricePreference>\r\n    \r\n    </opn:Shipment>\r\n</opn:QuoteRequest>"
+                            FCL:
+                                value: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<opn:QuoteRequest>\r\n    <opn:MessageHeader>\r\n        <opn:MessageID>6e67eef5-6a68-46d1-8c27-a9a8ed646c85</opn:MessageID>\r\n        <opn:RequestID>7b7ae200-11a6-4ae1-ac33-0b44e15655fb</opn:RequestID>\r\n        <opn:AuthenticationType>APIKey</opn:AuthenticationType>\r\n    </opn:MessageHeader>\r\n    <opn:BusinessInfo>\r\n        <opn:Station>LAX</opn:Station>\r\n        <opn:ServiceName>Quotes</opn:ServiceName>\r\n        <opn:ServiceMethod>Quotes Request</opn:ServiceMethod>\r\n        <opn:ServiceComment>Quotes for general cargo</opn:ServiceComment>\r\n        <opn:MessageDateTime>2019-03-01T12:00:00</opn:MessageDateTime>\r\n        <opn:Parties>\r\n            <opn:Party>\r\n                <opn:PartyTypeCode>HI</opn:PartyTypeCode>\r\n                <opn:ID>IATA code</opn:ID>\r\n                <opn:Name>Requestor's Name</opn:Name>\r\n                <opn:AccountIDList>\r\n\t\t          <opn:AccountID>\r\n\t\t        \t<opn:Value languageID=\"string\">XXXXX</opn:Value>\r\n\t\t\t        </opn:AccountID>\r\n\t\t        </opn:AccountIDList>\r\n                <opn:PostalAddress>\r\n                    <opn:LocationTypeCode>XXXXX</opn:LocationTypeCode>\r\n                    <opn:LocationCode>XXXXX</opn:LocationCode>\r\n                    <opn:LocationName>XXXXX</opn:LocationName>\r\n                    <opn:ID>XXXXX</opn:ID>\r\n                    <opn:AddressFormatCode>XXXXX</opn:AddressFormatCode>\r\n                    <opn:CountryID>US</opn:CountryID>\r\n                    <opn:CountryName>XXXXX</opn:CountryName>\r\n                    <opn:StateOrProvince>XXXXX</opn:StateOrProvince>\r\n                    <opn:CityID>XXXXX</opn:CityID>\r\n                    <opn:CityName>XXXXX</opn:CityName>\r\n                    <opn:StreetName>XXXXX</opn:StreetName>\r\n                    <opn:PostalCode>XXXXX</opn:PostalCode>\r\n                    <opn:AddressLines>\r\n                        <opn:AddressLine>XXXXX</opn:AddressLine>\r\n                    </opn:AddressLines>\r\n                    <opn:LocationCoordinate>\r\n                        <opn:CoordinateSystemCode>XXXXX</opn:CoordinateSystemCode>\r\n                        <opn:LatitudeDegreesMeasure>0.0</opn:LatitudeDegreesMeasure>\r\n                        <opn:LatitudeMinutesMeasure>0.0</opn:LatitudeMinutesMeasure>\r\n                        <opn:LongitudeDegreesMeasure>0.0</opn:LongitudeDegreesMeasure>\r\n                        <opn:LongitudeMinutesMeasure>0.0</opn:LongitudeMinutesMeasure>\r\n                    </opn:LocationCoordinate>\r\n                    <opn:TimezoneOffset>+00:00</opn:TimezoneOffset>\r\n                </opn:PostalAddress>\r\n                <opn:Contact>\r\n                    <opn:ID>XXXXX</opn:ID>\r\n                    <opn:Name>XXXXX</opn:Name>\r\n                    <opn:Telephone>XXXXX</opn:Telephone>\r\n                    <opn:Telefax>XXXXX</opn:Telefax>\r\n                    <opn:ElectronicMail>XXXXX</opn:ElectronicMail>\r\n                    <opn:Note>XXXXX</opn:Note>\r\n                </opn:Contact>\r\n            </opn:Party>\r\n            <opn:Party>\r\n                <opn:PartyTypeCode>CA</opn:PartyTypeCode>\r\n                <opn:ID>QAC</opn:ID>\r\n                <opn:Name>Carrier's Name</opn:Name>\r\n                <opn:AccountID>#123321</opn:AccountID>\r\n            </opn:Party>\r\n        </opn:Parties>\r\n    </opn:BusinessInfo>\r\n    <opn:Shipment>\r\n        <opn:ShipmentDirection>Export</opn:ShipmentDirection>\r\n        <opn:TransportMode>Fcl</opn:TransportMode>\r\n        <opn:TransportService>P2P</opn:TransportService>\r\n        <opn:ShipmentPriorityCode>standard</opn:ShipmentPriorityCode>\r\n        <opn:OriginLocation>\r\n            <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n            <opn:LocationCode>CNSHA</opn:LocationCode>\r\n            <opn:CountryID>CN</opn:CountryID>\r\n            <opn:CountryName>China</opn:CountryName>\r\n            <opn:CityName>Shanghai</opn:CityName>\r\n            <opn:LocationCoordinate>\r\n                <opn:LatitudeDegreesMeasure unitCode=\"DD\">31.234257</opn:LatitudeDegreesMeasure>\r\n                <opn:LongitudeDegreesMeasure unitCode=\"DD\">121.486351</opn:LongitudeDegreesMeasure>\r\n            </opn:LocationCoordinate>\r\n        </opn:OriginLocation>\r\n        <opn:DestinationLocation>\r\n            <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n            <opn:LocationCode>USSEA</opn:LocationCode>\r\n            <opn:CountryID>US</opn:CountryID>\r\n            <opn:CountryName>United States of America</opn:CountryName>\r\n            <opn:CityName>Seattle, WA</opn:CityName>\r\n            <opn:LocationCoordinate>\r\n                <opn:LatitudeDegreesMeasure unitCode=\"DD\">47.6</opn:LatitudeDegreesMeasure>\r\n                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-122.33</opn:LongitudeDegreesMeasure>\r\n            </opn:LocationCoordinate>\r\n        </opn:DestinationLocation>\r\n        <opn:PickupEvent>\r\n            <opn:EventDate>\r\n                <opn:ActualDateTime>2019-01-31T12:00:00</opn:ActualDateTime>\r\n                <opn:ScheduledDateTime>2019-01-31T12:00:00</opn:ScheduledDateTime>\r\n            </opn:EventDate>\r\n        </opn:PickupEvent>\r\n        <opn:DeliveryEvent>\r\n            <opn:EventDate>\r\n                <opn:ActualDateTime>2019-02-15T12:00:00</opn:ActualDateTime>\r\n                <opn:ScheduledDateTime>2019-02-15T12:00:00</opn:ScheduledDateTime>\r\n            </opn:EventDate>\r\n        </opn:DeliveryEvent>\r\n        <opn:Load>\r\n            <opn:NetWeight unitCode=\"kg\">28200.0</opn:NetWeight>\r\n            <opn:NetVolumeMeasure unitCode=\"cbm\">32.04</opn:NetVolumeMeasure>\r\n            <opn:Packages>\r\n                <opn:Package>\r\n                    <opn:PackagingType>container20</opn:PackagingType>\r\n                    <opn:Weight unitCode=\"kg\">28200.0</opn:Weight>\r\n                    <opn:Quantity>1.0</opn:Quantity>\r\n                    <opn:Dimensions>\r\n                        <opn:Dimension>\r\n                            <opn:Width unitCode=\"cm\">235.2</opn:Width>\r\n                            <opn:Length unitCode=\"cm\">571.0</opn:Length>\r\n                            <opn:Height unitCode=\"cm\">238.5</opn:Height>\r\n                        </opn:Dimension>\r\n                    </opn:Dimensions>\r\n                    <opn:Density>0.0</opn:Density>\r\n                    <opn:Stackable>true</opn:Stackable>\r\n                </opn:Package>\r\n            </opn:Packages>\r\n            <opn:Commodity>\r\n                <opn:CommodityCode></opn:CommodityCode>\r\n                <opn:Description></opn:Description>\r\n            </opn:Commodity>\r\n        </opn:Load>\r\n        <opn:PricePreference>\r\n            <opn:RequestCurrency>USD</opn:RequestCurrency>\r\n            <opn:RateCurrency>USD</opn:RateCurrency>\r\n            <opn:RateType></opn:RateType>\r\n        </opn:PricePreference>\r\n    </opn:Shipment>\r\n</opn:QuoteRequest>"
+                required: true
+            responses:
+                '200':
+                    description: success response description
+                    content:
+                        application/xml:
+                            schema:
+                                $ref: '#/components/schemas/QuotesResponse'
+                            examples:
+                                Air:
+                                    value: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<opn:QuotesResponse>\r\n    <opn:MessageHeader>\r\n        <opn:MessageID>b0590079-fff2-4586-9d25-31239433be74</opn:MessageID>\r\n        <opn:RequestID>agx0cmFkZW9zLXRlc3RyFwsSEGNvbW1lcmNlRG9jcy9SRlEY8XYM</opn:RequestID>\r\n        <opn:AuthenticationType>APIKey</opn:AuthenticationType>\r\n    </opn:MessageHeader>\r\n    <opn:BusinessInfo>\r\n        <opn:ServiceName>QUOTE</opn:ServiceName>\r\n        <opn:Parties>\r\n            <opn:Party \r\n                xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ShipperType\">\r\n                <opn:Knownshipper>false</opn:Knownshipper>\r\n            </opn:Party>\r\n            <opn:Party>\r\n                <opn:PartyTypeCode>FW</opn:PartyTypeCode>\r\n                <opn:ID>agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgIC0yAkM</opn:ID>\r\n                <opn:Name>ceva</opn:Name>\r\n                <opn:Contact>\r\n                    <opn:ID>agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgICq_AkM</opn:ID>\r\n                    <opn:Name>admin</opn:Name>\r\n                    <opn:ElectronicMail \r\n                        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ElectronicMailType\">admin1@ceva-uk.com\r\n                    </opn:ElectronicMail>\r\n                </opn:Contact>\r\n            </opn:Party>\r\n        </opn:Parties>\r\n    </opn:BusinessInfo>\r\n    <opn:Quotes>\r\n        <opn:Quote>\r\n            <opn:ReferenceID/>\r\n            <opn:Status>Draft</opn:Status>\r\n            <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\r\n            <opn:TransportMode>air</opn:TransportMode>\r\n            <opn:TransportService>port-to-port</opn:TransportService>\r\n            <opn:Connection>\r\n                <opn:ConnectionSegments>\r\n                    <opn:Segment>\r\n                        <opn:TransportMode>air</opn:TransportMode>\r\n                        <opn:Origin>\r\n                            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>LAX</opn:LocationCode>\r\n                            <opn:CountryID>US</opn:CountryID>\r\n                            <opn:CountryName>United States of America</opn:CountryName>\r\n                            <opn:CityName>Los Angeles</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">33.94</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-118.41</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Origin>\r\n                        <opn:Destination>\r\n                            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>JFK</opn:LocationCode>\r\n                            <opn:CountryID>US</opn:CountryID>\r\n                            <opn:CountryName>United States of America</opn:CountryName>\r\n                            <opn:CityName>New York</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">40.64</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-73.78</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Destination>\r\n                        <opn:Charges>\r\n                            <opn:Fee>\r\n                                <opn:Currency>USD</opn:Currency>\r\n                                <opn:FeeLocationType>serviceFee</opn:FeeLocationType>\r\n                                <opn:FeeCode>DELIVERY</opn:FeeCode>\r\n                                <opn:FeeName/>\r\n                                <opn:Quantity>100.0</opn:Quantity>\r\n                                <opn:UnitOfMeasure>kg</opn:UnitOfMeasure>\r\n                                <opn:Rate currencyID=\"USD\">33.0</opn:Rate>\r\n                            </opn:Fee>\r\n                        </opn:Charges>\r\n                    </opn:Segment>\r\n                </opn:ConnectionSegments>\r\n            </opn:Connection>\r\n            <opn:OriginLocation>\r\n                <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                <opn:LocationCode>LAX</opn:LocationCode>\r\n                <opn:CountryID>US</opn:CountryID>\r\n                <opn:CountryName>United States of America</opn:CountryName>\r\n                <opn:CityName>Los Angeles</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">33.94</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">-118.41</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:OriginLocation>\r\n            <opn:DestinationLocation>\r\n                <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                <opn:LocationCode>JFK</opn:LocationCode>\r\n                <opn:CountryID>US</opn:CountryID>\r\n                <opn:CountryName>United States of America</opn:CountryName>\r\n                <opn:CityName>New York</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">40.64</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">-73.78</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:DestinationLocation>\r\n            <opn:ValidTo>2019-04-09T12:54:25.420+03:00</opn:ValidTo>\r\n            <opn:Load>\r\n                <opn:NetWeight unitCode=\"kg\">100.0</opn:NetWeight>\r\n                <opn:NetVolumeMeasure unitCode=\"cbm\">1.0</opn:NetVolumeMeasure>\r\n                <opn:TotalChargeableWeight unitCode=\"kg\">100.0</opn:TotalChargeableWeight>\r\n                <opn:Packages>\r\n                    <opn:Package>\r\n                        <opn:PackagingType>Box</opn:PackagingType>\r\n                        <opn:Weight unitCode=\"kg\">100.0</opn:Weight>\r\n                        <opn:Quantity>1.0</opn:Quantity>\r\n                        <opn:Dimensions>\r\n                            <opn:Dimension>\r\n                                <opn:Width unitCode=\"cm\">100.0</opn:Width>\r\n                                <opn:Length unitCode=\"cm\">100.0</opn:Length>\r\n                                <opn:Height unitCode=\"cm\">100.0</opn:Height>\r\n                            </opn:Dimension>\r\n                        </opn:Dimensions>\r\n                        <opn:Density>0.0</opn:Density>\r\n                        <opn:Stackable>true</opn:Stackable>\r\n                    </opn:Package>\r\n                </opn:Packages>\r\n            </opn:Load>\r\n            <opn:PriceIndicator>\r\n                <opn:RequestCurrency>USD</opn:RequestCurrency>\r\n                <opn:RateCurrency>USD</opn:RateCurrency>\r\n                <opn:IncludeOriginPortCharges>false</opn:IncludeOriginPortCharges>\r\n                <opn:IncludeDestinationPortCharges>false</opn:IncludeDestinationPortCharges>\r\n                <opn:ValidTo>2019-04-09T12:54:25.420+03:00</opn:ValidTo>\r\n                <opn:TotalCharge currencyID=\"USD\">33.0</opn:TotalCharge>\r\n            </opn:PriceIndicator>\r\n            <opn:Accessorials/>\r\n        </opn:Quote>\r\n        <opn:Quote>\r\n            <opn:ReferenceID/>\r\n            <opn:Status>Draft</opn:Status>\r\n            <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\r\n            <opn:TransportMode>air</opn:TransportMode>\r\n            <opn:TransportService>port-to-port</opn:TransportService>\r\n            <opn:Connection>\r\n                <opn:ConnectionSegments>\r\n                    <opn:Segment>\r\n                        <opn:TransportMode>air</opn:TransportMode>\r\n                        <opn:Origin>\r\n                            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>LAX</opn:LocationCode>\r\n                            <opn:CountryID>US</opn:CountryID>\r\n                            <opn:CountryName>United States of America</opn:CountryName>\r\n                            <opn:CityName>Los Angeles</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">33.94</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-118.41</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Origin>\r\n                        <opn:Destination>\r\n                            <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>JFK</opn:LocationCode>\r\n                            <opn:CountryID>US</opn:CountryID>\r\n                            <opn:CountryName>United States of America</opn:CountryName>\r\n                            <opn:CityName>New York</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">40.64</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-73.78</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Destination>\r\n                        <opn:Charges>\r\n                            <opn:Fee>\r\n                                <opn:Currency>USD</opn:Currency>\r\n                                <opn:FeeLocationType>serviceFee</opn:FeeLocationType>\r\n                                <opn:FeeCode>DELIVERY</opn:FeeCode>\r\n                                <opn:FeeName/>\r\n                                <opn:Quantity>100.0</opn:Quantity>\r\n                                <opn:UnitOfMeasure>kg</opn:UnitOfMeasure>\r\n                                <opn:Rate currencyID=\"USD\">30.0</opn:Rate>\r\n                            </opn:Fee>\r\n                        </opn:Charges>\r\n                    </opn:Segment>\r\n                </opn:ConnectionSegments>\r\n            </opn:Connection>\r\n            <opn:OriginLocation>\r\n                <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                <opn:LocationCode>LAX</opn:LocationCode>\r\n                <opn:CountryID>US</opn:CountryID>\r\n                <opn:CountryName>United States of America</opn:CountryName>\r\n                <opn:CityName>Los Angeles</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">33.94</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">-118.41</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:OriginLocation>\r\n            <opn:DestinationLocation>\r\n                <opn:LocationTypeCode>airport</opn:LocationTypeCode>\r\n                <opn:LocationCode>JFK</opn:LocationCode>\r\n                <opn:CountryID>US</opn:CountryID>\r\n                <opn:CountryName>United States of America</opn:CountryName>\r\n                <opn:CityName>New York</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">40.64</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">-73.78</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:DestinationLocation>\r\n            <opn:ValidTo>2019-04-09T12:54:25.425+03:00</opn:ValidTo>\r\n            <opn:Load>\r\n                <opn:NetWeight unitCode=\"kg\">100.0</opn:NetWeight>\r\n                <opn:NetVolumeMeasure unitCode=\"cbm\">1.0</opn:NetVolumeMeasure>\r\n                <opn:TotalChargeableWeight unitCode=\"kg\">100.0</opn:TotalChargeableWeight>\r\n                <opn:Packages>\r\n                    <opn:Package>\r\n                        <opn:PackagingType>Box</opn:PackagingType>\r\n                        <opn:Weight unitCode=\"kg\">100.0</opn:Weight>\r\n                        <opn:Quantity>1.0</opn:Quantity>\r\n                        <opn:Dimensions>\r\n                            <opn:Dimension>\r\n                                <opn:Width unitCode=\"cm\">100.0</opn:Width>\r\n                                <opn:Length unitCode=\"cm\">100.0</opn:Length>\r\n                                <opn:Height unitCode=\"cm\">100.0</opn:Height>\r\n                            </opn:Dimension>\r\n                        </opn:Dimensions>\r\n                        <opn:Density>0.0</opn:Density>\r\n                        <opn:Stackable>true</opn:Stackable>\r\n                    </opn:Package>\r\n                </opn:Packages>\r\n            </opn:Load>\r\n            <opn:PriceIndicator>\r\n                <opn:RequestCurrency>USD</opn:RequestCurrency>\r\n                <opn:RateCurrency>USD</opn:RateCurrency>\r\n                <opn:IncludeOriginPortCharges>false</opn:IncludeOriginPortCharges>\r\n                <opn:IncludeDestinationPortCharges>false</opn:IncludeDestinationPortCharges>\r\n                <opn:ValidTo>2019-04-09T12:54:25.425+03:00</opn:ValidTo>\r\n                <opn:TotalCharge currencyID=\"USD\">30.0</opn:TotalCharge>\r\n            </opn:PriceIndicator>\r\n            <opn:Accessorials/>\r\n        </opn:Quote>\r\n    </opn:Quotes>\r\n</opn:QuotesResponse>\r\n"
+                                FCL:
+                                    value: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<opn:QuotesResponse>\r\n    <opn:MessageHeader>\r\n        <opn:MessageID>48582022-ebff-4986-9923-86930e7347bc</opn:MessageID>\r\n        <opn:RequestID>agx0cmFkZW9zLXRlc3RyFwsSEGNvbW1lcmNlRG9jcy9SRlEYyHkM</opn:RequestID>\r\n        <opn:AuthenticationType>APIKey</opn:AuthenticationType>\r\n    </opn:MessageHeader>\r\n    <opn:BusinessInfo>\r\n        <opn:ServiceName>QUOTE</opn:ServiceName>\r\n        <opn:Parties>\r\n            <opn:Party \r\n                xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ShipperType\">\r\n                <opn:Knownshipper>false</opn:Knownshipper>\r\n            </opn:Party>\r\n            <opn:Party>\r\n                <opn:PartyTypeCode>FW</opn:PartyTypeCode>\r\n                <opn:ID>agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgIC0yAkM</opn:ID>\r\n                <opn:Name>ceva</opn:Name>\r\n                <opn:Contact>\r\n                    <opn:ID>agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgICq_AkM</opn:ID>\r\n                    <opn:Name>admin</opn:Name>\r\n                    <opn:ElectronicMail \r\n                        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ElectronicMailType\">admin1@ceva-uk.com\r\n                    </opn:ElectronicMail>\r\n                </opn:Contact>\r\n            </opn:Party>\r\n        </opn:Parties>\r\n    </opn:BusinessInfo>\r\n    <opn:Quotes>\r\n        <opn:Quote>\r\n            <opn:ReferenceID/>\r\n            <opn:Status>Draft</opn:Status>\r\n            <opn:ShipmentPriorityCode>Standard</opn:ShipmentPriorityCode>\r\n            <opn:TransportMode>FCL</opn:TransportMode>\r\n            <opn:TransportService>port-to-port</opn:TransportService>\r\n            <opn:Connection>\r\n                <opn:ConnectionSegments>\r\n                    <opn:Segment>\r\n                        <opn:TransportMode>FCL</opn:TransportMode>\r\n                        <opn:Origin>\r\n                            <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>CNSHA</opn:LocationCode>\r\n                            <opn:CountryID>CN</opn:CountryID>\r\n                            <opn:CountryName>China</opn:CountryName>\r\n                            <opn:CityName>Shanghai</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">31.234257</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">121.486351</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Origin>\r\n                        <opn:Destination>\r\n                            <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n                            <opn:LocationCode>USSEA</opn:LocationCode>\r\n                            <opn:CountryID>US</opn:CountryID>\r\n                            <opn:CountryName>United States of America</opn:CountryName>\r\n                            <opn:CityName>Seattle, WA</opn:CityName>\r\n                            <opn:LocationCoordinate>\r\n                                <opn:LatitudeDegreesMeasure unitCode=\"DD\">47.6</opn:LatitudeDegreesMeasure>\r\n                                <opn:LongitudeDegreesMeasure unitCode=\"DD\">-122.33</opn:LongitudeDegreesMeasure>\r\n                            </opn:LocationCoordinate>\r\n                        </opn:Destination>\r\n                        <opn:OperatingCarrierCode>MAEU</opn:OperatingCarrierCode>\r\n                        <opn:Charges>\r\n                            <opn:Fee>\r\n                                <opn:Currency>USD</opn:Currency>\r\n                                <opn:FeeLocationType>serviceFee</opn:FeeLocationType>\r\n                                <opn:FeeCode>OCEAN 20'</opn:FeeCode>\r\n                                <opn:FeeName/>\r\n                                <opn:Quantity>1.0</opn:Quantity>\r\n                                <opn:UnitOfMeasure>flat</opn:UnitOfMeasure>\r\n                                <opn:Rate currencyID=\"USD\">900.0</opn:Rate>\r\n                            </opn:Fee>\r\n                            <opn:Fee>\r\n                                <opn:Currency>USD</opn:Currency>\r\n                                <opn:FeeLocationType>serviceFee</opn:FeeLocationType>\r\n                                <opn:FeeCode>O</opn:FeeCode>\r\n                                <opn:FeeName/>\r\n                                <opn:Quantity>1.0</opn:Quantity>\r\n                                <opn:UnitOfMeasure>flat</opn:UnitOfMeasure>\r\n                                <opn:Rate currencyID=\"USD\">100.0</opn:Rate>\r\n                            </opn:Fee>\r\n                        </opn:Charges>\r\n                    </opn:Segment>\r\n                </opn:ConnectionSegments>\r\n            </opn:Connection>\r\n            <opn:OriginLocation>\r\n                <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n                <opn:LocationCode>CNSHA</opn:LocationCode>\r\n                <opn:CountryID>CN</opn:CountryID>\r\n                <opn:CountryName>China</opn:CountryName>\r\n                <opn:CityName>Shanghai</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">31.234257</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">121.486351</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:OriginLocation>\r\n            <opn:DestinationLocation>\r\n                <opn:LocationTypeCode>seaport</opn:LocationTypeCode>\r\n                <opn:LocationCode>USSEA</opn:LocationCode>\r\n                <opn:CountryID>US</opn:CountryID>\r\n                <opn:CountryName>United States of America</opn:CountryName>\r\n                <opn:CityName>Seattle, WA</opn:CityName>\r\n                <opn:LocationCoordinate>\r\n                    <opn:LatitudeDegreesMeasure unitCode=\"DD\">47.6</opn:LatitudeDegreesMeasure>\r\n                    <opn:LongitudeDegreesMeasure unitCode=\"DD\">-122.33</opn:LongitudeDegreesMeasure>\r\n                </opn:LocationCoordinate>\r\n            </opn:DestinationLocation>\r\n            <opn:ValidTo>2019-04-09T15:54:47.526+03:00</opn:ValidTo>\r\n            <opn:Load>\r\n                <opn:NetWeight unitCode=\"kg\">28200.0</opn:NetWeight>\r\n                <opn:Packages>\r\n                    <opn:Package>\r\n                        <opn:PackagingType>Full 20' container (FCL)</opn:PackagingType>\r\n                        <opn:Weight unitCode=\"kg\">28200.0</opn:Weight>\r\n                        <opn:Quantity>1.0</opn:Quantity>\r\n                        <opn:Dimensions>\r\n                            <opn:Dimension>\r\n                                <opn:Width unitCode=\"cm\">235.2</opn:Width>\r\n                                <opn:Length unitCode=\"cm\">571.0</opn:Length>\r\n                                <opn:Height unitCode=\"cm\">238.5</opn:Height>\r\n                            </opn:Dimension>\r\n                        </opn:Dimensions>\r\n                        <opn:Density>0.0</opn:Density>\r\n                        <opn:Stackable>true</opn:Stackable>\r\n                    </opn:Package>\r\n                </opn:Packages>\r\n            </opn:Load>\r\n            <opn:PriceIndicator>\r\n                <opn:RequestCurrency>USD</opn:RequestCurrency>\r\n                <opn:RateCurrency>USD</opn:RateCurrency>\r\n                <opn:IncludeOriginPortCharges>false</opn:IncludeOriginPortCharges>\r\n                <opn:IncludeDestinationPortCharges>false</opn:IncludeDestinationPortCharges>\r\n                <opn:ValidTo>2019-04-09T15:54:47.526+03:00</opn:ValidTo>\r\n                <opn:TotalCharge currencyID=\"USD\">1000.0</opn:TotalCharge>\r\n            </opn:PriceIndicator>\r\n            <opn:Accessorials/>\r\n            <opn:GeneralInformation>Tariff-comment&lt;br&gt;</opn:GeneralInformation>\r\n        </opn:Quote>\r\n    </opn:Quotes>\r\n</opn:QuotesResponse>\r\n"
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/QuotesResponse'
+                            examples:
+                                Air:
+                                    value:
+                                        QuotesResponse:
+                                            BusinessInfo:
+                                                Parties:
+                                                    Party:
+                                                        -
+                                                            Knownshipper: false
+                                                            'xsi:type': ShipperType
+                                                            'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+                                                        -
+                                                            PartyTypeCode: FW
+                                                            ID: >-
+                                                                agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgIC0yAkM
+                                                            Name: ceva
+                                                            Contact:
+                                                                ElectronicMail:
+                                                                    'xsi:type': ElectronicMailType
+                                                                    'xmlns:xsi': >-
+                                                                        http://www.w3.org/2001/XMLSchema-instance
+                                                                    content: admin1@ceva-uk.com
+                                                                ID: >-
+                                                                    agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgICq_AkM
+                                                                Name: admin
+                                                ServiceName: QUOTE
+                                            Quotes:
+                                                Quote:
+                                                    -
+                                                        Status: Draft
+                                                        OriginLocation:
+                                                            CountryID: US
+                                                            CountryName: United States of America
+                                                            LocationCoordinate:
+                                                                LatitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: 33.94
+                                                                LongitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: -118.41
+                                                            LocationTypeCode: airport
+                                                            LocationCode: LAX
+                                                            CityName: Los Angeles
+                                                        Load:
+                                                            TotalChargeableWeight:
+                                                                unitCode: kg
+                                                                content: 100
+                                                            Packages:
+                                                                Package:
+                                                                    Stackable: true
+                                                                    Quantity: 1
+                                                                    Dimensions:
+                                                                        Dimension:
+                                                                            Length:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                            Height:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                            Width:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                    Density: 0
+                                                                    PackagingType: Pallet(s)
+                                                                    Weight:
+                                                                        unitCode: kg
+                                                                        content: 100
+                                                            NetWeight:
+                                                                unitCode: kg
+                                                                content: 100
+                                                            NetVolumeMeasure:
+                                                                unitCode: cbm
+                                                                content: 1
+                                                        ReferenceID: ''
+                                                        TransportService: port-to-port
+                                                        ValidTo: '2019-04-09T16:09:18.642+03:00'
+                                                        PriceIndicator:
+                                                            ValidTo: '2019-04-09T16:09:18.642+03:00'
+                                                            IncludeOriginPortCharges: false
+                                                            IncludeDestinationPortCharges: false
+                                                            TotalCharge:
+                                                                currencyID: USD
+                                                                content: 33
+                                                            RateCurrency: USD
+                                                            RequestCurrency: USD
+                                                        Connection:
+                                                            ConnectionSegments:
+                                                                Segment:
+                                                                    Origin:
+                                                                        CountryID: US
+                                                                        CountryName: United States of America
+                                                                        LocationCoordinate:
+                                                                            LatitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: 33.94
+                                                                            LongitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: -118.41
+                                                                        LocationTypeCode: airport
+                                                                        LocationCode: LAX
+                                                                        CityName: Los Angeles
+                                                                    Destination:
+                                                                        CountryID: US
+                                                                        CountryName: United States of America
+                                                                        LocationCoordinate:
+                                                                            LatitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: 40.64
+                                                                            LongitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: -73.78
+                                                                        LocationTypeCode: airport
+                                                                        LocationCode: JFK
+                                                                        CityName: New York
+                                                                    TransportMode: air
+                                                                    Charges:
+                                                                        Fee:
+                                                                            FeeName: ''
+                                                                            UnitOfMeasure: kg
+                                                                            FeeLocationType: serviceFee
+                                                                            Rate:
+                                                                                currencyID: USD
+                                                                                content: 33
+                                                                            Currency: USD
+                                                                            Quantity: 100
+                                                                            FeeCode: DELIVERY
+                                                        TransportMode: air
+                                                        DestinationLocation:
+                                                            CountryID: US
+                                                            CountryName: United States of America
+                                                            LocationCoordinate:
+                                                                LatitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: 40.64
+                                                                LongitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: -73.78
+                                                            LocationTypeCode: airport
+                                                            LocationCode: JFK
+                                                            CityName: New York
+                                                        ShipmentPriorityCode: Standard
+                                                        Accessorials: ''
+                                                    -
+                                                        Status: Draft
+                                                        OriginLocation:
+                                                            CountryID: US
+                                                            CountryName: United States of America
+                                                            LocationCoordinate:
+                                                                LatitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: 33.94
+                                                                LongitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: -118.41
+                                                            LocationTypeCode: airport
+                                                            LocationCode: LAX
+                                                            CityName: Los Angeles
+                                                        Load:
+                                                            TotalChargeableWeight:
+                                                                unitCode: kg
+                                                                content: 100
+                                                            Packages:
+                                                                Package:
+                                                                    Stackable: true
+                                                                    Quantity: 1
+                                                                    Dimensions:
+                                                                        Dimension:
+                                                                            Length:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                            Height:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                            Width:
+                                                                                unitCode: cm
+                                                                                content: 100
+                                                                    Density: 0
+                                                                    PackagingType: Pallet(s)
+                                                                    Weight:
+                                                                        unitCode: kg
+                                                                        content: 100
+                                                            NetWeight:
+                                                                unitCode: kg
+                                                                content: 100
+                                                            NetVolumeMeasure:
+                                                                unitCode: cbm
+                                                                content: 1
+                                                        ReferenceID: ''
+                                                        TransportService: port-to-port
+                                                        ValidTo: '2019-04-09T16:09:18.659+03:00'
+                                                        PriceIndicator:
+                                                            ValidTo: '2019-04-09T16:09:18.658+03:00'
+                                                            IncludeOriginPortCharges: false
+                                                            IncludeDestinationPortCharges: false
+                                                            TotalCharge:
+                                                                currencyID: USD
+                                                                content: 30
+                                                            RateCurrency: USD
+                                                            RequestCurrency: USD
+                                                        Connection:
+                                                            ConnectionSegments:
+                                                                Segment:
+                                                                    Origin:
+                                                                        CountryID: US
+                                                                        CountryName: United States of America
+                                                                        LocationCoordinate:
+                                                                            LatitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: 33.94
+                                                                            LongitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: -118.41
+                                                                        LocationTypeCode: airport
+                                                                        LocationCode: LAX
+                                                                        CityName: Los Angeles
+                                                                    Destination:
+                                                                        CountryID: US
+                                                                        CountryName: United States of America
+                                                                        LocationCoordinate:
+                                                                            LatitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: 40.64
+                                                                            LongitudeDegreesMeasure:
+                                                                                unitCode: DD
+                                                                                content: -73.78
+                                                                        LocationTypeCode: airport
+                                                                        LocationCode: JFK
+                                                                        CityName: New York
+                                                                    TransportMode: air
+                                                                    Charges:
+                                                                        Fee:
+                                                                            FeeName: ''
+                                                                            UnitOfMeasure: kg
+                                                                            FeeLocationType: serviceFee
+                                                                            Rate:
+                                                                                currencyID: USD
+                                                                                content: 30
+                                                                            Currency: USD
+                                                                            Quantity: 100
+                                                                            FeeCode: DELIVERY
+                                                        TransportMode: air
+                                                        DestinationLocation:
+                                                            CountryID: US
+                                                            CountryName: United States of America
+                                                            LocationCoordinate:
+                                                                LatitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: 40.64
+                                                                LongitudeDegreesMeasure:
+                                                                    unitCode: DD
+                                                                    content: -73.78
+                                                            LocationTypeCode: airport
+                                                            LocationCode: JFK
+                                                            CityName: New York
+                                                        ShipmentPriorityCode: Standard
+                                                        Accessorials: ''
+                                            MessageHeader:
+                                                RequestID: agx0cmFkZW9zLXRlc3RyFwsSEGNvbW1lcmNlRG9jcy9SRlEYg3oM
+                                                MessageID: ''
+                                                AuthenticationType: APIKey
+                                FCL:
+                                    value:
+                                        QuotesResponse:
+                                            BusinessInfo:
+                                                Parties:
+                                                    Party:
+                                                        -
+                                                            Knownshipper: false
+                                                            'xsi:type': ShipperType
+                                                            'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+                                                        -
+                                                            PartyTypeCode: FW
+                                                            ID: >-
+                                                                agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgIC0yAkM
+                                                            Name: ceva
+                                                            Contact:
+                                                                ElectronicMail:
+                                                                    'xsi:type': ElectronicMailType
+                                                                    'xmlns:xsi': >-
+                                                                        http://www.w3.org/2001/XMLSchema-instance
+                                                                    content: admin1@ceva-uk.com
+                                                                ID: >-
+                                                                    agx0cmFkZW9zLXRlc3RyHQsSEHVzZXIvTGVnYWxFbnRpdHkYgICAgICq_AkM
+                                                                Name: admin
+                                                ServiceName: QUOTE
+                                            Quotes:
+                                                Quote:
+                                                    Status: Draft
+                                                    OriginLocation:
+                                                        CountryID: CN
+                                                        CountryName: China
+                                                        LocationCoordinate:
+                                                            LatitudeDegreesMeasure:
+                                                                unitCode: DD
+                                                                content: 31.234257
+                                                            LongitudeDegreesMeasure:
+                                                                unitCode: DD
+                                                                content: 121.486351
+                                                        LocationTypeCode: seaport
+                                                        LocationCode: CNSHA
+                                                        CityName: Shanghai
+                                                    Load:
+                                                        Packages:
+                                                            Package:
+                                                                Stackable: true
+                                                                Quantity: 1
+                                                                Dimensions:
+                                                                    Dimension:
+                                                                        Length:
+                                                                            unitCode: cm
+                                                                            content: 571
+                                                                        Height:
+                                                                            unitCode: cm
+                                                                            content: 238.5
+                                                                        Width:
+                                                                            unitCode: cm
+                                                                            content: 235.2
+                                                                Density: 0
+                                                                PackagingType: Full 20' container (FCL)
+                                                                Weight:
+                                                                    unitCode: kg
+                                                                    content: 28200
+                                                        NetWeight:
+                                                            unitCode: kg
+                                                            content: 28200
+                                                    Connection:
+                                                        ConnectionSegments:
+                                                            Segment:
+                                                                Origin:
+                                                                    CountryID: CN
+                                                                    CountryName: China
+                                                                    LocationCoordinate:
+                                                                        LatitudeDegreesMeasure:
+                                                                            unitCode: DD
+                                                                            content: 31.234257
+                                                                        LongitudeDegreesMeasure:
+                                                                            unitCode: DD
+                                                                            content: 121.486351
+                                                                    LocationTypeCode: seaport
+                                                                    LocationCode: CNSHA
+                                                                    CityName: Shanghai
+                                                                Destination:
+                                                                    CountryID: US
+                                                                    CountryName: United States of America
+                                                                    LocationCoordinate:
+                                                                        LatitudeDegreesMeasure:
+                                                                            unitCode: DD
+                                                                            content: 47.6
+                                                                        LongitudeDegreesMeasure:
+                                                                            unitCode: DD
+                                                                            content: -122.33
+                                                                    LocationTypeCode: seaport
+                                                                    LocationCode: USSEA
+                                                                    CityName: 'Seattle, WA'
+                                                                TransportMode: FCL
+                                                                Charges:
+                                                                    Fee:
+                                                                        -
+                                                                            FeeName: ''
+                                                                            UnitOfMeasure: flat
+                                                                            FeeLocationType: serviceFee
+                                                                            Rate:
+                                                                                currencyID: USD
+                                                                                content: 900
+                                                                            Currency: USD
+                                                                            Quantity: 1
+                                                                            FeeCode: OCEAN 20'
+                                                                        -
+                                                                            FeeName: ''
+                                                                            UnitOfMeasure: flat
+                                                                            FeeLocationType: serviceFee
+                                                                            Rate:
+                                                                                currencyID: USD
+                                                                                content: 100
+                                                                            Currency: USD
+                                                                            Quantity: 1
+                                                                            FeeCode: O
+                                                                OperatingCarrierCode: MAEU
+                                                    ShipmentPriorityCode: Standard
+                                                    Accessorials: ''
+                                                    ReferenceID: ''
+                                                    TransportService: port-to-port
+                                                    ValidTo: '2019-04-09T16:07:19.081+03:00'
+                                                    PriceIndicator:
+                                                        ValidTo: '2019-04-09T16:07:19.081+03:00'
+                                                        IncludeOriginPortCharges: false
+                                                        IncludeDestinationPortCharges: false
+                                                        TotalCharge:
+                                                            currencyID: USD
+                                                            content: 1000
+                                                        RateCurrency: USD
+                                                        RequestCurrency: USD
+                                                    GeneralInformation: Tariff-comment<br>
+                                                    TransportMode: FCL
+                                                    DestinationLocation:
+                                                        CountryID: US
+                                                        CountryName: United States of America
+                                                        LocationCoordinate:
+                                                            LatitudeDegreesMeasure:
+                                                                unitCode: DD
+                                                                content: 47.6
+                                                            LongitudeDegreesMeasure:
+                                                                unitCode: DD
+                                                                content: -122.33
+                                                        LocationTypeCode: seaport
+                                                        LocationCode: USSEA
+                                                        CityName: 'Seattle, WA'
+                                            MessageHeader:
+                                                RequestID: agx0cmFkZW9zLXRlc3RyFwsSEGNvbW1lcmNlRG9jcy9SRlEY-nkM
+                                                MessageID: ''
+                                                AuthenticationType: APIKey
+                '401':
+                    description: |-
+                        Unauthorized, check the appId you are using
+                                
+                    content:
+                        application/xml:
+                            examples:
+                                example 0:
+                                    value: |-
+                                        <?xml version="1.0" encoding="UTF-8"?>
+                                        <opn:ErrorResponse
+                                          xmlns:opn="www.openfreight.org"
+                                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                          xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                          <opn:MessageHeader>
+                                            <opn:MessageID>XXXXX</opn:MessageID>
+                                            <opn:ConversationID>XXXXX</opn:ConversationID>
+                                            <opn:RequestID>XXXXX</opn:RequestID>
+                                            <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                          </opn:MessageHeader>
+                                          <opn:BusinessInfo>
+                                            <opn:Station>XXXXX</opn:Station>
+                                            <opn:ServiceName>XXXXX</opn:ServiceName>
+                                            <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                            <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                            <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                          </opn:BusinessInfo>
+                                          <opn:Status>XXXXX</opn:Status>
+                                          <opn:Message>XXXXX</opn:Message>
+                                          <opn:AdditionalInformation>
+                                            <opn:Information>
+                                              <opn:Code>XXXXX</opn:Code>
+                                              <opn:Reason>XXXXX</opn:Reason>
+                                            </opn:Information>
+                                          </opn:AdditionalInformation>
+                                        </opn:ErrorResponse>
+                '440':
+                    description: |-
+                        Invalid incoming request: Not supported bulk requests,
+                                  Not supported Origin or Destination type, Not supported enum
+                                  value,
+                                  Not supported Origin or Destination in specific mode
+                                
+                    content:
+                        application/xml:
+                            examples:
+                                example 0:
+                                    value: |-
+                                        <?xml version="1.0" encoding="UTF-8"?>
+                                        <opn:ErrorResponse
+                                          xmlns:opn="www.openfreight.org"
+                                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                          xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                          <opn:MessageHeader>
+                                            <opn:MessageID>XXXXX</opn:MessageID>
+                                            <opn:ConversationID>XXXXX</opn:ConversationID>
+                                            <opn:RequestID>XXXXX</opn:RequestID>
+                                            <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                          </opn:MessageHeader>
+                                          <opn:BusinessInfo>
+                                            <opn:Station>XXXXX</opn:Station>
+                                            <opn:ServiceName>XXXXX</opn:ServiceName>
+                                            <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                            <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                            <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                          </opn:BusinessInfo>
+                                          <opn:Status>XXXXX</opn:Status>
+                                          <opn:Message>XXXXX</opn:Message>
+                                          <opn:AdditionalInformation>
+                                            <opn:Information>
+                                              <opn:Code>XXXXX</opn:Code>
+                                              <opn:Reason>XXXXX</opn:Reason>
+                                            </opn:Information>
+                                          </opn:AdditionalInformation>
+                                        </opn:ErrorResponse>
+                '540':
+                    description: Unexpected Error
+                    content:
+                        application/xml:
+                            examples:
+                                example 0:
+                                    value: |-
+                                        <?xml version="1.0" encoding="UTF-8"?>
+                                        <opn:ErrorResponse
+                                          xmlns:opn="www.openfreight.org"
+                                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                          xsi:schemaLocation="www.openfreight.org ErrorResponse.xsd">
+                                          <opn:MessageHeader>
+                                            <opn:MessageID>XXXXX</opn:MessageID>
+                                            <opn:ConversationID>XXXXX</opn:ConversationID>
+                                            <opn:RequestID>XXXXX</opn:RequestID>
+                                            <opn:AuthenticationType other="string">Basic</opn:AuthenticationType>
+                                          </opn:MessageHeader>
+                                          <opn:BusinessInfo>
+                                            <opn:Station>XXXXX</opn:Station>
+                                            <opn:ServiceName>XXXXX</opn:ServiceName>
+                                            <opn:ServiceMethod>XXXXX</opn:ServiceMethod>
+                                            <opn:ServiceComment>XXXXX</opn:ServiceComment>
+                                            <opn:MessageDateTime>XXXXX</opn:MessageDateTime>
+                                          </opn:BusinessInfo>
+                                          <opn:Status>XXXXX</opn:Status>
+                                          <opn:Message>XXXXX</opn:Message>
+                                          <opn:AdditionalInformation>
+                                            <opn:Information>
+                                              <opn:Code>XXXXX</opn:Code>
+                                              <opn:Reason>XXXXX</opn:Reason>
+                                            </opn:Information>
+                                          </opn:AdditionalInformation>
+                                        </opn:ErrorResponse>
+            x-camelContextId: OpenFreightQuoteRequest
+            x-routeId: 'Handle API_AGGREGATOR:GG_Api_OPEN_FREIGHT_QUOTE_REQUEST Post Request'
+            x-code-samples:
+                -
+                    lang: Curl
+                    source: >-
+                        curl -X POST https://integration.freightos.com/api/v2/quotesRequest -H 'appId:To get
+                        your appId please contact this email: support-integration@freightos.com'
+components:
+    schemas:
+        DimensionType:
+            type: object
+            properties:
+                width:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: >-
+                        Width determined by measuring an object along with the unit of measure specified or
+                        implied in the attributes of data type - UOM could be cm , ft
+                    xml:
+                        name: Width
+                length:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: >-
+                        Length determined by measuring an object along with the unit of measure specified or
+                        implied in the attributes of data type - UOM could be cm , ft
+                    xml:
+                        name: Length
+                height:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: >-
+                        Width determined by measuring an object along with the unit of measure specified or
+                        implied in the attributes of data type - UOM could be cm , ft
+                    xml:
+                        name: Height
+                description:
+                    $ref: '#/components/schemas/TextType'
+                    description: |
+                        f more than one dimension type is used such as Internal Dimension
+                        External Dimension
+                        [e.g. PGA
+                        External dimensions 244 x 590
+                        Internal dimensions 228 x 590
+                    xml:
+                        name: Description
+        EventDate:
+            required:
+                - scheduledDateTime
+            type: object
+            properties:
+                actualDateTime:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: ActualDateTime
+                scheduledDateTime:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: ScheduledDateTime
+        HazardousMaterialType:
+            type: object
+            properties:
+                hazardClassID:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        Classification of dangerous goods is broken down into classes according to the type of
+                        danger materials or items present.
+                         Such as (Explosives,Gases,Flammable
+                    xml:
+                        name: HazardClassID
+                description:
+                    $ref: '#/components/schemas/TextType'
+                    description: Name of Class
+                    xml:
+                        name: Description
+                packingInstruction:
+                    $ref: '#/components/schemas/InstructionType'
+                    description: Free text to instruct the carrier how to pack and handle the material
+                    xml:
+                        name: PackingInstruction
+                toxicityZoneCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Hazard Zones A through D
+                    xml:
+                        name: ToxicityZoneCode
+                temperature:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Recommendation for transportation temperature
+                    xml:
+                        name: Temperature
+        EventType:
+            type: object
+            properties:
+                eventDate:
+                    $ref: '#/components/schemas/EventDate'
+                    description: |
+                        Describes the Event Dates
+                        1-Actual
+                        2-Scheduled
+                    xml:
+                        name: EventDate
+                party:
+                    $ref: '#/components/schemas/PartyType'
+                    description: Describe the actor doing the event using party type
+                    xml:
+                        name: Party
+        TransportationServiceType:
+            type: object
+            properties:
+                value:
+                    type: string
+                listID:
+                    description: The identification of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyID:
+                    description: An agency that maintains one or more code lists
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyName:
+                    description: The name of the agency that maintains the code list
+                    type: string
+                    xml:
+                        attribute: true
+                listName:
+                    description: The name of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listVersionID:
+                    description: The version of the code list
+                    type: string
+                    xml:
+                        attribute: true
+                name:
+                    description: The textual equivalent of the code content
+                    type: string
+                    xml:
+                        attribute: true
+                languageID:
+                    description: The identifier of the language used in the corresponding text string
+                    type: string
+                    xml:
+                        attribute: true
+                listURI:
+                    description: The Uniform Resource Identifier that identifies where the code list is located
+                    type: string
+                    xml:
+                        attribute: true
+                listSchemeURI:
+                    description: The Uniform Resource Identifier that identifies where the code list scheme is located
+                    type: string
+                    xml:
+                        attribute: true
+        TelephoneType:
+            type: object
+            properties:
+                value:
+                    type: string
+                languageID:
+                    description: The identifier of the language used in the corresponding text string (e.g EN)
+                    type: string
+                    xml:
+                        attribute: true
+        BusinessInfoType:
+            type: object
+            properties:
+                station:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Station of the contract
+                    xml:
+                        name: Station
+                serviceName:
+                    $ref: '#/components/schemas/TextType'
+                    description: |
+                        The main services are
+                        Quote Request
+                        Rate
+                        Capacity
+                        Booking
+                        Tracking
+                    xml:
+                        name: ServiceName
+                serviceMethod:
+                    $ref: '#/components/schemas/TextType'
+                    description: >-
+                        This might be used to indicate the type of transaction (e.g. in the Booking service we
+                        have book, cancel and update as the main methods )
+                    xml:
+                        name: ServiceMethod
+                serviceComment:
+                    $ref: '#/components/schemas/TextType'
+                    description: Additional information about the service
+                    xml:
+                        name: ServiceComment
+                messageDateTime:
+                    format: date-time
+                    description: |
+                        The request datetime 
+                        The response datetime
+                    type: string
+                    xml:
+                        name: MessageDateTime
+                parties:
+                    $ref: '#/components/schemas/Parties'
+                    description: >
+                        This is used to specify the Consignor, Consignee and other parties involved in the
+                        transaction such as "bill and ship to", "Bill of lading recipient","party to be
+                        billed", 
+
+
+                        If known shipper element is required, please use a party of type Shipper
+
+                        ShipperType
+                    xml:
+                        name: Parties
+        IDType:
+            type: object
+            properties:
+                value:
+                    type: string
+                schemeID:
+                    description: The identification of the identification scheme
+                    type: string
+                    xml:
+                        attribute: true
+                schemeName:
+                    description: The name of the identification scheme
+                    type: string
+                    xml:
+                        attribute: true
+                schemeAgencyID:
+                    description: The identification of the agency that maintains the identification scheme
+                    type: string
+                    xml:
+                        attribute: true
+                schemeAgencyName:
+                    description: The name of the agency that maintains the identification scheme
+                    type: string
+                    xml:
+                        attribute: true
+                schemeVersionID:
+                    description: The version of the identification scheme
+                    type: string
+                    xml:
+                        attribute: true
+                schemeDataURI:
+                    description: >-
+                        The Uniform Resource Identifier that identifies where the identification scheme data
+                        is located
+                    type: string
+                    xml:
+                        attribute: true
+                schemeURI:
+                    description: >-
+                        The Uniform Resource Identifier that identifies where the identification scheme is
+                        located
+                    type: string
+                    xml:
+                        attribute: true
+        EstimatedTransitTimes:
+            type: object
+            properties:
+                estimatedTransitTime:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/EstimatedTransitTimeType'
+                        xml:
+                            name: EstimatedTransitTime
+                    xml:
+                        name: EstimatedTransitTime
+        TermsType:
+            type: object
+            properties:
+                paymentTerm:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Payment Terms:: prepaid,collect, third party'
+                    xml:
+                        name: PaymentTerm
+                methodOfPayment:
+                    $ref: '#/components/schemas/TextType'
+                    description: 'Method of payment:: cash, checks, debit cards'
+                    xml:
+                        name: MethodOfPayment
+                deliveryTerm:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'INCOTERM::EXW (Ex Works),FCA (Free Carrier),FOB (Free on Board),...'
+                    xml:
+                        name: DeliveryTerm
+        AccessorialType:
+            type: object
+            properties:
+                scope:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Pickup,Delivery,General'
+                    xml:
+                        name: Scope
+                name:
+                    $ref: '#/components/schemas/TextType'
+                    description: Description of the Accessorial
+                    xml:
+                        name: Name
+                value:
+                    $ref: '#/components/schemas/TextType'
+                    description: '1 for selected, or n where n>1 for countable accessorials'
+                    xml:
+                        name: Value
+        SpecialHandlingCodes:
+            required:
+                - code
+            type: object
+            properties:
+                code:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/CodeType'
+                        xml:
+                            name: Code
+                    xml:
+                        name: Code
+        Parties:
+            required:
+                - party
+            type: object
+            properties:
+                party:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PartyType'
+                        xml:
+                            name: Party
+                    xml:
+                        name: Party
+        ShipmentType:
+            type: object
+            properties:
+                shipmentDirection:
+                    $ref: '#/components/schemas/TextType'
+                    description: Export/Import indicator
+                    xml:
+                        name: ShipmentDirection
+                    example: Import
+                transportMode:
+                    $ref: '#/components/schemas/TransportationModeType'
+                    description: 'For example: LCL, FCL, LTL, FTL, Air, Rail, Express, Barge, RoRo, AirSea, BreakBulk'
+                    xml:
+                        name: TransportMode
+                shipmentSecured:
+                    type: boolean
+                    xml:
+                        name: ShipmentSecured
+                transportService:
+                    $ref: '#/components/schemas/TransportationServiceType'
+                    description: >-
+                        Indicates the routing information between the origin point and destination point:
+                        door-to-door, port-to-port
+                    xml:
+                        name: TransportService
+                shipmentPriorityCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Indicates the booking service type required : standard; Express or time-definite'
+                    xml:
+                        name: ShipmentPriorityCode
+                originLocation:
+                    $ref: '#/components/schemas/LocationType'
+                    description: >-
+                        The Origin location could be a port, zipcode or address. 
+
+                        For airport use IATA code; for seaport use UNCODE (5-letters), for address use
+                        structured address format.
+                         For airlines the location type is by default "Airport". 
+                        For other types of vehicles (Vessel or Truck) a location type could be anyone of the
+                        following list:"Seaport", "Freight Terminal", "Rail Station"
+                    xml:
+                        name: OriginLocation
+                destinationLocation:
+                    $ref: '#/components/schemas/LocationType'
+                    description: >-
+                        The Destination location could be a port, zipcode or address. For air port use IATA
+                        code; 
+
+                        for seaport use UNCODE (5-letters), for address use structured address format
+                    xml:
+                        name: DestinationLocation
+                pickupEvent:
+                    $ref: '#/components/schemas/EventType'
+                    description: |
+                        Provides information about the pickup event
+                        Pickup dates (actual and estimated)
+                        and the party doing the pickup
+                    xml:
+                        name: PickupEvent
+                deliveryEvent:
+                    $ref: '#/components/schemas/EventType'
+                    description: |
+                        Provides information about the delivery event
+                        Delivery dates (actual and estimated)
+                        and the party doing the pickup
+                    xml:
+                        name: DeliveryEvent
+                timeOfAvailability:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: TimeOfAvailability
+                latestAcceptanceDate:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: LatestAcceptanceDate
+                load:
+                    $ref: '#/components/schemas/UnitLoadType'
+                    description: >-
+                        Provides the information about the actual unit load to be transported and contains
+                        information about the totals and information about each item transported (packages)
+                    xml:
+                        name: Load
+                pricePreference:
+                    $ref: '#/components/schemas/PricePreferenceType'
+                    description: >-
+                        Preferred currency for the Consumer and a holder for the rate currency when it is
+                        returned from the supplier
+                    xml:
+                        name: PricePreference
+                connection:
+                    $ref: '#/components/schemas/ConnectionType'
+                    description: Maximum number of segments returned per route if specified.
+                    xml:
+                        name: Connection
+                insuranceValueAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Provides the information about the declared insurance value of the shipment
+                    xml:
+                        name: InsuranceValueAmount
+                declaredCustomsValueAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Provides the information about the declared customs value of the shipment
+                    xml:
+                        name: DeclaredCustomsValueAmount
+                productCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        The code of the commodity or goods used to filter the routes that only support these
+                        Goods, items, commodities and products are easily co-located in a single paragraph
+                        describing the conditions and constraints needed before, during and after moving the
+                        goods from one place to another.specific products.
+                         If product is not selected then the response returns all routes with available space and supported products
+                    xml:
+                        name: ProductCode
+                specialHandlingCodes:
+                    $ref: '#/components/schemas/SpecialHandlingCodes'
+                    description: >-
+                        Used to filter the routes with flights that do not support the specified special
+                        handling codes (SPLs). For example cargo aircraft only
+                    xml:
+                        name: SpecialHandlingCodes
+                terms:
+                    $ref: '#/components/schemas/TermsType'
+                    description: 'Conditions of payment '
+                    xml:
+                        name: Terms
+                commodityClassification:
+                    $ref: '#/components/schemas/CommodityClassification'
+                    xml:
+                        name: CommodityClassification
+                accessorials:
+                    $ref: '#/components/schemas/Accessorials'
+                    description: |-
+                        The scope specify if the accessorial is applied at 
+                        (1) origin 
+                        (2) destination or 
+                        (3) Generic.
+                    xml:
+                        name: Accessorials
+                generalInformation:
+                    $ref: '#/components/schemas/TextType'
+                    description: Additional information
+                    xml:
+                        name: GeneralInformation
+                condition:
+                    $ref: '#/components/schemas/ConditionType'
+                    description: Additional information about conditions
+                    xml:
+                        name: Condition
+                additionalInformation:
+                    $ref: '#/components/schemas/AdditionalInformation'
+                    description: Use a key value additional information if needed.
+                    xml:
+                        name: AdditionalInformation
+        CountryIDType:
+            type: object
+            properties:
+                value:
+                    enum:
+                        - AD
+                        - AE
+                        - AF
+                        - AG
+                        - AI
+                        - AL
+                        - AM
+                        - AO
+                        - AQ
+                        - AR
+                        - AS
+                        - AT
+                        - AU
+                        - AW
+                        - AX
+                        - AZ
+                        - BA
+                        - BB
+                        - BD
+                        - BE
+                        - BF
+                        - BG
+                        - BH
+                        - BI
+                        - BJ
+                        - BL
+                        - BM
+                        - BN
+                        - BO
+                        - BQ
+                        - BR
+                        - BS
+                        - BT
+                        - BV
+                        - BW
+                        - BY
+                        - BZ
+                        - CA
+                        - CC
+                        - CD
+                        - CF
+                        - CG
+                        - CH
+                        - CI
+                        - CK
+                        - CL
+                        - CM
+                        - CN
+                        - CO
+                        - CR
+                        - CU
+                        - CV
+                        - CW
+                        - CX
+                        - CY
+                        - CZ
+                        - DE
+                        - DJ
+                        - DK
+                        - DM
+                        - DO
+                        - DZ
+                        - EC
+                        - EE
+                        - EG
+                        - EH
+                        - ER
+                        - ES
+                        - ET
+                        - FI
+                        - FJ
+                        - FK
+                        - FM
+                        - FO
+                        - FR
+                        - GA
+                        - GB
+                        - GD
+                        - GE
+                        - GF
+                        - GG
+                        - GH
+                        - GI
+                        - GL
+                        - GM
+                        - GN
+                        - GP
+                        - GQ
+                        - GR
+                        - GS
+                        - GT
+                        - GU
+                        - GW
+                        - GY
+                        - HK
+                        - HM
+                        - HN
+                        - HR
+                        - HT
+                        - HU
+                        - ID
+                        - IE
+                        - IL
+                        - IM
+                        - IN
+                        - IO
+                        - IQ
+                        - IR
+                        - IS
+                        - IT
+                        - JE
+                        - JM
+                        - JO
+                        - JP
+                        - KE
+                        - KG
+                        - KH
+                        - KI
+                        - KM
+                        - KN
+                        - KP
+                        - KR
+                        - KW
+                        - KY
+                        - KZ
+                        - LA
+                        - LB
+                        - LC
+                        - LI
+                        - LK
+                        - LR
+                        - LS
+                        - LT
+                        - LU
+                        - LV
+                        - LY
+                        - MA
+                        - MC
+                        - MD
+                        - ME
+                        - MF
+                        - MG
+                        - MH
+                        - MK
+                        - ML
+                        - MM
+                        - MN
+                        - MO
+                        - MP
+                        - MQ
+                        - MR
+                        - MS
+                        - MT
+                        - MU
+                        - MV
+                        - MW
+                        - MX
+                        - MY
+                        - MZ
+                        - NA
+                        - NC
+                        - NE
+                        - NF
+                        - NG
+                        - NI
+                        - NL
+                        - 'NO'
+                        - NP
+                        - NR
+                        - NU
+                        - NZ
+                        - OM
+                        - PA
+                        - PE
+                        - PF
+                        - PG
+                        - PH
+                        - PK
+                        - PL
+                        - PM
+                        - PN
+                        - PR
+                        - PS
+                        - PT
+                        - PW
+                        - PY
+                        - QA
+                        - RE
+                        - RO
+                        - RS
+                        - RU
+                        - RW
+                        - SA
+                        - SB
+                        - SC
+                        - SD
+                        - SE
+                        - SG
+                        - SH
+                        - SI
+                        - SJ
+                        - SK
+                        - SL
+                        - SM
+                        - SN
+                        - SO
+                        - SR
+                        - SS
+                        - ST
+                        - SV
+                        - SX
+                        - SY
+                        - SZ
+                        - TC
+                        - TD
+                        - TF
+                        - TG
+                        - TH
+                        - TJ
+                        - TK
+                        - TL
+                        - TM
+                        - TN
+                        - TO
+                        - TR
+                        - TT
+                        - TV
+                        - TW
+                        - TZ
+                        - UA
+                        - UG
+                        - UM
+                        - US
+                        - UY
+                        - UZ
+                        - VA
+                        - VC
+                        - VE
+                        - VG
+                        - VI
+                        - VN
+                        - VU
+                        - WF
+                        - WS
+                        - YE
+                        - YT
+                        - ZA
+                        - ZM
+                        - ZW
+                    type: string
+                schemeID:
+                    type: string
+                    xml:
+                        attribute: true
+                schemeAgencyID:
+                    type: string
+                    xml:
+                        attribute: true
+                schemeVersionID:
+                    type: string
+                    xml:
+                        attribute: true
+        LocationCoordinate:
+            required:
+                - coordinateSystemCode
+                - latitudeDegreesMeasure
+                - latitudeMinutesMeasure
+                - longitudeDegreesMeasure
+                - longitudeMinutesMeasure
+            type: object
+            properties:
+                coordinateSystemCode:
+                    $ref: '#/components/schemas/CodeType'
+                    xml:
+                        name: CoordinateSystemCode
+                latitudeDegreesMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: LatitudeDegreesMeasure
+                latitudeMinutesMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: LatitudeMinutesMeasure
+                longitudeDegreesMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: LongitudeDegreesMeasure
+                longitudeMinutesMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: LongitudeMinutesMeasure
+        Packages:
+            type: object
+            properties:
+                package:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PackageType'
+        PackageType:
+            type: object
+            properties:
+                packagingType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: The code in Airline cargo indicates if the load is bulk or containerized (ULD)
+                    xml:
+                        name: PackagingType
+                weight:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: Weight
+                chargeableWeightMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: |
+                        The chargeable weight is whichever of the following is greater:
+                        The gross weight (including the product, packaging, pallet, etc.), or
+                        The volumetric weight
+                    xml:
+                        name: ChargeableWeightMeasure
+                quantity:
+                    $ref: '#/components/schemas/QuantityType'
+                    description: Number of pieces
+                    xml:
+                        name: Quantity
+                freightClass:
+                    $ref: '#/components/schemas/TextType'
+                    description: Standardized Freight class value
+                    xml:
+                        name: FreightClass
+                dimensions:
+                    $ref: '#/components/schemas/Dimensions'
+                    description: Used to calculate the Volumetric Weight
+                    xml:
+                        name: Dimensions
+                density:
+                    format: double
+                    description: Cubage of a cargo divided by its weight
+                    type: number
+                    xml:
+                        name: Density
+                stackable:
+                    description: For fragile and non stackable stackable is false
+                    type: boolean
+                    xml:
+                        name: Stackable
+                dangerousGood:
+                    description: >-
+                        Indicator if the item is dangerous. If true the information should be provided in the
+                        hazardous information
+                    type: boolean
+                    xml:
+                        name: DangerousGood
+                uld:
+                    $ref: '#/components/schemas/ULDType'
+                    description: Unit Load Device
+                    xml:
+                        name: ULD
+                turnable:
+                    description: Is the shipment turnable?
+                    type: boolean
+                    xml:
+                        name: Turnable
+                hazardousInfo:
+                    $ref: '#/components/schemas/HazardousMaterialType'
+                    description: Detailed Information about the dangerous goods
+                    xml:
+                        name: HazardousInfo
+                handlingInstructions:
+                    $ref: '#/components/schemas/InstructionType'
+                    description: Parent tag to describe how goods should be handled
+                    xml:
+                        name: HandlingInstructions
+                declaredValue:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Shipment declared value
+                    xml:
+                        name: DeclaredValue
+                transportTemperature:
+                    description: Indicator of preferred temperature of transportation
+                    type: boolean
+                    xml:
+                        name: TransportTemperature
+                overDimensionIndicator:
+                    description: Is an dimension shipment
+                    type: boolean
+                    xml:
+                        name: OverDimensionIndicator
+                overWeightIndicator:
+                    description: Is an overweight shipment
+                    type: boolean
+                    xml:
+                        name: OverWeightIndicator
+        AuthenticationType:
+            type: object
+            properties:
+                value:
+                    enum:
+                        - BASIC
+                        - API_KEY
+                        - O_AUTH
+                        - X_509
+                        - EXTENSION
+                        - PUBLIC
+                    type: string
+                other:
+                    type: string
+                    xml:
+                        attribute: true
+        ConnectionType:
+            type: object
+            properties:
+                numberOfConnections:
+                    description: Number of segments
+                    type: integer
+                    xml:
+                        name: NumberOfConnections
+                transitTime:
+                    $ref: '#/components/schemas/TransitTimeType'
+                    description: >-
+                        Estimated Date of Delivery  based on the time counted from the moment when a shipment
+                        leaves the place of origin until it reaches the destination location
+                    xml:
+                        name: TransitTime
+                connectionSegments:
+                    $ref: '#/components/schemas/ConnectionSegments'
+                    xml:
+                        name: ConnectionSegments
+        PricePreferenceType:
+            type: object
+            properties:
+                requestCurrency:
+                    $ref: '#/components/schemas/CurrencyCodeType'
+                    description: Preferred currency for the Consumer
+                    xml:
+                        name: RequestCurrency
+                rateCurrency:
+                    $ref: '#/components/schemas/CurrencyCodeType'
+                    description: The currency of the Rate from the supplier
+                    xml:
+                        name: RateCurrency
+                rateType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: '[e.g. Market , promotion ,...]'
+                    xml:
+                        name: RateType
+                promotionCode:
+                    $ref: '#/components/schemas/TextType'
+                    description: Alphanumeric promotion code
+                    xml:
+                        name: PromotionCode
+                rateUnitOfMeasure:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Rate unit of measure (e.g kg, per shipment)'
+                    xml:
+                        name: RateUnitOfMeasure
+                responseTime:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Time to get response on the specified request
+                    xml:
+                        name: ResponseTime
+                discountAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Amount to be discounted from offered charge
+                    xml:
+                        name: DiscountAmount
+                proposedRate:
+                    $ref: '#/components/schemas/AmountType'
+                    description: New preferred Rate for negotiation
+                    xml:
+                        name: ProposedRate
+                discountPercent:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Percent of discount from offered charge
+                    xml:
+                        name: DiscountPercent
+                allInIndicator:
+                    description: Boolean to indicate additional charges to be included in the main fee
+                    type: boolean
+                    xml:
+                        name: AllInIndicator
+        CommodityType:
+            type: object
+            properties:
+                commodityCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: The harmonized international commodity code
+                    xml:
+                        name: CommodityCode
+                description:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Description of commodity Category
+                    xml:
+                        name: Description
+        TextType:
+            type: object
+            properties:
+                value:
+                    type: string
+                languageID:
+                    description: The identifier of the language used in the corresponding text string (e.g EN)
+                    type: string
+                    xml:
+                        attribute: true
+        CommodityClassification:
+            required:
+                - commodityClass
+            type: object
+            properties:
+                commodityClass:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/CommodityClassificationType'
+                        xml:
+                            name: CommodityClass
+                    xml:
+                        name: CommodityClass
+        QuantityType:
+            type: object
+            properties:
+                value:
+                    format: double
+                    type: number
+                unitCode:
+                    type: string
+                    xml:
+                        attribute: true
+        AmountType:
+            type: object
+            properties:
+                value:
+                    format: double
+                    type: number
+                currencyID:
+                    description: The identifier of the currency used in the corresponding value (e.g USD)
+                    enum:
+                        - AED
+                        - AFN
+                        - ALL
+                        - AMD
+                        - ANG
+                        - AOA
+                        - ARS
+                        - AUD
+                        - AWG
+                        - AZN
+                        - BAM
+                        - BBD
+                        - BDT
+                        - BGN
+                        - BHD
+                        - BIF
+                        - BMD
+                        - BND
+                        - BOB
+                        - BOV
+                        - BRL
+                        - BSD
+                        - BTN
+                        - BWP
+                        - BYR
+                        - BZD
+                        - CAD
+                        - CDF
+                        - CHE
+                        - CHF
+                        - CHW
+                        - CLF
+                        - CLP
+                        - CNY
+                        - COP
+                        - COU
+                        - CRC
+                        - CUC
+                        - CUP
+                        - CVE
+                        - CZK
+                        - DJF
+                        - DKK
+                        - DOP
+                        - DZD
+                        - EEK
+                        - EGP
+                        - ERN
+                        - ETB
+                        - EUR
+                        - FJD
+                        - FKP
+                        - GBP
+                        - GEL
+                        - GHS
+                        - GIP
+                        - GMD
+                        - GNF
+                        - GTQ
+                        - GWP
+                        - GYD
+                        - HKD
+                        - HNL
+                        - HRK
+                        - HTG
+                        - HUF
+                        - IDR
+                        - ILS
+                        - INR
+                        - IQD
+                        - IRR
+                        - ISK
+                        - JMD
+                        - JOD
+                        - JPY
+                        - KES
+                        - KGS
+                        - KHR
+                        - KMF
+                        - KPW
+                        - KRW
+                        - KWD
+                        - KYD
+                        - KZT
+                        - LAK
+                        - LBP
+                        - LKR
+                        - LRD
+                        - LSL
+                        - LTL
+                        - LVL
+                        - LYD
+                        - MAD
+                        - MDL
+                        - MGA
+                        - MKD
+                        - MMK
+                        - MNT
+                        - MOP
+                        - MRO
+                        - MUR
+                        - MVR
+                        - MWK
+                        - MXN
+                        - MXV
+                        - MYR
+                        - MZN
+                        - NAD
+                        - NGN
+                        - NIO
+                        - NOK
+                        - NPR
+                        - NZD
+                        - OMR
+                        - PAB
+                        - PEN
+                        - PGK
+                        - PHP
+                        - PKR
+                        - PLN
+                        - PYG
+                        - QAR
+                        - RON
+                        - RSD
+                        - RUB
+                        - RWF
+                        - SAR
+                        - SBD
+                        - SCR
+                        - SDG
+                        - SEK
+                        - SGD
+                        - SHP
+                        - SLL
+                        - SOS
+                        - SRD
+                        - STD
+                        - SVC
+                        - SYP
+                        - SZL
+                        - THB
+                        - TJS
+                        - TMT
+                        - TND
+                        - TOP
+                        - TRY
+                        - TTD
+                        - TWD
+                        - TZS
+                        - UAH
+                        - UGX
+                        - USD
+                        - USN
+                        - USS
+                        - UYI
+                        - UYU
+                        - UZS
+                        - VEF
+                        - VND
+                        - VUV
+                        - WST
+                        - XAF
+                        - XAG
+                        - XAU
+                        - XBA
+                        - XBB
+                        - XBC
+                        - XBD
+                        - XCD
+                        - XDR
+                        - XFU
+                        - XOF
+                        - XPD
+                        - XPF
+                        - XPT
+                        - XTS
+                        - XXX
+                        - YER
+                        - ZAR
+                        - ZMK
+                        - ZWL
+                    type: string
+                    xml:
+                        attribute: true
+        AdditionalPropertyType:
+            required:
+                - key
+                - value
+            type: object
+            properties:
+                key:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Key
+                value:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Value
+        UnitLoadType:
+            type: object
+            properties:
+                allotmentID:
+                    $ref: '#/components/schemas/IDType'
+                    xml:
+                        name: AllotmentID
+                product:
+                    $ref: '#/components/schemas/CodeType'
+                    xml:
+                        name: Product
+                netNetWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: NetNetWeight
+                netWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: The weight of the goods including weight of packaging and transport equipment
+                    xml:
+                        name: NetWeight
+                netVolumeMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: The weight of the goods net of packaging and transport equipment
+                    xml:
+                        name: NetVolumeMeasure
+                totalChargeableWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Total chargeable for the shipment
+                    xml:
+                        name: TotalChargeableWeight
+                totalQuantity:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: 'number of Unit Loads [ containers, ULD''s, pallets,..]'
+                    xml:
+                        name: TotalQuantity
+                totalGrossVolumeMeasure:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: The total volume of the goods in a shipment plus packaging
+                    xml:
+                        name: TotalGrossVolumeMeasure
+                hazardousInfo:
+                    $ref: '#/components/schemas/HazardousInfo'
+                    description: Information about Hazardous packages only if dangerous good
+                    xml:
+                        name: HazardousInfo
+                packages:
+                    $ref: '#/components/schemas/Packages'
+                    description: Shipping units
+                    xml:
+                        name: Packages
+                commodity:
+                    $ref: '#/components/schemas/CommodityType'
+                    description: Commodity Classification Group
+                    xml:
+                        name: Commodity
+        ConditionType:
+            type: object
+            properties:
+                condition:
+                    $ref: '#/components/schemas/TextType'
+                    description: Free text condition
+                    xml:
+                        name: Condition
+                conditionURI:
+                    description: URI to Rate Conditions
+                    type: string
+                    xml:
+                        name: ConditionURI
+        CommodityClassificationType:
+            required:
+                - classificationCode
+            type: object
+            properties:
+                classificationCode:
+                    $ref: '#/components/schemas/CodeType'
+                    xml:
+                        name: ClassificationCode
+                name:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Name
+        TransportationModeType:
+            type: object
+            properties:
+                value:
+                    type: string
+                listID:
+                    description: The identification of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyID:
+                    description: An agency that maintains one or more code lists
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyName:
+                    description: The name of the agency that maintains the code list
+                    type: string
+                    xml:
+                        attribute: true
+                listName:
+                    description: The name of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listVersionID:
+                    description: The version of the code list
+                    type: string
+                    xml:
+                        attribute: true
+                name:
+                    description: The textual equivalent of the code content
+                    type: string
+                    xml:
+                        attribute: true
+                languageID:
+                    description: The identifier of the language used in the corresponding text string
+                    type: string
+                    xml:
+                        attribute: true
+                listURI:
+                    description: The Uniform Resource Identifier that identifies where the code list is located
+                    type: string
+                    xml:
+                        attribute: true
+                listSchemeURI:
+                    description: The Uniform Resource Identifier that identifies where the code list scheme is located
+                    type: string
+                    xml:
+                        attribute: true
+        MeasureType:
+            type: object
+            properties:
+                value:
+                    format: double
+                    type: number
+                unitCode:
+                    description: 'The type of unit of measure (e.g kg, cm)'
+                    type: string
+                    xml:
+                        attribute: true
+        CurrencyCodeType:
+            type: object
+            properties:
+                value:
+                    enum:
+                        - AED
+                        - AFN
+                        - ALL
+                        - AMD
+                        - ANG
+                        - AOA
+                        - ARS
+                        - AUD
+                        - AWG
+                        - AZN
+                        - BAM
+                        - BBD
+                        - BDT
+                        - BGN
+                        - BHD
+                        - BIF
+                        - BMD
+                        - BND
+                        - BOB
+                        - BOV
+                        - BRL
+                        - BSD
+                        - BTN
+                        - BWP
+                        - BYR
+                        - BZD
+                        - CAD
+                        - CDF
+                        - CHE
+                        - CHF
+                        - CHW
+                        - CLF
+                        - CLP
+                        - CNY
+                        - COP
+                        - COU
+                        - CRC
+                        - CUC
+                        - CUP
+                        - CVE
+                        - CZK
+                        - DJF
+                        - DKK
+                        - DOP
+                        - DZD
+                        - EEK
+                        - EGP
+                        - ERN
+                        - ETB
+                        - EUR
+                        - FJD
+                        - FKP
+                        - GBP
+                        - GEL
+                        - GHS
+                        - GIP
+                        - GMD
+                        - GNF
+                        - GTQ
+                        - GWP
+                        - GYD
+                        - HKD
+                        - HNL
+                        - HRK
+                        - HTG
+                        - HUF
+                        - IDR
+                        - ILS
+                        - INR
+                        - IQD
+                        - IRR
+                        - ISK
+                        - JMD
+                        - JOD
+                        - JPY
+                        - KES
+                        - KGS
+                        - KHR
+                        - KMF
+                        - KPW
+                        - KRW
+                        - KWD
+                        - KYD
+                        - KZT
+                        - LAK
+                        - LBP
+                        - LKR
+                        - LRD
+                        - LSL
+                        - LTL
+                        - LVL
+                        - LYD
+                        - MAD
+                        - MDL
+                        - MGA
+                        - MKD
+                        - MMK
+                        - MNT
+                        - MOP
+                        - MRO
+                        - MUR
+                        - MVR
+                        - MWK
+                        - MXN
+                        - MXV
+                        - MYR
+                        - MZN
+                        - NAD
+                        - NGN
+                        - NIO
+                        - NOK
+                        - NPR
+                        - NZD
+                        - OMR
+                        - PAB
+                        - PEN
+                        - PGK
+                        - PHP
+                        - PKR
+                        - PLN
+                        - PYG
+                        - QAR
+                        - RON
+                        - RSD
+                        - RUB
+                        - RWF
+                        - SAR
+                        - SBD
+                        - SCR
+                        - SDG
+                        - SEK
+                        - SGD
+                        - SHP
+                        - SLL
+                        - SOS
+                        - SRD
+                        - STD
+                        - SVC
+                        - SYP
+                        - SZL
+                        - THB
+                        - TJS
+                        - TMT
+                        - TND
+                        - TOP
+                        - TRY
+                        - TTD
+                        - TWD
+                        - TZS
+                        - UAH
+                        - UGX
+                        - USD
+                        - USN
+                        - USS
+                        - UYI
+                        - UYU
+                        - UZS
+                        - VEF
+                        - VND
+                        - VUV
+                        - WST
+                        - XAF
+                        - XAG
+                        - XAU
+                        - XBA
+                        - XBB
+                        - XBC
+                        - XBD
+                        - XCD
+                        - XDR
+                        - XFU
+                        - XOF
+                        - XPD
+                        - XPF
+                        - XPT
+                        - XTS
+                        - XXX
+                        - YER
+                        - ZAR
+                        - ZMK
+                        - ZWL
+                    type: string
+                listID:
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyID:
+                    type: string
+                    xml:
+                        attribute: true
+                listVersionID:
+                    type: string
+                    xml:
+                        attribute: true
+                listURI:
+                    type: string
+                    xml:
+                        attribute: true
+        TelefaxType:
+            type: object
+            properties:
+                value:
+                    type: string
+                languageID:
+                    description: The identifier of the language used in the corresponding text string (e.g EN)
+                    type: string
+                    xml:
+                        attribute: true
+        TransitTimeType:
+            type: object
+            properties:
+                time:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Real Time it takes to complete an event
+                    xml:
+                        name: Time
+                estimatedTransitTimes:
+                    $ref: '#/components/schemas/EstimatedTransitTimes'
+                    description: Estimated times to complete an event (range
+                    xml:
+                        name: EstimatedTransitTimes
+        AdditionalInformation:
+            type: object
+            properties:
+                information:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/AdditionalPropertyType'
+                        xml:
+                            name: Information
+                    xml:
+                        name: Information
+        EstimatedTransitTimeType:
+            type: object
+            properties:
+                from:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Minimum time takes to complete an event
+                    xml:
+                        name: From
+                to:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Maximum time takes to complete an event
+                    xml:
+                        name: To
+        TransportationMode:
+            type: object
+            properties:
+                value:
+                    type: string
+                listID:
+                    description: The identification of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyID:
+                    description: An agency that maintains one or more code lists
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyName:
+                    description: The name of the agency that maintains the code list
+                    type: string
+                    xml:
+                        attribute: true
+                listName:
+                    description: The name of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listVersionID:
+                    description: The version of the code list
+                    type: string
+                    xml:
+                        attribute: true
+                name:
+                    description: The textual equivalent of the code content
+                    type: string
+                    xml:
+                        attribute: true
+                languageID:
+                    description: The identifier of the language used in the corresponding text string
+                    type: string
+                    xml:
+                        attribute: true
+                listURI:
+                    description: The Uniform Resource Identifier that identifies where the code list is located
+                    type: string
+                    xml:
+                        attribute: true
+                listSchemeURI:
+                    description: The Uniform Resource Identifier that identifies where the code list scheme is located
+                    type: string
+                    xml:
+                        attribute: true
+        InstructionType:
+            required:
+                - instructionLine
+            type: object
+            properties:
+                instructionLine:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/TextType'
+                        xml:
+                            name: InstructionLine
+                    xml:
+                        name: InstructionLine
+        Dimensions:
+            required:
+                - dimension
+            type: object
+            properties:
+                dimension:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/DimensionType'
+                        xml:
+                            name: Dimension
+                    xml:
+                        name: Dimension
+        Accessorials:
+            type: object
+            properties:
+                accessorial:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/AccessorialType'
+                        xml:
+                            name: Accessorial
+                    xml:
+                        name: Accessorial
+        ULDType:
+            type: object
+            properties:
+                position:
+                    $ref: '#/components/schemas/CodeType'
+                    description: E.g. AKE 0 0 1
+                    xml:
+                        name: Position
+                grossWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    xml:
+                        name: GrossWeight
+                unitQuantity:
+                    $ref: '#/components/schemas/QuantityType'
+                    xml:
+                        name: UnitQuantity
+                uldtype:
+                    $ref: '#/components/schemas/CodeType'
+        AddressLines:
+            required:
+                - addressLine
+            type: object
+            properties:
+                addressLine:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/TextType'
+                        xml:
+                            name: AddressLine
+                    xml:
+                        name: AddressLine
+        ConnectionSegments:
+            required:
+                - segment
+            type: object
+            properties:
+                segment:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/SegmentCapacityType'
+                        xml:
+                            name: Segment
+                    xml:
+                        name: Segment
+        HazardousInfo:
+            required:
+                - info
+            type: object
+            properties:
+                info:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/HazardousMaterialType'
+                        xml:
+                            name: Info
+                    xml:
+                        name: Info
+        CodeType:
+            type: object
+            properties:
+                value:
+                    type: string
+                listID:
+                    description: The identification of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyID:
+                    description: An agency that maintains one or more code lists
+                    type: string
+                    xml:
+                        attribute: true
+                listAgencyName:
+                    description: The name of the agency that maintains the code list
+                    type: string
+                    xml:
+                        attribute: true
+                listName:
+                    description: The name of a list of codes
+                    type: string
+                    xml:
+                        attribute: true
+                listVersionID:
+                    description: The version of the code list
+                    type: string
+                    xml:
+                        attribute: true
+                name:
+                    description: The textual equivalent of the code content
+                    type: string
+                    xml:
+                        attribute: true
+                languageID:
+                    description: The identifier of the language used in the corresponding text string
+                    type: string
+                    xml:
+                        attribute: true
+                listURI:
+                    description: The Uniform Resource Identifier that identifies where the code list is located
+                    type: string
+                    xml:
+                        attribute: true
+                listSchemeURI:
+                    description: The Uniform Resource Identifier that identifies where the code list scheme is located
+                    type: string
+                    xml:
+                        attribute: true
+        LocationType:
+            type: object
+            properties:
+                locationTypeCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: '"Seaport", "Airport", "Freight Terminal", "Rail Station",Address.'
+                    xml:
+                        name: LocationTypeCode
+                locationCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: |-
+                        IATA Location Identifier,UN/LOCODE 
+
+                        3-letters IATA airport code
+                        5-letter UN/LOCODE seaport code
+                        AN for PostalCode
+                    xml:
+                        name: LocationCode
+                locationName:
+                    $ref: '#/components/schemas/TextType'
+                    description: |
+                        Name of the location 
+                    xml:
+                        name: LocationName
+                id:
+                    $ref: '#/components/schemas/IDType'
+                    description: 'airport code, sea port code'
+                    xml:
+                        name: ID
+                addressFormatCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Structured, Unstructured'
+                    xml:
+                        name: AddressFormatCode
+                countryID:
+                    $ref: '#/components/schemas/CountryIDType'
+                    description: Country code
+                    xml:
+                        name: CountryID
+                countryName:
+                    $ref: '#/components/schemas/TextType'
+                    description: Name of country
+                    xml:
+                        name: CountryName
+                stateOrProvince:
+                    $ref: '#/components/schemas/TextType'
+                    description: 'State or Province code '
+                    xml:
+                        name: StateOrProvince
+                cityID:
+                    $ref: '#/components/schemas/IDType'
+                    description: City code
+                    xml:
+                        name: CityID
+                cityName:
+                    $ref: '#/components/schemas/TextType'
+                    description: City Name
+                    xml:
+                        name: CityName
+                streetName:
+                    $ref: '#/components/schemas/TextType'
+                    description: Street Name
+                    xml:
+                        name: StreetName
+                postalCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: |
+
+                        Postal or Zip code
+                    xml:
+                        name: PostalCode
+                addressLines:
+                    $ref: '#/components/schemas/AddressLines'
+                    description: Free text
+                    xml:
+                        name: AddressLines
+                locationCoordinate:
+                    $ref: '#/components/schemas/LocationCoordinate'
+                    description: LAT and Long
+                    xml:
+                        name: LocationCoordinate
+                timezoneOffset:
+                    $ref: '#/components/schemas/TextType'
+                    description: Time offset from Universal Coordinated Time (UTC)
+                    xml:
+                        name: TimezoneOffset
+        FeeType:
+            type: object
+            properties:
+                currency:
+                    $ref: '#/components/schemas/CurrencyCodeType'
+                    description: Rate currency for this fee. Multiple fees might have different currencies
+                    xml:
+                        name: Currency
+                feeLocationType:
+                    $ref: '#/components/schemas/TextType'
+                    description: |
+                        FeeLocationType
+                                                Origin 
+                                                service (leg)
+                                                destination 
+                                                general
+                    xml:
+                        name: FeeLocationType
+                exchangeRate:
+                    format: double
+                    description: The value of one currency for the purpose of conversion to another
+                    type: number
+                    xml:
+                        name: ExchangeRate
+                inclusive:
+                    description: If "true" the price is included in the main fee
+                    type: boolean
+                    xml:
+                        name: Inclusive
+                feeType:
+                    $ref: '#/components/schemas/CodeType'
+                    xml:
+                        name: FeeType
+                feeCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Code of the fee
+                    xml:
+                        name: FeeCode
+                feeName:
+                    $ref: '#/components/schemas/TextType'
+                    description: |-
+                        Name of fee
+                        (e.g Freight cost fee)
+                        The fee break for this fee is defined in the feeBreak
+                    xml:
+                        name: FeeName
+                feeComment:
+                    $ref: '#/components/schemas/TextType'
+                    description: Comment about the fee.
+                    xml:
+                        name: FeeComment
+                minimumPrice:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Min value when brakes applied
+                    xml:
+                        name: MinimumPrice
+                maximumPrice:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Max value when brakes applied
+                    xml:
+                        name: MaximumPrice
+                quantity:
+                    $ref: '#/components/schemas/QuantityType'
+                    description: Number of units this fee covers
+                    xml:
+                        name: Quantity
+                unitOfMeasure:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Indicates the unit of measure if per KG or per Shipment
+                    xml:
+                        name: UnitOfMeasure
+                unitRate:
+                    $ref: '#/components/schemas/AmountType'
+                    description: The Rate of a single Unit (e.g Rate per kg)
+                    xml:
+                        name: UnitRate
+                rateID:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: RateId
+                rate:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Price value for this fee
+                    xml:
+                        name: Rate
+                feeBreaks:
+                    $ref: '#/components/schemas/FeeBreaks'
+                    description: Each fee has its own breakpoints
+                    xml:
+                        name: FeeBreaks
+        PriceIndicatorType:
+            type: object
+            properties:
+                requestCurrency:
+                    $ref: '#/components/schemas/CurrencyCodeType'
+                    description: Currency preferred by the requester
+                    xml:
+                        name: RequestCurrency
+                exchangeRate:
+                    format: double
+                    description: The value of one currency for the purpose of conversion to another
+                    type: number
+                    xml:
+                        name: ExchangeRate
+                rateID:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: RateId
+                rateComment:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: RateComment
+                priceTool:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: PriceTool
+                promotionCode:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: PromotionCode
+                rateCurrency:
+                    $ref: '#/components/schemas/CurrencyCodeType'
+                    xml:
+                        name: RateCurrency
+                rateType:
+                    $ref: '#/components/schemas/CodeType'
+                    xml:
+                        name: RateType
+                unitOfMeasure:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Indicates the unit of measure if per KG or per Shipment
+                    xml:
+                        name: UnitOfMeasure
+                unitRate:
+                    $ref: '#/components/schemas/AmountType'
+                    description: The Rate of a single Unit (e.g Rate per kg)
+                    xml:
+                        name: UnitRate
+                includeOriginPortCharges:
+                    description: Price includes origin handling charges
+                    type: boolean
+                    xml:
+                        name: IncludeOriginPortCharges
+                includeDestinationPortCharges:
+                    description: Price includes destination handling charges
+                    type: boolean
+                    xml:
+                        name: IncludeDestinationPortCharges
+                validFrom:
+                    format: date-time
+                    description: Price valid from specific date
+                    type: string
+                    xml:
+                        name: ValidFrom
+                validTo:
+                    format: date-time
+                    description: Price expired on a specific date
+                    type: string
+                    xml:
+                        name: ValidTo
+                breakPointUsed:
+                    format: double
+                    description: The breakpoint used when calculated the fees
+                    type: number
+                    xml:
+                        name: BreakPointUsed
+                chargeableWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Chargeable weight used in price calculation
+                    xml:
+                        name: ChargeableWeight
+                grossWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Shipment gross weight
+                    xml:
+                        name: GrossWeight
+                totalCharge:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Main charge plus surcharges
+                    xml:
+                        name: TotalCharge
+                totalFreightCharge:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Transportation Charge
+                    xml:
+                        name: TotalFreightCharge
+        FeeBreakType:
+            required:
+                - breakAmount
+            type: object
+            properties:
+                breakPoint:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: BreakPoint
+                breakAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    xml:
+                        name: BreakAmount
+        FeeBreaks:
+            type: object
+            properties:
+                feeBreak:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FeeBreakType'
+                        xml:
+                            name: FeeBreak
+                    xml:
+                        name: FeeBreak
+        AvailableSpaceType:
+            type: object
+            properties:
+                spaceAvailable:
+                    description: Is this flight has space available
+                    type: boolean
+                    xml:
+                        name: SpaceAvailable
+                remainingBookableWeight:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Remaining weight capacity on the flight
+                    xml:
+                        name: RemainingBookableWeight
+                remainingBookableVolume:
+                    $ref: '#/components/schemas/MeasureType'
+                    description: Remaining volume capacity on the flight
+                    xml:
+                        name: RemainingBookableVolume
+                uld:
+                    $ref: '#/components/schemas/ULDType'
+                    description: Unit load device information
+                    xml:
+                        name: ULD
+        ResponseStatus:
+            type: object
+            properties:
+                status:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/StatusType'
+                        xml:
+                            name: Status
+                    xml:
+                        name: Status
+        ChargeType:
+            required:
+                - fee
+            type: object
+            properties:
+                fee:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FeeType'
+                        xml:
+                            name: Fee
+                    xml:
+                        name: Fee
+        StatusType:
+            type: object
+            properties:
+                code:
+                    $ref: '#/components/schemas/CodeType'
+                    description: Status code
+                    xml:
+                        name: Code
+                reason:
+                    $ref: '#/components/schemas/TextType'
+                    description: Reason of the status
+                    xml:
+                        name: Reason
+        QuoteRequest:
+            type: object
+            properties:
+                messageHeader:
+                    $ref: '#/components/schemas/MessageHeaderType'
+                    description: Header properties that are manipulated by the provider API functions
+                    xml:
+                        name: MessageHeader
+                businessInfo:
+                    $ref: '#/components/schemas/BusinessInfoType'
+                    description: >-
+                        Identification of the message Sender, receiver, account number and information about
+                        all parties involved in the exchange
+                    xml:
+                        name: BusinessInfo
+                shipment:
+                    $ref: '#/components/schemas/ShipmentType'
+                    description: Define the main payload of the message
+                    xml:
+                        name: Shipment
+            xml:
+                name: QuoteRequest
+            x-className:
+                type: string
+                format: org.openfreight.api.transformation.data.v1.quote.request.QuoteRequest
+        QuotesResponse:
+            type: object
+            properties:
+                messageHeader:
+                    $ref: '#/components/schemas/MessageHeaderType'
+                    description: Header properties that are manipulated by the provider API functions
+                    xml:
+                        name: MessageHeader
+                businessInfo:
+                    $ref: '#/components/schemas/BusinessInfoType'
+                    description: >-
+                        Identification of the message Sender, receiver, account number and information about
+                        all parties involved in the exchange
+                    xml:
+                        name: BusinessInfo
+                quotes:
+                    $ref: '#/components/schemas/Quotes'
+                    description: The main payload of the returned response
+                    xml:
+                        name: Quotes
+            xml:
+                name: QuotesResponse
+            x-className:
+                type: string
+                format: org.openfreight.api.transformation.data.v1.quote.response.QuotesResponse
+        FreightShipmentType:
+            type: object
+            properties:
+                referenceID:
+                    $ref: '#/components/schemas/IDType'
+                    description: A reference for quote
+                    xml:
+                        name: ReferenceID
+                status:
+                    $ref: '#/components/schemas/TextType'
+                    description: The current status of the quote
+                    xml:
+                        name: Status
+                shipmentDirection:
+                    $ref: '#/components/schemas/TextType'
+                    description: Export/Import indicator
+                    xml:
+                        name: ShipmentDirection
+                    example: Import
+                shipmentPriorityCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Indicates the booking service type required : standard; Express or time-definite'
+                    xml:
+                        name: ShipmentPriorityCode
+                transportMode:
+                    $ref: '#/components/schemas/TransportationModeType'
+                    description: 'For example: LCL,FCL,LTL,FTL,Air,Rail,Express,Barge,RoRo,AirSea,BreakBulk'
+                    xml:
+                        name: TransportMode
+                transportService:
+                    $ref: '#/components/schemas/TransportationServiceType'
+                    description: >-
+                        Indicates the routing information between the origin point and destination point:
+                        door-to-door, port-to-port
+                    xml:
+                        name: TransportService
+                connection:
+                    $ref: '#/components/schemas/ConnectionType'
+                    description: Maximum number of segments returned per route if specified
+                    xml:
+                        name: Connection
+                originLocation:
+                    $ref: '#/components/schemas/LocationType'
+                    description: >-
+                        The Origin location could be a port, zipcode or address. 
+
+                        For airport use IATA code; for seaport use UNCODE (5-letters), for address use
+                        structured address format.
+                         For airlines the location type is by default "Airport". 
+                        For other types of vehicles (Vessel or Truck) a location type could be anyone of the
+                        following list:"Seaport", "Freight Terminal", "Rail Station"
+                    xml:
+                        name: OriginLocation
+                destinationLocation:
+                    $ref: '#/components/schemas/LocationType'
+                    description: >-
+                        The Destination location could be a port, zipcode or address. For air port use IATA
+                        code; 
+
+                        for seaport use UNCODE (5-letters), for address use structured address format
+                    xml:
+                        name: DestinationLocation
+                pickupEvent:
+                    $ref: '#/components/schemas/EventType'
+                    description: |
+                        Provides information about the pickup event 
+                        Pickup dates (actual and estimated)
+                        and the party doing the pickup
+                    xml:
+                        name: PickupEvent
+                deliveryEvent:
+                    $ref: '#/components/schemas/EventType'
+                    description: |
+                        Provides information about the delivery event 
+                        Delivery dates (actual and estimated)
+                        and the party doing the pickup
+                    xml:
+                        name: DeliveryEvent
+                timeOfAvailability:
+                    format: date-time
+                    description: Date and time for a shipment to be picked up by the carrier from the dock or warehouse
+                    type: string
+                    xml:
+                        name: TimeOfAvailability
+                latestAcceptanceDate:
+                    format: date-time
+                    description: Date and time for a shipment to be delivered to the carrier dock or warehouse
+                    type: string
+                    xml:
+                        name: LatestAcceptanceDate
+                validFrom:
+                    format: date-time
+                    description: Quote start date validity
+                    type: string
+                    xml:
+                        name: ValidFrom
+                validTo:
+                    format: date-time
+                    description: Quote end date validity
+                    type: string
+                    xml:
+                        name: ValidTo
+                load:
+                    $ref: '#/components/schemas/UnitLoadType'
+                    description: >-
+                        Provides the information about the actual unit load to be transported and contains
+                        information about the totals and information about each item transported (packages)
+                    xml:
+                        name: Load
+                insuranceValueAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Provides the information about the declared insurance value of the shipment
+                    xml:
+                        name: InsuranceValueAmount
+                declaredCustomsValueAmount:
+                    $ref: '#/components/schemas/AmountType'
+                    description: Provides the information about the declared customs value of the shipment
+                    xml:
+                        name: DeclaredCustomsValueAmount
+                priceIndicator:
+                    $ref: '#/components/schemas/PriceIndicatorType'
+                    description: A summary of preferences and the calculation rules used in the charges section
+                    xml:
+                        name: PriceIndicator
+                specialHandlingCodes:
+                    $ref: '#/components/schemas/SpecialHandlingCodes'
+                    description: >-
+                        Used to filter the routes with flights that do not support the specified special
+                        handling codes (SPLs). For example cargo aircraft only
+                    xml:
+                        name: SpecialHandlingCodes
+                accessorials:
+                    $ref: '#/components/schemas/Accessorials'
+                    description: >-
+                        The scope specify if the accessorial is applied at (1) origin (2) destination or (3)
+                        Generic
+                    xml:
+                        name: Accessorials
+                commodityClassification:
+                    $ref: '#/components/schemas/CommodityClassification'
+                    description: List of commodity classes describes the goods in the quote
+                    xml:
+                        name: CommodityClassification
+                terms:
+                    $ref: '#/components/schemas/TermsType'
+                    description: 'Conditions of payment '
+                    xml:
+                        name: Terms
+                internalRemarks:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: InternalRemarks
+                remarks:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Remarks
+                condition:
+                    $ref: '#/components/schemas/ConditionType'
+                    description: Additional information about conditions
+                    xml:
+                        name: Condition
+                additionalInfo:
+                    $ref: '#/components/schemas/AdditionalInformation'
+                    description: Use a key value additional information if needed
+                    xml:
+                        name: AdditionalInfo
+        Quotes:
+            required:
+                - quote
+            type: object
+            properties:
+                quote:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FreightShipmentType'
+                        xml:
+                            name: Quote
+                    xml:
+                        name: Quote
+        WayBillIdentifierType:
+            type: object
+            properties:
+                hwb:
+                    $ref: '#/components/schemas/TextType'
+                    description: >-
+                        The House waybill number that is created by the FreightForworder;should be filled if
+                        MWB is empty
+                    xml:
+                        name: HWB
+                mwb:
+                    $ref: '#/components/schemas/TextType'
+                    description: >
+                        The master waybil lnumber  that is created by the carrier; should be filled if HWB is
+                        empty
+                         A carrier can issue a waybill through the following methods
+                        1- Generated by the system when a new booking is requested 
+
+                        2- Pre-Allocated:  when a carrier allocates a range of predefined ranges to each FF
+                    xml:
+                        name: MWB
+                additionalID:
+                    $ref: '#/components/schemas/IDType'
+                    description: A reference number to local usage
+                    xml:
+                        name: AdditionalID
+                billOfLading:
+                    $ref: '#/components/schemas/TextType'
+                    description: The B/L number
+                    xml:
+                        name: BillOfLading
+                billOfLadingURL:
+                    description: The B/L url
+                    type: string
+                    xml:
+                        name: BillOfLadingURL
+                electronicWayBill:
+                    description: Indicates if the waybill is electronic only or has accompanied document
+                    type: boolean
+                    xml:
+                        name: ElectronicWayBill
+        PartyType:
+            type: object
+            properties:
+                partyTypeCode:
+                    $ref: '#/components/schemas/IDType'
+                    description: |
+                        e.g. CA:Carrier;CG:Carrier's agent; Refer to the UN Party type codes at 
+                        https://www.unece.org/trade/untdid/d00a/tred/tred3035.htm
+                    xml:
+                        name: PartyTypeCode
+                id:
+                    $ref: '#/components/schemas/IDType'
+                    description: IATA or FMC ID
+                    xml:
+                        name: ID
+                additionalID:
+                    $ref: '#/components/schemas/IDType'
+                    description: Additional id
+                    xml:
+                        name: AdditionalID
+                name:
+                    $ref: '#/components/schemas/TextType'
+                    description: Name of the party
+                    xml:
+                        name: Name
+                accountIDList:
+                    $ref: '#/components/schemas/AccountIDList'
+                    description: Shipper Account Number
+                    xml:
+                        name: AccountIDList
+                postalAddress:
+                    $ref: '#/components/schemas/LocationType'
+                    description: Two-character country code based on ISO 3166-1 alpha-2 standard
+                    xml:
+                        name: PostalAddress
+                contact:
+                    $ref: '#/components/schemas/ContactType'
+                    description: The contact person information for this party
+                    xml:
+                        name: Contact
+                parties:
+                    $ref: '#/components/schemas/Parties'
+                    description: The information about the agent assigned on behalf of this party
+                    xml:
+                        name: Parties
+        AccountIDList:
+            required:
+                - accountID
+            type: object
+            properties:
+                accountID:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/AccountIDType'
+                        xml:
+                            name: AccountID
+                    xml:
+                        name: AccountID
+        AccountIDType:
+            required:
+                - value
+            type: object
+            properties:
+                value:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Value
+                        namespace: www.openfreight.org
+                idsource:
+                    $ref: '#/components/schemas/TextType'
+        SegmentType:
+            type: object
+            properties:
+                segmentID:
+                    $ref: '#/components/schemas/TextType'
+                    description: Unique ID for the route. A sequence number
+                    xml:
+                        name: SegmentID
+                segmentType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Indicates the type of segment. For example "Pickup", "Main" , "Delivery"'
+                    xml:
+                        name: SegmentType
+                status:
+                    $ref: '#/components/schemas/StatusType'
+                    xml:
+                        name: Status
+                vehicleType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        A vehicle is the generic term used to indicate "Aircraft", "Vessel" and "Truck" for
+                        example
+                    xml:
+                        name: VehicleType
+                vehicleNumber:
+                    $ref: '#/components/schemas/TextType'
+                    description: >-
+                        Based on the vehicle type this indicated the aircraft number of the vehicle type is
+                        Aircraft
+                    xml:
+                        name: VehicleNumber
+                itineraryNumber:
+                    $ref: '#/components/schemas/TextType'
+                    description: The commercial itinerary number
+                    xml:
+                        name: ItineraryNumber
+                transportMode:
+                    $ref: '#/components/schemas/TransportationMode'
+                    description: 'For example: LCL, FCL, LTL, FTL, Air, Rail, Express, Barge, RoRo, AirSea, BreakBulk'
+                    xml:
+                        name: TransportMode
+                origin:
+                    $ref: '#/components/schemas/LocationType'
+                    description: The origin of segment
+                    xml:
+                        name: Origin
+                destination:
+                    $ref: '#/components/schemas/LocationType'
+                    description: The destination of the segment
+                    xml:
+                        name: Destination
+                scheduledTimeOfDeparture:
+                    format: date-time
+                    description: Scheduled departure date and time
+                    type: string
+                    xml:
+                        name: ScheduledTimeOfDeparture
+                scheduledTimeOfArrival:
+                    format: date-time
+                    description: Scheduled arrival date and time
+                    type: string
+                    xml:
+                        name: ScheduledTimeOfArrival
+                timeOfAvailability:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: TimeOfAvailability
+                latestAcceptanceDate:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: LatestAcceptanceDate
+                marketingCarrierCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        A code sharing when a carrier places its designator code on a vehicle operated by
+                        another carrier 
+                    xml:
+                        name: MarketingCarrierCode
+                operatingCarrierCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: The carrier code of the operator
+                    xml:
+                        name: OperatingCarrierCode
+                transitTime:
+                    $ref: '#/components/schemas/TransitTimeType'
+                    description: >-
+                        Estimated Date of Delivery based on the time counted from the moment when a shipment
+                        leaves the place of origin until it reaches the destination location
+                    xml:
+                        name: TransitTime
+        SegmentCapacityType:
+            type: object
+            properties:
+                segmentID:
+                    $ref: '#/components/schemas/TextType'
+                    description: Unique ID for the route. A sequence number
+                    xml:
+                        name: SegmentID
+                segmentType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: 'Indicates the type of segment. For example "Pickup", "Main" , "Delivery"'
+                    xml:
+                        name: SegmentType
+                status:
+                    $ref: '#/components/schemas/StatusType'
+                    xml:
+                        name: Status
+                vehicleType:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        A vehicle is the generic term used to indicate "Aircraft", "Vessel" and "Truck" for
+                        example
+                    xml:
+                        name: VehicleType
+                vehicleNumber:
+                    $ref: '#/components/schemas/TextType'
+                    description: >-
+                        Based on the vehicle type this indicated the aircraft number of the vehicle type is
+                        Aircraft
+                    xml:
+                        name: VehicleNumber
+                itineraryNumber:
+                    $ref: '#/components/schemas/TextType'
+                    description: The commercial itinerary number
+                    xml:
+                        name: ItineraryNumber
+                transportMode:
+                    $ref: '#/components/schemas/TransportationMode'
+                    description: 'For example: LCL, FCL, LTL, FTL, Air, Rail, Express, Barge, RoRo, AirSea, BreakBulk'
+                    xml:
+                        name: TransportMode
+                origin:
+                    $ref: '#/components/schemas/LocationType'
+                    description: The origin of segment
+                    xml:
+                        name: Origin
+                destination:
+                    $ref: '#/components/schemas/LocationType'
+                    description: The destination of the segment
+                    xml:
+                        name: Destination
+                scheduledTimeOfDeparture:
+                    format: date-time
+                    description: Scheduled departure date and time
+                    type: string
+                    xml:
+                        name: ScheduledTimeOfDeparture
+                scheduledTimeOfArrival:
+                    format: date-time
+                    description: Scheduled arrival date and time
+                    type: string
+                    xml:
+                        name: ScheduledTimeOfArrival
+                timeOfAvailability:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: TimeOfAvailability
+                latestAcceptanceDate:
+                    format: date-time
+                    type: string
+                    xml:
+                        name: LatestAcceptanceDate
+                marketingCarrierCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: >-
+                        A code sharing when a carrier places its designator code on a vehicle operated by
+                        another carrier 
+                    xml:
+                        name: MarketingCarrierCode
+                operatingCarrierCode:
+                    $ref: '#/components/schemas/CodeType'
+                    description: The carrier code of the operator
+                    xml:
+                        name: OperatingCarrierCode
+                transitTime:
+                    $ref: '#/components/schemas/TransitTimeType'
+                    description: >-
+                        Estimated Date of Delivery based on the time counted from the moment when a shipment
+                        leaves the place of origin until it reaches the destination location
+                    xml:
+                        name: TransitTime
+                charges:
+                    $ref: '#/components/schemas/ChargeType'
+                    description: The actual prices calculated for the main fee and its surcharges
+                    xml:
+                        name: Charges
+                availableSpace:
+                    $ref: '#/components/schemas/AvailableSpaceType'
+                    description: Details of available space remaining
+                    xml:
+                        name: AvailableSpace
+        ContactType:
+            required:
+                - id
+            type: object
+            properties:
+                id:
+                    $ref: '#/components/schemas/IDType'
+                    xml:
+                        name: ID
+                name:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Name
+                telephone:
+                    $ref: '#/components/schemas/TelephoneType'
+                    xml:
+                        name: Telephone
+                telefax:
+                    $ref: '#/components/schemas/TelefaxType'
+                    xml:
+                        name: Telefax
+                electronicMail:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: ElectronicMail
+                note:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Note
+                groups:
+                    $ref: '#/components/schemas/Groups'
+                    xml:
+                        name: Groups
+        Groups:
+            required:
+                - group
+            type: object
+            properties:
+                group:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/GroupType'
+                        xml:
+                            name: Group
+                    xml:
+                        name: Group
+        GroupType:
+            required:
+                - name
+                - type
+            type: object
+            properties:
+                type:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Type
+                name:
+                    $ref: '#/components/schemas/TextType'
+                    xml:
+                        name: Name
+        MessageHeaderType:
+            type: object
+            properties:
+                messageID:
+                    $ref: '#/components/schemas/IDType'
+                    description: >
+                        This value uniquely identifies each message.
+
+                        You can use this value to locate the particular message on the Exceptions, Queue
+                        manager, and logs. 
+
+
+                        Use case: check duplicate messages
+
+
+                        Optional
+
+                        [e.g. out92bbfe5-29e7-4db2-84e0-64d1ea68888]
+                    xml:
+                        name: MessageID
+                conversationID:
+                    $ref: '#/components/schemas/IDType'
+                    description: >
+                        Useful to inform the system how to process the inbound messages: Sequential or
+                        Parallel. If multiple messages have same conversionId, they will be processed
+                        sequentially. 
+
+
+                        Use case: process messages sequentially 
+
+                        [e.g. 83c732b1-1514-418e-a8ae-a69618ea9d60]
+                    xml:
+                        name: ConversationID
+                requestID:
+                    $ref: '#/components/schemas/IDType'
+                    description: |
+                        Used to link the  outbound message with the inbound message.
+                        [e.g. 892bbfe5-29e7-4db2-84e0-64d1ea67557]
+                    xml:
+                        name: RequestID
+                authenticationType:
+                    $ref: '#/components/schemas/AuthenticationType'
+                    description: '[e.g.Public, JWT, Basic, OAuth]'
+                    xml:
+                        name: AuthenticationType
