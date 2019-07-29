@@ -4,7 +4,7 @@ Let's Connect Digital Freight.  OpenFreight is the open data standard for multim
 
 OpenFreight is a community of carriers, forwarders, BCOs, and logistics technology companies that are removing data silos with open multimodal freight standards. Together, we can provide better, more efficient logistics services, benefitting every player across the supply chain.
 
-Join the growing [community](https://www.openfreight.org/openfreight-org-home-page/openfreight-community/) now. 
+Join the growing <a href="https://www.openfreight.org/openfreight-org-home-page/openfreight-community/" target="_blank">community</a> now. 
 
 ---
 **Setting A New Standard**
@@ -18,4 +18,4 @@ The initial OpenFreight standards were developed internally at Freightos and are
 - Track & Trace – request and response on shipment status, location, etc. (Coming shortly…)
 ---
 
-These standards were rolled out in 2018 and continue to evolve with adoption and the growth of the OpenFreight community.  Updates will be posted on the website and emails informing of any updates will be sent to all who join the OpenFreight Community.
+These standards were rolled out in 2018 and continue to evolve with adoption and the growth of the OpenFreight community.  Updates will be posted on the website and emails informing of any updates will be sent to all who join the <a href="https://www.openfreight.org/openfreight-org-home-page/openfreight-community/" target="_blank">OpenFreight</a> Community.
